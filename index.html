@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Keep this page out of search engines. Do not remove. -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot-news" content="noindex">
+<meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="slurp" content="noindex, nofollow">
+<meta name="duckduckbot" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>AS Latin Vocabulary</title>
+<style>
+:root{
+  --navy:#003968; --navy-lt:#1b5285; --red:#c91235; --red-dk:#a50e2b;
+  --ink:#12202e; --muted:#5c6f80; --line:#d8e0e7; --bg:#f4f6f8; --card:#ffffff;
+  --ok:#1c7a4b; --ok-bg:#e8f5ee; --bad:#b3122f; --bad-bg:#fdeced; --warn:#8a5a00; --warn-bg:#fdf3e0;
+  --r:10px; --shadow:0 1px 2px rgba(0,40,80,.06),0 6px 18px rgba(0,40,80,.07);
+  --body:"Gill Sans MT","Gill Sans",Calibri,"Trebuchet MS",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--body);color:var(--ink);background:var(--bg);font-size:17px;line-height:1.45;-webkit-text-size-adjust:100%}
+h1,h2,h3{margin:0;font-weight:600;letter-spacing:.04em}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px 64px}
+
+/* header */
+header{background:var(--navy);color:#fff;padding:18px 0 16px;border-bottom:4px solid var(--red)}
+header .wrap{padding-bottom:0;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+header h1{font-size:20px;text-transform:uppercase;letter-spacing:.14em}
+header .sub{font-size:14px;color:#b9d0e4;letter-spacing:.02em}
+header .spacer{flex:1}
+header .nav{display:flex;gap:8px}
+header button.link{background:none;border:1px solid rgba(255,255,255,.35);color:#fff;font-size:13px;padding:5px 11px;border-radius:6px;cursor:pointer;font-family:inherit}
+header button.link:hover{background:rgba(255,255,255,.12)}
+
+/* generic */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;margin:18px 0;box-shadow:var(--shadow)}
+.card h2{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--navy);margin-bottom:14px}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:5px;letter-spacing:.02em}
+select,input[type=text],input[type=number]{font-family:inherit;font-size:16px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);width:100%}
+select:focus,input:focus{outline:2px solid var(--navy-lt);outline-offset:1px;border-color:var(--navy-lt)}
+.row{display:flex;gap:14px;flex-wrap:wrap}
+.row>div{flex:1 1 180px;min-width:0}
+button{font-family:inherit}
+.btn{background:var(--navy);color:#fff;border:none;border-radius:8px;padding:12px 22px;font-size:16px;cursor:pointer;letter-spacing:.03em}
+.btn:hover{background:var(--navy-lt)}
+.btn.red{background:var(--red)} .btn.red:hover{background:var(--red-dk)}
+.btn.ghost{background:#fff;color:var(--navy);border:1px solid var(--line)}
+.btn.ghost:hover{background:#eef3f7}
+.btn.sm{padding:7px 13px;font-size:14px}
+.btn:disabled{opacity:.45;cursor:default}
+.muted{color:var(--muted);font-size:14px}
+.hidden{display:none!important}
+
+/* mode picker */
+.modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:12px}
+.mode{text-align:left;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:14px 15px;cursor:pointer;transition:.12s}
+.mode:hover{border-color:var(--navy-lt);transform:translateY(-1px);box-shadow:var(--shadow)}
+.mode[aria-pressed=true]{border-color:var(--navy);background:#eef4f9;box-shadow:inset 0 0 0 1px var(--navy)}
+.mode .n{display:inline-block;background:var(--navy);color:#fff;font-size:11px;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;margin-right:8px}
+.mode .t{font-weight:600;font-size:15px;letter-spacing:.02em}
+.mode .d{font-size:13px;color:var(--muted);margin-top:5px;line-height:1.35}
+
+/* test chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:6px;padding:6px 0;width:44px;text-align:center;font-size:14px;cursor:pointer;color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.chip.done::after{content:"";display:block;height:3px;background:var(--red);margin:3px 8px -3px;border-radius:2px}
+
+/* question */
+.qhead{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px}
+.qtag{background:#eef4f9;color:var(--navy);border-radius:5px;padding:3px 8px;font-size:11px;letter-spacing:.08em}
+.qtag.inter{background:#fdf0e2;color:#8a5a00}
+.prompt{font-size:29px;line-height:1.25;margin:12px 0 4px;font-weight:600}
+.prompt.en{font-size:25px;font-weight:500}
+.sub{font-size:15px;color:var(--muted);margin-bottom:14px}
+.bar{height:5px;background:#e4eaef;border-radius:3px;overflow:hidden;margin-bottom:2px}
+.bar>i{display:block;height:100%;background:var(--navy);transition:width .25s}
+.fb{border-radius:8px;padding:12px 14px;margin-top:14px;font-size:15px}
+.fb.ok{background:var(--ok-bg);color:var(--ok);border:1px solid #bfe3d0}
+.fb.bad{background:var(--bad-bg);color:var(--bad);border:1px solid #f3c9cf}
+.fb.warn{background:var(--warn-bg);color:var(--warn);border:1px solid #f0dcb4}
+.fb b{font-weight:600}
+.fb .alt{display:block;margin-top:6px;color:var(--ink);font-size:14px}
+.flag{background:none;border:none;color:var(--muted);font-size:12px;cursor:pointer;text-decoration:underline;padding:0}
+.flag:hover{color:var(--red)}
+
+/* flashcards */
+.flash{min-height:190px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;user-select:none;padding:26px 12px}
+.flash .front{font-size:36px;font-weight:600}
+.flash .parts{font-size:17px;color:var(--muted);margin-top:6px;font-style:italic}
+.flash .back{font-size:23px;color:var(--navy);margin-top:16px;padding-top:16px;border-top:1px solid var(--line);width:100%;max-width:520px}
+.flash .hint{font-size:13px;color:var(--muted);margin-top:16px;letter-spacing:.06em;text-transform:uppercase}
+
+/* parse grid */
+.parse{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:8px}
+
+/* results */
+.score{font-size:52px;font-weight:600;color:var(--navy);line-height:1}
+.score small{font-size:19px;color:var(--muted);font-weight:400}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:8px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600}
+td.lat{font-weight:600;white-space:nowrap}
+code.codebox{display:block;background:#eef4f9;border:1px dashed var(--navy-lt);border-radius:8px;padding:12px;font-size:15px;word-break:break-all;color:var(--navy);font-family:ui-monospace,Menlo,Consolas,monospace;margin-top:8px}
+
+/* print sheet */
+.sheet{background:#fff;padding:26px;border:1px solid var(--line);border-radius:var(--r)}
+.sheet h3{font-size:15px;text-transform:uppercase;letter-spacing:.12em;color:var(--navy)}
+.sheet .meta{font-size:13px;color:var(--muted);margin:4px 0 16px}
+.sheet ol{margin:0;padding-left:26px}
+.sheet li{padding:5px 0;border-bottom:1px dotted #c9d3db}
+.sheet .ans{color:var(--red)}
+@media print{
+  body{background:#fff;font-size:12pt}
+  header,.noprint{display:none!important}
+  .wrap{max-width:none;padding:0}
+  .sheet{border:none;padding:0;border-radius:0}
+  .sheet li{break-inside:avoid}
+  .cols{column-count:2;column-gap:30px}
+}
+@media (max-width:560px){
+  header .wrap{gap:6px}header h1{font-size:17px}header .sub{width:100%;margin-top:-2px}
+  .prompt{font-size:24px}.flash .front{font-size:30px}.score{font-size:42px}
+  .chip{width:40px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>AS Latin Vocabulary</h1>
+    <span class="sub">Tests 1&ndash;24 &middot; Eastbourne College</span>
+    <span class="spacer"></span>
+    <nav class="nav">
+      <button class="link" id="navHome">Home</button>
+      <button class="link" id="navPrint">Print a test</button>
+      <button class="link" id="navTeacher">Teacher</button>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ============ HOME ============ -->
+<section id="home">
+  <div class="card">
+    <h2>1 &middot; Choose your test</h2>
+    <div class="chips" id="testChips"></div>
+    <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn ghost sm" id="selOne">Just one</button>
+      <button class="btn ghost sm" id="selCumulative">Everything up to here</button>
+      <button class="btn ghost sm" id="selAll">All 24</button>
+    </div>
+    <p class="muted" id="poolInfo" style="margin:12px 0 0"></p>
+  </div>
+
+  <div class="card">
+    <h2>2 &middot; Choose your activity</h2>
+    <div class="modes" id="modeGrid"></div>
+  </div>
+
+  <div class="card">
+    <h2>3 &middot; Settings</h2>
+    <div class="row">
+      <div>
+        <label for="qCount">Number of questions</label>
+        <select id="qCount"><option>10</option><option selected>20</option><option>30</option><option>40</option><option value="0">All of them</option></select>
+      </div>
+      <div>
+        <label for="interleave">Interleaving from earlier tests</label>
+        <select id="interleave">
+          <option value="0">None</option>
+          <option value="0.2" selected>A fifth of questions</option>
+          <option value="0.33">A third of questions</option>
+          <option value="0.5">Half and half</option>
+        </select>
+      </div>
+      <div>
+        <label for="pupil">Your name (for the score code)</label>
+        <input type="text" id="pupil" placeholder="e.g. A. Smith" autocomplete="name">
+      </div>
+    </div>
+    <p class="muted" id="interNote" style="margin:12px 0 0"></p>
+  </div>
+
+  <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+    <button class="btn red" id="start" style="font-size:18px;padding:14px 34px">Start</button>
+    <span class="muted" id="startHint"></span>
+  </div>
+</section>
+
+<!-- ============ SESSION ============ -->
+<section id="session" class="hidden">
+  <div class="bar"><i id="progBar" style="width:0"></i></div>
+  <div class="card" id="qcard"></div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+    <button class="btn ghost sm" id="quit">End and see results</button>
+    <span class="muted" id="runScore"></span>
+  </div>
+</section>
+
+<!-- ============ RESULTS ============ -->
+<section id="results" class="hidden"></section>
+
+<!-- ============ PRINT ============ -->
+<section id="print" class="hidden">
+  <div class="card noprint">
+    <h2>Printable test</h2>
+    <div class="row">
+      <div>
+        <label for="pTest">Test</label>
+        <select id="pTest"></select>
+      </div>
+      <div>
+        <label for="pCount">How many words</label>
+        <select id="pCount"><option>10</option><option>15</option><option selected>20</option><option>25</option><option value="0">All of them</option></select>
+      </div>
+      <div>
+        <label for="pDir">Direction</label>
+        <select id="pDir">
+          <option value="le">Latin given, write the English</option>
+          <option value="el">English given, write the Latin</option>
+          <option value="parts">Latin given, write meaning and parts</option>
+        </select>
+      </div>
+      <div>
+        <label for="pInter">Interleaving</label>
+        <select id="pInter"><option value="0">None</option><option value="0.25" selected>A quarter from earlier tests</option><option value="0.5">Half from earlier tests</option></select>
+      </div>
+    </div>
+    <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn sm" id="pGen">Generate</button>
+      <button class="btn ghost sm" id="pKey">Show answer key</button>
+      <button class="btn ghost sm" id="pPrint">Print</button>
+    </div>
+  </div>
+  <div id="sheet"></div>
+</section>
+
+<!-- ============ TEACHER ============ -->
+<section id="teacher" class="hidden"></section>
+
+</div>
+<script>
+const VOCAB = [{"t":1,"w":[{"l":"a, ab","n":"+ abl","p":"prep","c":"general","m":"from, by"},{"l":"absum","n":"abesse, afui","p":"verb irreg","c":"general","m":"be absent, be away, be distant"},{"l":"appareo","n":"apparere, apparui","p":"verb 2","c":"general","m":"appear"},{"l":"appropinquo","n":"appropinquare, appropinquavi + dat","p":"verb 1","c":"general","m":"approach, come near to"},{"l":"centurio","n":"centurionis, m","p":"noun 3","c":"military","m":"centurion"},{"l":"cerno","n":"cernere, crevi, cretus","p":"verb 3","c":"general","m":"see, perceive, decree"},{"l":"crudelis","n":"crudele","p":"adj","c":"general","m":"cruel"},{"l":"culpa","n":"culpae, f","p":"noun 1","c":"general","m":"fault, blame"},{"l":"domina","n":"dominae, f","p":"noun 2","c":"domestic","m":"mistress"},{"l":"dominus","n":"domini, m","p":"noun 2","c":"domestic","m":"master"},{"l":"fero","n":"ferre, tuli, latus","p":"verb irreg","c":"general","m":"bear, carry, bring, say"},{"l":"ferox","n":"ferocis","p":"adj","c":"military","m":"fierce, cruel, brave"},{"l":"honor","n":"honoris, m","p":"noun 3","c":"military","m":"honour, esteem, glory"},{"l":"hora","n":"horae, f","p":"noun 1","c":"general","m":"hour"},{"l":"instruo","n":"instruere, instruxi, instructus","p":"verb 3","c":"military","m":"draw up, prepare, equip, supply"},{"l":"insula","n":"insulae, f","p":"noun 1","c":"domestic","m":"island, block (of apartments)"},{"l":"licet","n":"licere, licuit + dat","p":"verb impersonal","c":"general","m":"it is allowed"},{"l":"littera","n":"litterae, f (usually pl. with sg. meaning)","p":"noun 1","c":"general","m":"letter"},{"l":"multus","n":"multa, multum","p":"adj","c":"general","m":"much, many"},{"l":"munio","n":"munire, munivi, munitus","p":"verb 4","c":"military","m":"fortify, defend, guard"},{"l":"ob","n":"+ acc","p":"prep","c":"general","m":"because of, on account of"},{"l":"obliviscor","n":"oblivisci, oblitus sum","p":"verb 3 dep","c":"general","m":"forget"},{"l":"passus","n":"passus, m","p":"noun 4","c":"general","m":"pace"},{"l":"mille passus","n":"(pl milia passuum)","p":"","c":"","m":"mile"},{"l":"postulo","n":"postulare, postulavi, postulatus","p":"verb 1","c":"general","m":"demand, ask"},{"l":"potens","n":"potentis","p":"adj","c":"general","m":"powerful"},{"l":"quasi","n":"indeclinable","p":"adverb","c":"general","m":"as if, just as, nearly"},{"l":"-que","n":"indeclinable","p":"conjunction","c":"general","m":"and"},{"l":"ripa","n":"ripae, f","p":"noun 1","c":"general","m":"bank"},{"l":"rogo","n":"rogare, rogavi, rogatus","p":"verb 1","c":"general","m":"ask, ask for"},{"l":"soleo","n":"solere, solitus sum","p":"verb 2 semidep","c":"general","m":"be accustomed"},{"l":"solum","n":"indeclinable","p":"adverb","c":"general","m":"only"},{"l":"terra","n":"terrae, f","p":"noun 1","c":"general","m":"ground, land, earth"},{"l":"terreo","n":"terrere, terrui, territus","p":"verb 2","c":"general","m":"frighten"},{"l":"vereor","n":"vereri, veritus sum","p":"verb 2 dep","c":"general","m":"fear, be afraid"},{"l":"vero","n":"indeclinable","p":"adverb","c":"general","m":"indeed, in fact, however"}]},{"t":2,"w":[{"l":"ac, atque","n":"indeclinable","p":"conjunction","c":"general","m":"and"},{"l":"accido","n":"accidere, accidi","p":"verb 3","c":"general","m":"happen"},{"l":"apud","n":"+ acc","p":"prep","c":"domestic","m":"among, at the house of, according to, in the opinion of"},{"l":"aqua","n":"aquae, f","p":"noun 1","c":"general","m":"water"},{"l":"certamen","n":"certaminis, n","p":"noun 3","c":"military","m":"contest, battle, struggle"},{"l":"certus","n":"certa, certum","p":"adj","c":"general","m":"certain, sure, fixed"},{"l":"cum","n":"indeclinable","p":"conjunction","c":"general","m":"when, since, although"},{"l":"cum","n":"+ abl","p":"prep","c":"general","m":"with"},{"l":"domus","n":"domus, f","p":"noun 4","c":"domestic","m":"house, home"},{"l":"donum","n":"doni, n","p":"noun 2","c":"general","m":"gift, present"},{"l":"ferrum","n":"ferri, n","p":"noun 2","c":"military","m":"iron, sword"},{"l":"festino","n":"festinare, festinavi","p":"verb 1","c":"general","m":"hurry"},{"l":"hortor","n":"hortari, hortatus sum","p":"verb 1 dep","c":"military","m":"urge, encourage"},{"l":"hortus","n":"horti, m","p":"noun 2","c":"domestic","m":"garden"},{"l":"intellego","n":"intellegere, intellexi, intellectus","p":"verb 3","c":"general","m":"understand, perceive, realise"},{"l":"inter","n":"+ acc","p":"prep","c":"general","m":"between, among"},{"l":"litus","n":"litoris, n","p":"noun 3","c":"general","m":"sea-shore, beach"},{"l":"locus","n":"loci, m","p":"noun 2","c":"general","m":"place, position, situation, opportunity"},{"l":"munus","n":"muneris, n","p":"noun 3","c":"military","m":"service, duty, present"},{"l":"murus","n":"muri, m","p":"noun 2","c":"general","m":"wall, rampart"},{"l":"obses","n":"obsidis m and f","p":"noun 3","c":"military","m":"hostage"},{"l":"obsideo","n":"obsidere, obsedi, obsessus","p":"verb 2","c":"military","m":"besiege, blockade"},{"l":"pater","n":"patris, m","p":"noun 3","c":"domestic","m":"father"},{"l":"patior","n":"pati, passus sum","p":"verb 3 dep","c":"general","m":"suffer, endure, allow"},{"l":"potestas","n":"potestatis, f","p":"noun 3","c":"political","m":"power, authority, opportunity"},{"l":"potior","n":"potiri, potitus sum + gen or abl","p":"verb 4","c":"general","m":"seize, get possession of"},{"l":"queror","n":"queri, questus sum","p":"verb 3 dep","c":"general","m":"complain"},{"l":"qui","n":"quae, quod","p":"pron","c":"general","m":"who, which, that"},{"l":"rumpo","n":"rumpere, rupi, ruptus","p":"verb 3","c":"general","m":"break, burst, break through"},{"l":"rursus","n":"indeclinable","p":"adverb","c":"general","m":"back, again"},{"l":"solus","n":"sola, solum","p":"adj","c":"general","m":"alone, only, lonely, single"},{"l":"solvo","n":"solvere, solvi, solutus","p":"verb 3","c":"military","m":"loose, pay"},{"l":"terror","n":"terroris, m","p":"noun 3","c":"general","m":"terror, panic"},{"l":"timeo","n":"timere, timui","p":"verb 2","c":"general","m":"fear, be afraid"},{"l":"verto","n":"vertere, verti, versus","p":"verb 3","c":"general","m":"turn"},{"l":"terga verto","n":"","p":"verb phrase","c":"","m":"retreat"}]},{"t":3,"w":[{"l":"accipio","n":"accipere, accepi, acceptus","p":"verb 3","c":"general","m":"accept, take in, receive, hear"},{"l":"acer","n":"acris, acre","p":"adj","c":"general","m":"keen, sharp, fierce"},{"l":"aquila","n":"aquilae, f","p":"noun 1","c":"military","m":"eagle, standard"},{"l":"ara","n":"arae, f","p":"noun 1","c":"religious","m":"altar"},{"l":"certiorem facere","n":"","p":"verb phrase","c":"general","m":"inform"},{"l":"ceteri","n":"ceterae, cetera","p":"adj","c":"general","m":"the rest, the other"},{"l":"cunctus","n":"cuncta, cunctum","p":"adj","c":"general","m":"all, whole"},{"l":"cupidus","n":"cupida, cupidum + gen","p":"adj","c":"general","m":"eager (for), greedy"},{"l":"dormio","n":"dormire, dormivi","p":"verb 4","c":"domestic","m":"sleep"},{"l":"dubito","n":"dubitare, dubitavi, dubitatus","p":"verb 1","c":"general","m":"doubt, hesitate"},{"l":"fidelis","n":"fidele","p":"adj","c":"general","m":"trustworthy, faithful, loyal"},{"l":"fides","n":"fidei, f","p":"noun 5","c":"general","m":"trust, faith, confidence, loyalty"},{"l":"hospes","n":"hospitis, m","p":"noun 3","c":"domestic","m":"guest, host"},{"l":"hostis","n":"hostis, m","p":"noun 3","c":"military","m":"enemy"},{"l":"interea, interim","n":"indeclinable","p":"adverb","c":"general","m":"meanwhile, in the meantime"},{"l":"interficio","n":"interficere, interfeci, interfectus","p":"verb 3","c":"military","m":"kill"},{"l":"longus","n":"longa, longum","p":"adj","c":"general","m":"long"},{"l":"loquor","n":"loqui, locutus sum","p":"verb 3 dep","c":"general","m":"speak, talk"},{"l":"muto","n":"mutare, mutavi, mutatus","p":"verb 1","c":"general","m":"change, alter"},{"l":"nam","n":"indeclinable","p":"conjunction","c":"general","m":"for"},{"l":"obviam eo","n":"ire, i(v)i + dat","p":"verb phrase","c":"military","m":"meet, go to meet, oppose, resist"},{"l":"occasio","n":"occasionis, f","p":"noun 3","c":"general","m":"opportunity, occasion"},{"l":"patria","n":"patriae, f","p":"noun 1","c":"political","m":"homeland, native land"},{"l":"pauci","n":"paucae, pauca","p":"adj plural","c":"general","m":"few, a few"},{"l":"potius","n":"indeclinable","p":"adverb","c":"general","m":"rather, more"},{"l":"praebeo","n":"praebere, praebui, praebitus","p":"verb 2","c":"general","m":"provide, give, show, offer"},{"l":"quia","n":"indeclinable","p":"conjunction","c":"general","m":"because"},{"l":"quidam","n":"quaedam, quoddam","p":"pron","c":"general","m":"one, a certain, some"},{"l":"rus","n":"ruris, n","p":"noun 3","c":"general","m":"country, countryside"},{"l":"sacerdos","n":"sacerdotis, m and f","p":"noun 3","c":"religious","m":"priest, priestess"},{"l":"navem solvo","n":"","p":"verb phrase","c":"","m":"set sail"},{"l":"somnus","n":"somni, m","p":"noun 2","c":"general","m":"sleep"},{"l":"timor","n":"timoris, m","p":"noun 3","c":"general","m":"fear, anxiety"},{"l":"tollo","n":"tollere, sustuli, sublatus","p":"verb 3","c":"general","m":"raise, lift up, remove, destroy"},{"l":"verus","n":"vera, verum","p":"adj","c":"general","m":"true, real"},{"l":"vesper","n":"vesperis or vesperi, m","p":"noun 3 or 2","c":"general","m":"evening"}]},{"t":4,"w":[{"l":"acies","n":"aciei, f","p":"noun 5","c":"military","m":"line, battle line, army"},{"l":"ad","n":"+ acc","p":"prep","c":"general","m":"to, towards, at, about, near"},{"l":"arbor","n":"arboris, f","p":"noun 3","c":"general","m":"tree"},{"l":"arcesso","n":"arcessere, arcessivi, arcessitus","p":"verb 3","c":"general","m":"summon, send for"},{"l":"cibus","n":"cibi, m","p":"noun 2","c":"domestic","m":"food"},{"l":"cingo","n":"cingere, cinxi, cinctus","p":"verb 3","c":"general","m":"surround, enclose, gird"},{"l":"cupio","n":"cupere, cupivi, cupitus","p":"verb 3","c":"general","m":"desire, wish, want"},{"l":"cur?","n":"indeclinable","p":"adverb","c":"general","m":"why?"},{"l":"dubius","n":"dubia, dubium","p":"adj","c":"general","m":"doubtful, wavering, uncertain"},{"l":"duco","n":"ducere, duxi, ductus","p":"verb 3","c":"military","m":"lead, take, marry, consider"},{"l":"fido","n":"fidere, fisus sum + dat or abl","p":"verb 3 semi-dep","c":"general","m":"trust, rely upon"},{"l":"filia","n":"filiae, f","p":"noun 1","c":"domestic","m":"daughter"},{"l":"huc","n":"indeclinable","p":"adverb","c":"general","m":"here, to this place"},{"l":"humus","n":"humi, f","p":"noun 2","c":"general","m":"ground, earth"},{"l":"intra","n":"+ acc","p":"prep","c":"general","m":"inside, within"},{"l":"intro","n":"intrare, intravi, intratus","p":"verb 1","c":"general","m":"enter"},{"l":"lux","n":"lucis, f","p":"noun 3","c":"general","m":"light, daylight"},{"l":"magister","n":"magistri, m","p":"noun 2","c":"general","m":"teacher, master"},{"l":"narro","n":"narrare, narravi, narratus","p":"verb 1","c":"general","m":"tell, relate"},{"l":"nascor","n":"nasci, natus sum","p":"verb 3 dep","c":"general","m":"am born"},{"l":"occido","n":"occidere, occidi, occisus","p":"verb 3","c":"military","m":"kill"},{"l":"occupo","n":"occupare, occupavi, occupatus","p":"verb 1","c":"military","m":"seize, take possession of, occupy"},{"l":"paulatim","n":"indeclinable","p":"adverb","c":"general","m":"gradually, little by little"},{"l":"paulisper","n":"indeclinable","p":"adverb","c":"general","m":"for a short time"},{"l":"praeda","n":"praedae, f","p":"noun 1","c":"military","m":"booty, plunder"},{"l":"praemium","n":"praemii, n","p":"noun 2","c":"general","m":"prize, reward"},{"l":"quidem","n":"indeclinable","p":"adverb","c":"general","m":"indeed, in fact, however"},{"l":"ne ... quidem","n":"indeclinable","p":"adverb","c":"general","m":"not ... even"},{"l":"saepe","n":"indeclinable","p":"adverb","c":"general","m":"often"},{"l":"saevus","n":"saeva, saevum","p":"adj","c":"general","m":"savage, cruel"},{"l":"sonus","n":"soni, m","p":"noun 2","c":"general","m":"noise, sound"},{"l":"soror","n":"sororis, f","p":"noun 3","c":"domestic","m":"sister"},{"l":"tot","n":"indeclinable","p":"adj","c":"general","m":"so many"},{"l":"totus","n":"tota, totum","p":"adj","c":"general","m":"the whole, entire, all"},{"l":"vester","n":"vestra, vestrum","p":"pron","c":"general","m":"your (pl)"},{"l":"vestis","n":"vestis, f","p":"noun 3","c":"general","m":"clothes"}]},{"t":5,"w":[{"l":"addo","n":"addere, addidi, additus","p":"verb 3","c":"general","m":"add, join"},{"l":"adeo","n":"indeclinable","p":"adverb","c":"general","m":"so much, so greatly, to such an extent"},{"l":"argentum","n":"argenti, n","p":"noun 2","c":"general","m":"silver, money"},{"l":"arma","n":"armorum, n pl","p":"noun 2","c":"military","m":"arms, weapons, armour"},{"l":"circum, circa","n":"+ acc","p":"prep","c":"general","m":"around, about"},{"l":"civis","n":"civis, m and f","p":"noun 3","c":"political","m":"citizen"},{"l":"cura","n":"curae, f","p":"noun 1","c":"general","m":"care, charge, anxiety"},{"l":"curo","n":"curare, curavi, curatus","p":"verb 1","c":"general","m":"care for, cure; with gerundive = get something done"},{"l":"dum","n":"indeclinable","p":"conjunction","c":"general","m":"while, until, provided that"},{"l":"durus","n":"dura, durum","p":"adj","c":"general","m":"hard, harsh, rough"},{"l":"filius","n":"filii, m","p":"noun 2","c":"domestic","m":"son"},{"l":"finis","n":"finis, m","p":"noun 3","c":"general","m":"end, boundary, pl territory"},{"l":"iaceo","n":"iacere, iacui","p":"verb 2","c":"general","m":"lie (down)"},{"l":"iacio","n":"iacere, ieci, iactus (in compounds -icio)","p":"verb 3","c":"military","m":"throw"},{"l":"invenio","n":"invenire, inveni, inventus","p":"verb 4","c":"general","m":"find, discover"},{"l":"invito","n":"invitare, invitavi, invitatus","p":"verb 1","c":"general","m":"invite"},{"l":"magnus","n":"magna, magnum","p":"adj","c":"general","m":"big, large, great"},{"l":"magnopere","n":"indeclinable","p":"adverb","c":"general","m":"very much, greatly"},{"l":"natura","n":"naturae, f","p":"noun 1","c":"general","m":"nature"},{"l":"nauta","n":"nautae, m","p":"noun 1","c":"military","m":"sailor"},{"l":"oculus","n":"oculi, m","p":"noun 2","c":"general","m":"eye"},{"l":"odi","n":"odisse (perfect with present meaning)","p":"verb irreg","c":"general","m":"hate"},{"l":"paulum, paulo","n":"indeclinable","p":"adverb","c":"general","m":"a little, somewhat"},{"l":"pauper","n":"pauperis","p":"adj","c":"general","m":"poor"},{"l":"praeficio","n":"praeficere, praefeci, praefectus","p":"verb 3","c":"military","m":"put in charge (of)"},{"l":"praesidium","n":"praesidii, n","p":"noun 2","c":"military","m":"protection, garrison, fortification"},{"l":"quies","n":"quietis, f","p":"noun 3","c":"general","m":"rest, peace, quiet"},{"l":"quis?","n":"quid","p":"pron","c":"general","m":"who? what? any"},{"l":"salus","n":"salutis, f","p":"noun 3","c":"general","m":"health, safety, greeting"},{"l":"saluto","n":"salutare, salutavi, salutatus","p":"verb 1","c":"general","m":"greet, salute"},{"l":"spatium","n":"spatii, n","p":"noun 2","c":"general","m":"interval, space, distance"},{"l":"specto","n":"spectare, spectavi, spectatus","p":"verb 1","c":"general","m":"look at, watch"},{"l":"trado","n":"tradere, tradidi, traditus","p":"verb 3","c":"general","m":"hand over, entrust, hand down, surrender"},{"l":"traho","n":"trahere, traxi, tractus","p":"verb 3","c":"general","m":"pull, drag, draw"},{"l":"veto","n":"vetare, vetui, vetitus","p":"verb 1","c":"general","m":"forbid, order…not"},{"l":"vetus","n":"veteris","p":"adj","c":"general","m":"old"}]},{"t":6,"w":[{"l":"adhuc","n":"indeclinable","p":"adverb","c":"general","m":"till now, still"},{"l":"adimo","n":"adimere, ademi, ademptus","p":"verb 3","c":"general","m":"take away, remove"},{"l":"ars","n":"artis, f","p":"noun 3","c":"general","m":"art, skill"},{"l":"ascendo","n":"ascendere, ascendi, ascensus","p":"verb 3","c":"general","m":"climb, go up"},{"l":"civitas","n":"civitatis, f","p":"noun 3","c":"political","m":"citizenship, state, city, tribe"},{"l":"clades","n":"cladis, f","p":"noun 3","c":"military","m":"disaster, loss, defeat"},{"l":"curro","n":"currere, cucurri, cursus","p":"verb 3","c":"general","m":"run"},{"l":"custodio","n":"custodire, custodivi, custoditus","p":"verb 4","c":"military","m":"guard"},{"l":"dux","n":"ducis, m","p":"noun 3","c":"military","m":"leader, general, ruler"},{"l":"e, ex","n":"+ abl","p":"prep","c":"general","m":"from, out of; (in compounds) out"},{"l":"fio","n":"fieri, factus sum","p":"verb irreg","c":"general","m":"become, be made, happen"},{"l":"flamma","n":"flammae, f","p":"noun 1","c":"general","m":"blaze, flame, passion"},{"l":"iam","n":"indeclinable","p":"adverb","c":"general","m":"now, already"},{"l":"non iam","n":"indeclinable","p":"adverb","c":"general","m":"no longer"},{"l":"invitus","n":"invita, invitum","p":"adj","c":"general","m":"unwillling, reluctant"},{"l":"ipse","n":"ipsa, ipsum","p":"pron","c":"general","m":"-self"},{"l":"magis","n":"indeclinable","p":"adverb comp","c":"general","m":"more, rather"},{"l":"malo","n":"malle, malui","p":"verb irreg","c":"general","m":"prefer"},{"l":"navigo","n":"navigare, navigavi","p":"verb 1","c":"military","m":"sail"},{"l":"navis","n":"navis, f","p":"noun 3","c":"military","m":"ship"},{"l":"odium","n":"odii, n","p":"noun 2","c":"general","m":"hatred"},{"l":"odio est + dat","n":"","p":"verb phrase","c":"","m":"be hated by"},{"l":"pax","n":"pacis, f","p":"noun 3","c":"military","m":"peace"},{"l":"pecunia","n":"pecuniae, f","p":"noun 1","c":"general","m":"money"},{"l":"praesum","n":"praeesse, praefui + dat","p":"verb irreg","c":"military","m":"be in charge of"},{"l":"praeter","n":"+ acc","p":"prep","c":"general","m":"beyond, except, besides"},{"l":"quisquam","n":"quicquam","p":"pron","c":"general","m":"anyone, anything"},{"l":"quisque","n":"quaeque, quidque","p":"pron","c":"general","m":"each, each one, every"},{"l":"sanguis","n":"sanguinis, m","p":"noun 3","c":"general","m":"blood"},{"l":"sapiens","n":"sapientis","p":"adj","c":"general","m":"wise, sensible"},{"l":"sperno","n":"spernere, sprevi, spretus","p":"verb 3","c":"general","m":"despise, reject, scorn"},{"l":"spero","n":"sperare, speravi, speratus","p":"verb 1","c":"general","m":"hope, expect"},{"l":"trans","n":"+ acc","p":"prep","c":"general","m":"across, over"},{"l":"tristis","n":"triste","p":"adj","c":"general","m":"sad, gloomy, grim"},{"l":"via","n":"viae, f","p":"noun 1","c":"general","m":"street, road, way, path"},{"l":"victor","n":"victoris, m","p":"noun 3","c":"military","m":"victor, conqueror"}]},{"t":7,"w":[{"l":"adipiscor","n":"adipisci, adeptus sum","p":"verb 3 dep","c":"general","m":"obtain"},{"l":"adiuvo","n":"adiuvare, adiuvi, adiutus","p":"verb 1","c":"general","m":"help"},{"l":"at","n":"indeclinable","p":"conjunction","c":"general","m":"but"},{"l":"attonitus","n":"attonita, attonitum","p":"adj","c":"general","m":"astonished, thunder-struck"},{"l":"clam","n":"indeclinable","p":"adverb","c":"general","m":"secretly"},{"l":"clamo","n":"clamare, clamavi, clamatus","p":"verb 1","c":"general","m":"shout, exclaim, proclaim"},{"l":"custos","n":"custodis, m and f","p":"noun 3","c":"military","m":"guard"},{"l":"de","n":"+ abl","p":"prep","c":"general","m":"about, from, down from"},{"l":"efficio","n":"efficere, effeci, effectus","p":"verb 3","c":"general","m":"carry out, accomplish"},{"l":"effugio","n":"effugere, effugi","p":"verb 3","c":"military","m":"escape"},{"l":"flumen","n":"fluminis, n","p":"noun 3","c":"general","m":"river"},{"l":"foedus","n":"foederis, n","p":"noun 3","c":"military","m":"treaty, agreement"},{"l":"ibi","n":"indeclinable","p":"adverb","c":"general","m":"there, then"},{"l":"idem","n":"eadem, idem","p":"pron","c":"general","m":"the same"},{"l":"ira","n":"irae, f","p":"noun 1","c":"general","m":"anger"},{"l":"iratus","n":"irata, iratum","p":"adj","c":"general","m":"angry"},{"l":"malus","n":"mala, malum","p":"adj","c":"general","m":"evil, bad"},{"l":"mando","n":"mandare, mandavi, mandatus","p":"verb 1","c":"general","m":"commit, entrust, command"},{"l":"navis longa","n":"","p":"","c":"military","m":"warship"},{"l":"navis oneraria","n":"","p":"","c":"military","m":"merchant ship"},{"l":"offero","n":"offerre, obtuli, oblatus","p":"verb irreg","c":"general","m":"present, offer"},{"l":"officium","n":"officii, n","p":"noun 2","c":"political","m":"duty, task, function"},{"l":"pedes","n":"peditis, m","p":"noun 3","c":"military","m":"infantry"},{"l":"pello","n":"pellere, pepuli, pulsus","p":"verb 3","c":"military","m":"push, drive, rout"},{"l":"praeterea","n":"indeclinable","p":"adverb","c":"general","m":"besides, moreover, in addition"},{"l":"praetor","n":"praetoris, m","p":"noun 3","c":"political","m":"praetor (acted as judge or governor)"},{"l":"quisquis","n":"quicquid","p":"pron","c":"general","m":"whoever, whatever"},{"l":"quo?","n":"indeclinable","p":"adverb","c":"general","m":"where to?"},{"l":"sapientia","n":"sapientiae, f","p":"noun 1","c":"general","m":"wisdom, good sense"},{"l":"satis","n":"indeclinable","p":"adj","c":"general","m":"enough"},{"l":"spes","n":"spei, f","p":"noun 5","c":"general","m":"hope"},{"l":"spolium","n":"spolii, n","p":"noun 2","c":"military","m":"booty, spoil(s)"},{"l":"tu","n":"tui","p":"pron","c":"general","m":"you (singular)"},{"l":"tum","n":"indeclinable","p":"adverb","c":"general","m":"then, next"},{"l":"victoria","n":"victoriae, f","p":"noun 1","c":"military","m":"victory"},{"l":"video","n":"videre, vidi, visus","p":"verb 2","c":"general","m":"see"}]},{"t":8,"w":[{"l":"adsum","n":"adesse, adfui","p":"verb irreg","c":"general","m":"be here, be present"},{"l":"adulescens","n":"adulescentis, m","p":"noun 3","c":"general","m":"youth, young man"},{"l":"audax","n":"audacis","p":"adj","c":"military","m":"bold, daring"},{"l":"audeo","n":"audere, ausus sum","p":"verb semi-dep.","c":"military","m":"dare"},{"l":"clamor","n":"clamoris, m","p":"noun 3","c":"general","m":"shout, uproar, noise"},{"l":"clarus","n":"clara, clarum","p":"adj","c":"general","m":"clear, famous, distinguished"},{"l":"dea","n":"deae, f","p":"noun 1","c":"religious","m":"goddess"},{"l":"debeo","n":"debere, debui, debitus","p":"verb 2","c":"general","m":"owe, ought"},{"l":"egeo","n":"egere, egui + gen or abl","p":"verb 2","c":"general","m":"need, be in want of, lack"},{"l":"ego","n":"mei","p":"pron","c":"general","m":"I, me"},{"l":"fortasse","n":"indeclinable","p":"adverb","c":"general","m":"perhaps"},{"l":"forte","n":"indeclinable","p":"adverb","c":"general","m":"by chance"},{"l":"idoneus","n":"idonea, idoneum","p":"adj","c":"general","m":"suitable, convenient"},{"l":"igitur","n":"indeclinable","p":"adverb","c":"general","m":"therefore, and so"},{"l":"is","n":"ea, id","p":"pron","c":"general","m":"this, that, he, she, it"},{"l":"ita","n":"indeclinable","p":"adverb","c":"general","m":"in this way, so, thus"},{"l":"mane","n":"indeclinable","p":"adverb","c":"general","m":"in the morning, early"},{"l":"maneo","n":"manere, mansi","p":"verb 2","c":"general","m":"remain, stay"},{"l":"-ne","n":"indeclinable","p":"particle","c":"general","m":"(introduces question)"},{"l":"ne","n":"indeclinable","p":"conjunction","c":"general","m":"lest, that not"},{"l":"olim","n":"indeclinable","p":"adverb","c":"general","m":"once, formerly, one day"},{"l":"omitto","n":"omittere, omisi, omissus","p":"verb 3","c":"general","m":"neglect, disregard, make no mention of"},{"l":"per","n":"+ acc","p":"prep","c":"general","m":"through, throughout, along"},{"l":"perdo","n":"perdere, perdidi, perditus","p":"verb 3","c":"general","m":"destroy, lose"},{"l":"precor","n":"precari, precatus sum","p":"verb 1 dep","c":"religious","m":"pray, pray to, beg"},{"l":"pretium","n":"pretii, n","p":"noun 2","c":"general","m":"price, value"},{"l":"quoad","n":"indeclinable","p":"conjunction","c":"general","m":"as long as, until"},{"l":"quod","n":"indeclinable","p":"conjunction","c":"general","m":"because, (as to) the fact that"},{"l":"scelus","n":"sceleris, n","p":"noun 3","c":"legal","m":"crime, wickedness"},{"l":"scio","n":"scire, scivi, scitus","p":"verb 4","c":"general","m":"know"},{"l":"statim","n":"indeclinable","p":"adverb","c":"general","m":"at once, immediately"},{"l":"statuo","n":"statuere, statui, statutus","p":"verb 3","c":"general","m":"fix, determine, decide, arrange"},{"l":"tumultus","n":"tumultus, m","p":"noun 4","c":"military","m":"uproar, disturbance, civil war"},{"l":"turba","n":"turbae, f","p":"noun 1","c":"general","m":"crowd, mob, disturbance, multitude"},{"l":"videor","n":"videri, visus sum","p":"verb 2 dep","c":"general","m":"seem, appear, be seen"},{"l":"villa","n":"villae, f","p":"noun 1","c":"domestic","m":"country-house, estate, farm"}]},{"t":9,"w":[{"l":"advenio","n":"advenire, adveni","p":"verb 4","c":"general","m":"arrive"},{"l":"adversus","n":"+ acc","p":"prep","c":"general","m":"against, towards"},{"l":"audio","n":"audire, audivi, auditus","p":"verb 4","c":"general","m":"hear, listen to"},{"l":"aufero","n":"auferre, abstuli, ablatus","p":"verb 3","c":"general","m":"take away, carry off, steal"},{"l":"coepi","n":"coepisse, coeptus","p":"verb defective","c":"general","m":"began"},{"l":"cogito","n":"cogitare, cogitavi, cogitatus","p":"verb 1","c":"general","m":"think, consider"},{"l":"decipio","n":"decipere, decepi, deceptus","p":"verb 3","c":"general","m":"deceive"},{"l":"defendo","n":"defendere, defendi, defensus","p":"verb 3","c":"military","m":"defend"},{"l":"egredior","n":"egredi, egressus sum","p":"verb 3 dep","c":"general","m":"go out, come out"},{"l":"emo","n":"emere, emi, emptus","p":"verb 3","c":"general","m":"buy"},{"l":"fortis","n":"forte","p":"adj","c":"military","m":"brave, strong, bold"},{"l":"fortuna","n":"fortunae, f","p":"noun 1","c":"religious","m":"fate, luck, fortune (good or bad)"},{"l":"ignis","n":"ignis, m","p":"noun 3","c":"general","m":"fire"},{"l":"ignoro","n":"ignorare, ignoravi, ignoratus","p":"verb 1","c":"general","m":"do not know, be ignorant, misunderstand"},{"l":"ita vero","n":"indeclinable","p":"adverb","c":"general","m":"yes"},{"l":"itaque","n":"indeclinable","p":"adverb","c":"general","m":"and so, therefore"},{"l":"manus","n":"manus, f","p":"noun 4","c":"military","m":"hand, band"},{"l":"mare","n":"maris, n","p":"noun 3","c":"general","m":"sea"},{"l":"nec, neque","n":"indeclinable","p":"conjunction","c":"general","m":"and not, nor, neither"},{"l":"necesse","n":"indeclinable","p":"adj","c":"general","m":"necessary"},{"l":"omnis","n":"omne","p":"adj","c":"general","m":"all, every"},{"l":"omnino","n":"","p":"adverb","c":"general","m":"altogether, at all, entirely"},{"l":"pereo","n":"perire, perii","p":"verb irreg","c":"general","m":"die, perish, be ruined"},{"l":"perficio","n":"perficere, perfeci, perfectus","p":"verb 3","c":"general","m":"bring about, complete, perfect"},{"l":"primus","n":"prima, primum","p":"adj","c":"general","m":"first, chief"},{"l":"princeps","n":"principis, m","p":"noun 3","c":"political","m":"emperor, chief, chieftain"},{"l":"quod si","n":"","p":"conjunction","c":"","m":"but if"},{"l":"quomodo?","n":"indeclinable","p":"adverb","c":"general","m":"how? in what way?"},{"l":"scribo","n":"scribere, scripsi, scriptus","p":"verb 3","c":"general","m":"write"},{"l":"scutum","n":"scuti, n","p":"noun 2","c":"military","m":"shield"},{"l":"sto","n":"stare, steti","p":"verb 1","c":"general","m":"stand, stand firm"},{"l":"studium","n":"studii, n","p":"noun 2","c":"general","m":"eagerness, study, devotion"},{"l":"tutus","n":"tuta, tutum","p":"adj","c":"military","m":"safe"},{"l":"tuus","n":"tua, tuum","p":"pron","c":"general","m":"your (singular)"},{"l":"vinco","n":"vincere, vici, victus","p":"verb 3","c":"military","m":"conquer, defeat, win, be victorious"},{"l":"vir","n":"viri, m","p":"noun 2","c":"general","m":"man, husband"}]},{"t":10,"w":[{"l":"adversus","n":"","p":"adverb","c":"general","m":"against, opposite"},{"l":"aedificium","n":"aedificii, n","p":"noun 2","c":"general","m":"building"},{"l":"augeo","n":"augere, auxi, auctus","p":"verb 2","c":"general","m":"increase, exaggerate"},{"l":"aut","n":"indeclinable","p":"conjunction","c":"general","m":"or, either"},{"l":"cognosco","n":"cognoscere, cognovi, cognitus","p":"verb 3","c":"general","m":"get to know, find out, learn"},{"l":"cogo","n":"cogere, coegi, coactus","p":"verb 3","c":"general","m":"force, compel, drive, assemble"},{"l":"defessus","n":"defessa, defessum","p":"adj","c":"general","m":"tired"},{"l":"deinde, dein","n":"indeclinable","p":"adverb","c":"general","m":"then, next, afterwards"},{"l":"enim","n":"indeclinable","p":"conjunction","c":"general","m":"for"},{"l":"eo","n":"indeclinable","p":"adverb","c":"general","m":"thither"},{"l":"forum","n":"fori, n","p":"noun 2","c":"general","m":"forum, market place"},{"l":"frango","n":"frangere, fregi, fractus","p":"verb 3","c":"general","m":"break, crush"},{"l":"ille","n":"illa, illud","p":"pron","c":"general","m":"that, he, she, it"},{"l":"illic","n":"indeclinable","p":"adverb","c":"general","m":"there"},{"l":"iter","n":"itineris, n","p":"noun 3","c":"military","m":"journey, march, way"},{"l":"iterum","n":"indeclinable","p":"adverb","c":"general","m":"again"},{"l":"maritus","n":"mariti, m","p":"noun 2","c":"domestic","m":"husband"},{"l":"mater","n":"matris, f","p":"noun 3","c":"domestic","m":"mother"},{"l":"neco","n":"necare, necavi, necatus","p":"verb 1","c":"military","m":"kill"},{"l":"neglego","n":"neglegere, neglexi, neglectus","p":"verb 3","c":"general","m":"neglect, disregard"},{"l":"onus","n":"oneris, n","p":"noun 3","c":"general","m":"burden, load"},{"l":"opera","n":"operae, f","p":"noun 1","c":"general","m":"work, effort, attention, trouble"},{"l":"periculum","n":"periculi, n","p":"noun 2","c":"general","m":"danger"},{"l":"peritus","n":"perita, peritum + gen or abl","p":"adj","c":"general","m":"skilled (in)"},{"l":"prior","n":"prioris","p":"adj","c":"general","m":"previous, former"},{"l":"prius","n":"indeclinable","p":"adverb","c":"general","m":"before, previously"},{"l":"quoniam","n":"indeclinable","p":"conjunction","c":"general","m":"since"},{"l":"quoque","n":"indeclinable","p":"conjunction","c":"general","m":"also, too"},{"l":"se","n":"sui","p":"pron","c":"general","m":"himself, herself, itself, themselves"},{"l":"secundus","n":"secunda, secundum","p":"adj","c":"general","m":"following, next, second, favourable"},{"l":"stultus","n":"stulta, stultum","p":"adj","c":"general","m":"stupid, foolish"},{"l":"sub","n":"+ abl or + acc","p":"prep","c":"general","m":"under, beneath; up to"},{"l":"ubi","n":"indeclinable","p":"adverb","c":"general","m":"where? where, when"},{"l":"ubique","n":"indeclinable","p":"adverb","c":"general","m":"everywhere"},{"l":"virtus","n":"virtutis, f","p":"noun 3","c":"military","m":"courage, virtue"},{"l":"vis","n":"pl vires, f","p":"noun irreg","c":"military","m":"force, violence; (pl) strength, forces"}]},{"t":11,"w":[{"l":"aedifico","n":"aedificare, aedificavi, aedificatus","p":"verb 1","c":"general","m":"build"},{"l":"aequus","n":"aequa, aequum","p":"adj","c":"general","m":"equal, fair, favourable, calm"},{"l":"autem","n":"indeclinable","p":"conjunction","c":"general","m":"but, however"},{"l":"auxilium","n":"auxilii, n","p":"noun 2","c":"military","m":"help; (pl ) (auxiliary) troops"},{"l":"cohors","n":"cohortis, f","p":"noun 3","c":"military","m":"cohort, company"},{"l":"colo","n":"colere, colui, cultus","p":"verb 3","c":"general","m":"cultivate, worship, honour"},{"l":"deleo","n":"delere, delevi, deletus","p":"verb 2","c":"military","m":"destroy"},{"l":"denique","n":"indeclinable","p":"adverb","c":"general","m":"at last, finally, in short"},{"l":"eo","n":"ire, i(v)i","p":"verb irreg","c":"general","m":"go"},{"l":"epistula","n":"epistulae, f","p":"noun 1","c":"general","m":"letter"},{"l":"frater","n":"fratris, m","p":"noun 3","c":"domestic","m":"brother"},{"l":"frigus","n":"frigoris, n","p":"noun 3","c":"general","m":"cold"},{"l":"impedio","n":"impedire, impedivi, impeditus","p":"verb 4","c":"military","m":"delay, hinder, prevent, hamper"},{"l":"imperator","n":"imperatoris, m","p":"noun 3","c":"political","m":"emperor, general, leader"},{"l":"iubeo","n":"iubere, iussi, iussus","p":"verb 2","c":"general","m":"order, command"},{"l":"iudex","n":"iudicis, m and f","p":"noun 3","c":"legal","m":"judge, juror"},{"l":"medius","n":"media, medium","p":"adj","c":"general","m":"middle (of)"},{"l":"mens","n":"mentis, f","p":"noun 3","c":"general","m":"mind"},{"l":"nego","n":"negare, negavi, negatus","p":"verb 1","c":"general","m":"say no, deny, refuse, say that ...not"},{"l":"negotium","n":"negotii, n","p":"noun 2","c":"general","m":"business"},{"l":"operam do","n":"","p":"verb phrase","c":"general","m":"I take pains, give attention (to)"},{"l":"oportet","n":"oportere, oportuit","p":"verb 2 impersonal","c":"general","m":"be necessary, ought, must"},{"l":"permitto","n":"permittere, permisi, permissus","p":"verb 3","c":"general","m":"hand over, entrust, permit, allow"},{"l":"persuadeo","n":"persuadere, persuasi + dat","p":"verb 2","c":"general","m":"persuade, convince"},{"l":"priusquam","n":"indeclinable","p":"conjunction","c":"general","m":"before, until"},{"l":"pro","n":"+ abl","p":"prep","c":"general","m":"in front of, for, on behalf of, in return for"},{"l":"quot?","n":"indeclinable","p":"adj","c":"general","m":"how many?"},{"l":"quotiens?","n":"indeclinable","p":"adverb","c":"general","m":"how often? as often as"},{"l":"sed","n":"indeclinable","p":"conjunction","c":"general","m":"but"},{"l":"sedes","n":"sedis, f","p":"noun 3","c":"domestic","m":"seat, temple, home"},{"l":"subito","n":"indeclinable","p":"adverb","c":"general","m":"suddenly"},{"l":"sum","n":"esse, fui","p":"verb irreg","c":"general","m":"be"},{"l":"ullus","n":"ulla, ullum","p":"adj","c":"general","m":"any"},{"l":"ultimus","n":"ultima, ultimum","p":"adj","c":"general","m":"furthest, last, utmost"},{"l":"vita","n":"vitae, f","p":"noun 1","c":"general","m":"life"},{"l":"vito","n":"vitare, vitavi, vitatus","p":"verb 1","c":"general","m":"avoid"}]},{"t":12,"w":[{"l":"ager","n":"agri, m","p":"noun 2","c":"general","m":"field, land, territory"},{"l":"aggredior","n":"aggredi, aggressus sum","p":"verb 3 dep","c":"military","m":"attack, approach"},{"l":"bellum","n":"belli, n","p":"noun 2","c":"military","m":"war"},{"l":"bene","n":"indeclinable","p":"adverb","c":"general","m":"well"},{"l":"comes","n":"comitis, m and f","p":"noun 3","c":"military","m":"comrade, companion"},{"l":"committo","n":"committere, commisi, commissus","p":"verb 3","c":"military","m":"commit, fight, begin (battle)"},{"l":"descendo","n":"descendere, descendi, descensus","p":"verb 3","c":"general","m":"descend, come down"},{"l":"desino","n":"desinere, desii, desitus","p":"verb 3","c":"general","m":"cease"},{"l":"eques","n":"equitis, m","p":"noun 3","c":"military","m":"knight, horseman, (pl) cavalry"},{"l":"equus","n":"equi, m","p":"noun 2","c":"military","m":"horse"},{"l":"frumentum","n":"frumenti, n","p":"noun 2","c":"general","m":"corn, grain"},{"l":"frustra","n":"indeclinable","p":"adverb","c":"general","m":"in vain"},{"l":"imperium","n":"imperii, n","p":"noun 2","c":"political","m":"command, power, empire"},{"l":"impero","n":"imperare, imperavi, imperatus +dat","p":"verb 1","c":"military","m":"order, command"},{"l":"iungo","n":"iungere, iunxi, iunctus","p":"verb 3","c":"general","m":"join, unite, fasten"},{"l":"iustus","n":"iusta, iustum","p":"adj","c":"legal","m":"right, just, lawful, complete"},{"l":"mensis","n":"mensis, m","p":"noun 3","c":"general","m":"month"},{"l":"mercator","n":"mercatoris, m","p":"noun 3","c":"general","m":"merchant"},{"l":"nemo","n":"nullius","p":"noun irreg","c":"general","m":"no one, nobody"},{"l":"nescio","n":"nescire, nescivi","p":"verb 4","c":"general","m":"not know"},{"l":"oppidum","n":"oppidi, n","p":"noun 2","c":"military","m":"town"},{"l":"opprimo","n":"opprimere, oppressi, oppressus","p":"verb 3","c":"military","m":"overwhelm, crush, weigh down"},{"l":"perterritus","n":"perterrita, perterritum","p":"adj","c":"general","m":"very frightened, terrified"},{"l":"pervenio","n":"pervenire, perveni","p":"verb 4","c":"general","m":"reach, arrive"},{"l":"procedo","n":"procedere, processi","p":"verb 3","c":"general","m":"advance, proceed"},{"l":"procul","n":"indeclinable","p":"adverb","c":"general","m":"far away, distant"},{"l":"rapio","n":"rapere, rapui, raptus","p":"verb 3","c":"military","m":"seize, grab, carry off, plunder"},{"l":"ratio","n":"rationis, f","p":"noun 3","c":"general","m":"account, reckoning, manner, reason"},{"l":"semel","n":"indeclinable","p":"adverb","c":"general","m":"once"},{"l":"semper","n":"indeclinable","p":"adverb","c":"general","m":"always"},{"l":"summus","n":"summa, summum","p":"adj","c":"general","m":"highest, greatest, top (of)"},{"l":"sumo","n":"sumere, sumpsi, sumptus","p":"verb 3","c":"general","m":"take, take up"},{"l":"umquam","n":"indeclinable","p":"adverb","c":"general","m":"ever"},{"l":"una","n":"indeclinable","p":"adverb","c":"general","m":"together"},{"l":"vivo","n":"vivere, vixi","p":"verb 3","c":"general","m":"live, be alive, (+ abl) live on"},{"l":"vivus","n":"viva, vivum","p":"adj","c":"general","m":"alive, living"}]},{"t":13,"w":[{"l":"agmen","n":"agminis, n","p":"noun 3","c":"military","m":"column of men, army"},{"l":"ago","n":"agere, egi, actus","p":"verb 3","c":"general","m":"do, act, drive"},{"l":"beneficium","n":"beneficii, n","p":"noun 2","c":"general","m":"kindness, service, favour"},{"l":"bibo","n":"bibere, bibi","p":"verb 3","c":"domestic","m":"drink"},{"l":"comparo","n":"comparare, comparavi, comparatus","p":"verb 1","c":"general","m":"prepare, provide, obtain, compare"},{"l":"condemno","n":"condemnare, condemnavi, condemnatus","p":"verb 1","c":"legal","m":"convict, condemn"},{"l":"despero","n":"desperare, desperavi, desperatus","p":"verb 1","c":"general","m":"despair"},{"l":"deus","n":"dei, m","p":"noun 2","c":"religious","m":"god"},{"l":"erga","n":"+ acc","p":"prep","c":"general","m":"towards"},{"l":"ergo","n":"indeclinable","p":"adverb","c":"general","m":"therefore"},{"l":"fuga","n":"fugae, f","p":"noun 1","c":"military","m":"flight, escape"},{"l":"fugio","n":"fugere, fugi","p":"verb 3","c":"military","m":"flee, run away (from), avoid"},{"l":"impetus","n":"impetus, m","p":"noun 4","c":"military","m":"attack, impulse"},{"l":"in","n":"+ abl","p":"prep","c":"general","m":"in, on"},{"l":"iuvenis","n":"iuvenis m or adj","p":"noun & adj","c":"general","m":"young man, young"},{"l":"iuvo","n":"iuvare, iuvi, iutus","p":"verb 1","c":"general","m":"help, please"},{"l":"metus","n":"metus, m","p":"noun 4","c":"general","m":"fear"},{"l":"meus","n":"mea, meum","p":"adj","c":"general","m":"my"},{"l":"nihil","n":"indeclinable","p":"noun irreg","c":"general","m":"nothing"},{"l":"nisi","n":"indeclinable","p":"conjunction","c":"general","m":"unless, if not, except"},{"l":"oppugno","n":"oppugnare, oppugnavi, oppugnatus","p":"verb 1","c":"military","m":"attack"},{"l":"(ops)","n":"opis, f","p":"noun 3","c":"military","m":"help; (pl) resources, riches"},{"l":"pes","n":"pedis, m","p":"noun 3","c":"general","m":"foot"},{"l":"peto","n":"petere, petivi, petitus","p":"verb 3","c":"general","m":"seek, ask for, make for, attack"},{"l":"prodo","n":"prodere, prodidi, proditus","p":"verb 3","c":"military","m":"betray, surrender"},{"l":"proelium","n":"proelii, n","p":"noun 2","c":"military","m":"battle"},{"l":"recens","n":"recentis","p":"adj","c":"general","m":"recent, fresh"},{"l":"recipio","n":"recipere, recepi, receptus","p":"verb 3","c":"general","m":"regain, receive, welcome"},{"l":"senator","n":"senatoris, m","p":"noun 3","c":"political","m":"senator"},{"l":"senatus","n":"senatus, m","p":"noun 4","c":"political","m":"senate"},{"l":"supero","n":"superare, superavi, superatus","p":"verb 1","c":"military","m":"overcome, overpower"},{"l":"supersum","n":"superesse, superfui","p":"verb irreg","c":"general","m":"be left, remain, survive"},{"l":"unda","n":"undae, f","p":"noun 1","c":"general","m":"wave"},{"l":"unde","n":"indeclinable","p":"adverb","c":"general","m":"from where, whence"},{"l":"vix","n":"indeclinable","p":"adverb","c":"general","m":"hardly, scarcely, with difficulty"},{"l":"voco","n":"vocare, vocavi, vocatus","p":"verb 1","c":"general","m":"call, summon, invite, name"}]},{"t":14,"w":[{"l":"gratias ago","n":"","p":"verb phrase","c":"general","m":"thank, give thanks"},{"l":"aliquis","n":"aliquid","p":"pron","c":"general","m":"someone, something, anyone, anything"},{"l":"bis","n":"indeclinable","p":"adverb","c":"general","m":"twice"},{"l":"bona","n":"bonorum, n pl","p":"noun 2","c":"general","m":"goods, possessions, property"},{"l":"condo","n":"condere, condidi, conditus","p":"verb 3","c":"general","m":"found, establish, hide"},{"l":"confero","n":"conferre, contuli, conlatus","p":"verb irreg","c":"general","m":"collect, compare, contribute, bestow"},{"l":"dexter","n":"dextra, dextrum","p":"adj","c":"general","m":"right, on the right, right hand"},{"l":"dextra","n":"dextrae, f","p":"noun 1","c":"general","m":"right hand, right side"},{"l":"erro","n":"errare, erravi, erratus","p":"verb 1","c":"general","m":"wander, make a mistake"},{"l":"et","n":"indeclinable","p":"conjunction","c":"general","m":"and, both"},{"l":"fundo","n":"fundere, fudi, fusus","p":"verb 3","c":"military","m":"pour, shed, rout"},{"l":"furor","n":"furoris, m","p":"noun 3","c":"general","m":"rage, fury, madness, passion"},{"l":"in","n":"+ acc","p":"prep","c":"general","m":"into, onto, against, towards"},{"l":"incendium","n":"incendii, n","p":"noun 2","c":"general","m":"fire"},{"l":"labor","n":"labi, lapsus sum","p":"verb 3 dep","c":"general","m":"glide, slip, fall"},{"l":"labor","n":"laboris, m","p":"noun 3","c":"general","m":"work, toil, trouble"},{"l":"miles","n":"militis, m","p":"noun 3","c":"military","m":"soldier"},{"l":"minor","n":"minari, minatus sum + dat","p":"verb 1 dep","c":"military","m":"threaten"},{"l":"nobilis","n":"nobile","p":"adj","c":"political","m":"noble, famous"},{"l":"noceo","n":"nocere, nocui + dat","p":"verb 2","c":"general","m":"hurt, harm"},{"l":"opus","n":"operis, n","p":"noun 3","c":"general","m":"work, toil, construction"},{"l":"opus est","n":"esse, fuit + abl (impersonal)","p":"verb phrase","c":"general","m":"there is need (of)"},{"l":"pilum","n":"pili, n","p":"noun 2","c":"military","m":"javelin"},{"l":"placet","n":"placere, placuit + dat","p":"verb 2 impersonal","c":"general","m":"it pleases, suits, it is resolved"},{"l":"proficiscor","n":"proficisci, profectus sum","p":"verb 3 dep","c":"general","m":"set out, depart"},{"l":"progredior","n":"progredi, progressus sum","p":"verb 3 dep","c":"general","m":"advance, proceed"},{"l":"me recipio","n":"","p":"verb phrase","c":"military","m":"retreat, withdraw"},{"l":"recito","n":"recitare, recitavi, recitatus","p":"verb 1","c":"general","m":"recite, read aloud"},{"l":"senex","n":"senis, m","p":"noun 3","c":"general","m":"old man"},{"l":"sententia","n":"sententiae, f","p":"noun 1","c":"legal","m":"opinion, judgement, sentence"},{"l":"superus","n":"supera, superum","p":"adj","c":"general","m":"upper, higher"},{"l":"surgo","n":"surgere, surrexi","p":"verb 3","c":"general","m":"get up, stand up, rise"},{"l":"undique","n":"indeclinable","p":"adverb","c":"general","m":"from all sides, on all sides"},{"l":"urbs","n":"urbis, f","p":"noun 3","c":"general","m":"city, town, Rome"},{"l":"volo","n":"velle, volui","p":"verb irreg","c":"general","m":"want, wish, be willing, intend"},{"l":"vos","n":"vestrum / vestri","p":"pron","c":"general","m":"you (plural)"}]},{"t":15,"w":[{"l":"alius","n":"alia, aliud","p":"pron and adj","c":"general","m":"other, one, another, else"},{"l":"alii ... alii","n":"","p":"pron","c":"general","m":"some ... others"},{"l":"bonus","n":"bona, bonum","p":"adj","c":"general","m":"good"},{"l":"brevis","n":"breve","p":"adj","c":"general","m":"short, brief"},{"l":"conficio","n":"conficere, confeci, confectus","p":"verb 3","c":"general","m":"complete, wear out"},{"l":"confido","n":"confidere, confisus sum + dat","p":"verb semi-dep","c":"general","m":"trust, believe, have confidence (in)"},{"l":"dico","n":"dicere, dixi, dictus","p":"verb 3","c":"general","m":"say, speak, tell"},{"l":"dies","n":"diei, m, occasionally f","p":"noun 5","c":"general","m":"day"},{"l":"etiam","n":"indeclinable","p":"adverb","c":"general","m":"also, even, still"},{"l":"etsi","n":"indeclinable","p":"conjunction","c":"general","m":"although"},{"l":"gaudeo","n":"gaudere, gavisus sum","p":"verb 2 semi-dep","c":"general","m":"rejoice"},{"l":"gaudium","n":"gaudii, n","p":"noun 2","c":"general","m":"joy, delight"},{"l":"incendo","n":"incendere, incendi, incensus","p":"verb 3","c":"general","m":"burn, set on fire, inflame, rouse"},{"l":"incipio","n":"incipere, incepi, inceptus","p":"verb 3","c":"general","m":"begin"},{"l":"laboro","n":"laborare, laboravi","p":"verb 1","c":"general","m":"work, toil, be in difficulty"},{"l":"laedo","n":"laedere, laesi, laesus","p":"verb 3","c":"military","m":"hurt, injure, harm"},{"l":"mirabilis","n":"mirabile","p":"adj","c":"general","m":"strange, wonderful"},{"l":"miror","n":"mirari, miratus sum","p":"verb 1 dep","c":"general","m":"wonder at, admire"},{"l":"nolo","n":"nolle, nolui","p":"verb irreg","c":"general","m":"not want, be unwilling, refuse"},{"l":"nomen","n":"nominis, n","p":"noun 3","c":"general","m":"name"},{"l":"ora","n":"orae, f","p":"noun 1","c":"general","m":"coast"},{"l":"oratio","n":"orationis, f","p":"noun 3","c":"legal","m":"speech"},{"l":"plebs","n":"plebis, f","p":"noun 3","c":"political","m":"the people, common people"},{"l":"plenus","n":"plena, plenum","p":"adj","c":"general","m":"full, filled"},{"l":"promitto","n":"promittere, promisi, promissus","p":"verb 3","c":"general","m":"promise"},{"l":"prope","n":"+ acc","p":"prep","c":"general","m":"near"},{"l":"rectus","n":"recta, rectum","p":"adj","c":"general","m":"straight, direct, right, proper"},{"l":"reddo","n":"reddere, reddidi, redditus","p":"verb 3","c":"general","m":"give back, restore, hand over, make"},{"l":"sentio","n":"sentire, sensi, sensus","p":"verb 4","c":"general","m":"feel, notice, hear, judge"},{"l":"sequor","n":"sequi, secutus sum","p":"verb 3 dep","c":"general","m":"follow, pursue, attend"},{"l":"suscipio","n":"suscipere, suscepi, susceptus","p":"verb 3","c":"general","m":"take up, undertake, begin, bear"},{"l":"suspicor","n":"suspicari, suspicatus sum","p":"verb 1 dep","c":"legal","m":"mistrust, suspect"},{"l":"usque","n":"indeclinable","p":"adverb","c":"general","m":"all the way, right up to, continuously"},{"l":"usus","n":"usus, m","p":"noun 4","c":"general","m":"use, experience, practice"},{"l":"vox","n":"vocis, f","p":"noun 3","c":"general","m":"voice, shout, word"},{"l":"vulnero","n":"vulnerare, vulneravi, vulneratus","p":"verb 1","c":"military","m":"wound, injure"}]},{"t":16,"w":[{"l":"alter","n":"altera, alterum","p":"pron and adj","c":"general","m":"the other, one (of two), another, a second"},{"l":"altus","n":"alta, altum","p":"adj","c":"general","m":"high, deep"},{"l":"cado","n":"cadere, cecidi, casus","p":"verb 3","c":"general","m":"fall, perish"},{"l":"caedes","n":"caedis, f","p":"noun 3","c":"military","m":"slaughter, killing, murder"},{"l":"coniunx","n":"coniugis, m and f","p":"noun 3","c":"domestic","m":"husband, wife, spouse"},{"l":"conor","n":"conari, conatus sum","p":"verb 1 dep","c":"general","m":"try"},{"l":"difficilis","n":"difficile","p":"adj","c":"general","m":"difficult"},{"l":"dignitas","n":"dignitatis, f","p":"noun 3","c":"political","m":"rank, dignity, importance, honour"},{"l":"excipio","n":"excipere, excepi, exceptus","p":"verb 3","c":"general","m":"receive, take, welcome"},{"l":"excito","n":"excitare, excitavi, excitatus","p":"verb 1","c":"general","m":"wake, rouse, excite"},{"l":"gens","n":"gentis, f","p":"noun 3","c":"general","m":"race, people, family, tribe, nation"},{"l":"genus","n":"generis, n","p":"noun 3","c":"general","m":"race, descent, birth, kind"},{"l":"incito","n":"incitare, incitavi, incitatus","p":"verb 1","c":"military","m":"urge on, arouse, encourage"},{"l":"inde","n":"indeclinable","p":"adverb","c":"general","m":"from there, thereupon, next"},{"l":"laetus","n":"laeta, laetum","p":"adj","c":"general","m":"happy, glad"},{"l":"latus","n":"lata, latum","p":"adj","c":"general","m":"wide, broad"},{"l":"miser","n":"misera, miserum","p":"adj","c":"general","m":"miserable, wretched, sad"},{"l":"mitto","n":"mittere, misi, missus","p":"verb 3","c":"general","m":"send, throw, let go"},{"l":"non","n":"indeclinable","p":"adverb","c":"general","m":"not"},{"l":"nondum","n":"indeclinable","p":"adverb","c":"general","m":"not yet"},{"l":"ordo","n":"ordinis, m","p":"noun 3","c":"military","m":"rank, order, line"},{"l":"orior","n":"oriri, ortus sum","p":"verb 4 dep","c":"general","m":"rise, start, originate"},{"l":"plerique","n":"pleraeque, pleraque","p":"adj","c":"general","m":"most, the majority"},{"l":"poena","n":"poenae, f","p":"noun 1","c":"legal","m":"punishment, penalty"},{"l":"propter","n":"+ acc","p":"prep","c":"general","m":"on account of, because of"},{"l":"provincia","n":"provinciae, f","p":"noun 1","c":"political","m":"province"},{"l":"redeo","n":"redire, redii","p":"verb irreg","c":"general","m":"return, go back, come back"},{"l":"refero","n":"referre, rettuli, relatus","p":"verb irreg","c":"general","m":"bring back, report, refer"},{"l":"servo","n":"servare, servavi, servatus","p":"verb 1","c":"general","m":"save, protect, keep"},{"l":"servus","n":"servi, m","p":"noun 2","c":"domestic","m":"slave"},{"l":"suus","n":"sua, suum","p":"pron","c":"general","m":"his (own), her (own), its (own), their (own)"},{"l":"taberna","n":"tabernae, f","p":"noun 1","c":"general","m":"shop, inn"},{"l":"usui est","n":"","p":"verb phrase","c":"","m":"it is useful"},{"l":"ut","n":"indeclinable + indic.","p":"conjunction","c":"general","m":"as, where, when, how"},{"l":"vulnus","n":"vulneris, n","p":"noun 3","c":"military","m":"wound, injury"},{"l":"vultus","n":"vultus, m","p":"noun 4","c":"general","m":"face, expression"}]},{"t":17,"w":[{"l":"ambulo","n":"ambulare, ambulavi","p":"verb 1","c":"general","m":"walk"},{"l":"amica","n":"amicae f","p":"noun 1","c":"general","m":"girl-friend, female friend"},{"l":"caelum","n":"caeli, n","p":"noun 2","c":"religious","m":"sky, heaven"},{"l":"campus","n":"campi, m","p":"noun 2","c":"military","m":"plain, field"},{"l":"consilium","n":"consilii, n","p":"noun 2","c":"political","m":"council, plan, advice, prudence"},{"l":"consisto","n":"consistere, constiti, constitus","p":"verb 3","c":"military","m":"halt, stand, stand firm"},{"l":"dignus","n":"digna, dignum + abl","p":"adj","c":"general","m":"worthy (of), deserving (of)"},{"l":"diligens","n":"diligentis","p":"adj","c":"general","m":"careful, diligent"},{"l":"exemplum","n":"exempli, n","p":"noun 2","c":"general","m":"example, precedent"},{"l":"exercitus","n":"exercitus, m","p":"noun 4","c":"military","m":"army"},{"l":"gero","n":"gerere, gessi, gestus","p":"verb 3","c":"military","m":"bear, wear, wage war, manage"},{"l":"gladius","n":"gladii, m","p":"noun 2","c":"military","m":"sword"},{"l":"infero","n":"inferre, intuli, illatus/inlatus","p":"verb irreg","c":"military","m":"inflict, bring to, cause, carry against"},{"l":"signa inferre","n":"","p":"verb phrase","c":"military","m":"attack, charge"},{"l":"latus","n":"lateris, n","p":"noun 3","c":"military","m":"side, wing"},{"l":"laudo","n":"laudare, laudavi, laudatus","p":"verb 1","c":"general","m":"praise"},{"l":"modo","n":"indeclinable","p":"adverb","c":"general","m":"just now, only"},{"l":"modus","n":"modi, m","p":"noun 2","c":"general","m":"manner, way, kind"},{"l":"nonne?","n":"indeclinable","p":"adverb","c":"general","m":"surely?"},{"l":"nonnulli","n":"nonnullae, nonnulla","p":"adj","c":"general","m":"some, several"},{"l":"orno","n":"ornare, ornavi, ornatus","p":"verb 1","c":"general","m":"adorn, decorate, provide, equip"},{"l":"oro","n":"orare, oravi, oratus","p":"verb 1","c":"general","m":"beg"},{"l":"poenas do","n":"","p":"verb phrase","c":"","m":"pay the penalty, am punished"},{"l":"polliceor","n":"polliceri, pollicitus sum","p":"verb 2 dep","c":"general","m":"promise"},{"l":"proximus","n":"proxima, proximum","p":"adj","c":"general","m":"nearest, next, last"},{"l":"publicus","n":"publica, publicum","p":"adj","c":"political","m":"public, common"},{"l":"pedem/me refero","n":"","p":"verb phrase","c":"","m":"retreat"},{"l":"reficio","n":"reficere, refeci, refectus","p":"verb 3","c":"general","m":"repair, restore, refresh"},{"l":"si","n":"indeclinable","p":"conjunction","c":"general","m":"if"},{"l":"sic","n":"indeclinable","p":"adverb","c":"general","m":"thus, in this way"},{"l":"tacitus","n":"tacita, tacitum","p":"adj","c":"general","m":"quiet, silent, in silence"},{"l":"talis","n":"tale","p":"adj","c":"general","m":"such"},{"l":"ut","n":"indeclinable + subjunc.","p":"conjunction","c":"general","m":"that, so that, to"},{"l":"uter?","n":"utra, utrum","p":"pron","c":"general","m":"which (of two)?"}]},{"t":18,"w":[{"l":"amicus","n":"amici m","p":"noun 2","c":"general","m":"friend"},{"l":"amitto","n":"amittere, amisi, amissus","p":"verb 3","c":"general","m":"lose"},{"l":"canis","n":"canis, m and f","p":"noun 3","c":"domestic","m":"dog"},{"l":"cano","n":"canere, cecini, cantus","p":"verb 3","c":"general","m":"sing, sound, play (of trumpets etc.)"},{"l":"conspicio","n":"conspicere, conspexi, conspectus","p":"verb 3","c":"general","m":"notice, observe, see"},{"l":"constituo","n":"constituere, constitui, constitutus","p":"verb 3","c":"general","m":"decide, establish"},{"l":"dimitto","n":"dimittere, dimisi, dimissus","p":"verb 3","c":"military","m":"dismiss, scatter"},{"l":"dirus","n":"dira, dirum","p":"adj","c":"general","m":"dreadful"},{"l":"exilium","n":"exilii, n","p":"noun 2","c":"political","m":"exile"},{"l":"exitium","n":"exitii, n","p":"noun 2","c":"general","m":"ruin, destruction"},{"l":"gratia","n":"gratiae, f","p":"noun 1","c":"general","m":"favour, thanks, esteem"},{"l":"gratias ago","n":"","p":"verb phrase","c":"general","m":"thank, give thanks"},{"l":"bellum inferre","n":"+ dat","p":"verb phrase","c":"military","m":"make war on"},{"l":"infra","n":"+ acc","p":"prep & adverb","c":"general","m":"below, beneath"},{"l":"laus","n":"laudis, f","p":"noun 3","c":"general","m":"praise, honour, credit"},{"l":"legatus","n":"legati, m","p":"noun 2","c":"military","m":"(legionary) commander, ambassador, envoy"},{"l":"moenia","n":"moenium, n pl","p":"noun 3","c":"military","m":"city walls, city"},{"l":"moneo","n":"monere, monui, monitus","p":"verb 2","c":"general","m":"warn, advise, teach"},{"l":"nos","n":"nostrum / nostri","p":"pron","c":"general","m":"we, us"},{"l":"noster","n":"nostra, nostrum","p":"pron","c":"general","m":"our"},{"l":"os","n":"oris, n","p":"noun 3","c":"general","m":"mouth, face"},{"l":"ostendo","n":"ostendere, ostendi, ostentus","p":"verb 3","c":"general","m":"show, point out, indicate"},{"l":"pono","n":"ponere, posui, positus","p":"verb 3","c":"general","m":"put, place, set up (camp)"},{"l":"pons","n":"pontis, m","p":"noun 3","c":"general","m":"bridge"},{"l":"pudor","n":"pudoris, m","p":"noun 3","c":"general","m":"shame, modesty, honour, disgrace"},{"l":"puella","n":"puellae, f","p":"noun 1","c":"general","m":"girl"},{"l":"regina","n":"reginae, f","p":"noun 1","c":"political","m":"queen"},{"l":"regnum","n":"regni, n","p":"noun 2","c":"political","m":"kingdom, reign, rule"},{"l":"sicut","n":"indeclinable","p":"adverb","c":"general","m":"just as, like, as, as if"},{"l":"signum","n":"signi, n","p":"noun 2","c":"military","m":"sign, signal, standard"},{"l":"tam","n":"indeclinable","p":"adverb","c":"general","m":"so"},{"l":"tamen","n":"indeclinable","p":"adverb","c":"general","m":"however, nevertheless, yet"},{"l":"uterque","n":"utraque, utrumque","p":"pron","c":"general","m":"each (of two), both"},{"l":"utrum","n":"indeclinable","p":"adverb","c":"general","m":"whether"}]},{"t":19,"w":[{"l":"amo","n":"amare, amavi, amatus","p":"verb 1","c":"general","m":"love, like"},{"l":"amor","n":"amoris, m","p":"noun 3","c":"general","m":"love"},{"l":"capio","n":"capere, cepi, captus (in compounds -icio)","p":"verb 3","c":"military","m":"take, catch, capture"},{"l":"captivus","n":"captivi, m","p":"noun 2","c":"military","m":"captive, prisoner"},{"l":"consul","n":"consulis, m","p":"noun 3","c":"political","m":"consul"},{"l":"consulo","n":"consulere, consului, consultus","p":"verb 3","c":"general","m":"consult, consider, advise"},{"l":"discedo","n":"discedere, discessi","p":"verb 3","c":"general","m":"depart, leave"},{"l":"disco","n":"discere, didici","p":"verb 3","c":"general","m":"learn"},{"l":"exspecto","n":"exspectare, exspectavi, exspectatus","p":"verb 1","c":"general","m":"wait for, expect"},{"l":"extra","n":"+ acc","p":"prep & adverb","c":"general","m":"outside, beyond"},{"l":"gravis","n":"grave","p":"adj","c":"general","m":"heavy, serious, painful, important"},{"l":"habeo","n":"habere, habui, habitus","p":"verb 2","c":"general","m":"have, hold, consider"},{"l":"ingenium","n":"ingenii, n","p":"noun 2","c":"general","m":"character, ability"},{"l":"ingens","n":"ingentis","p":"adj","c":"general","m":"huge"},{"l":"legio","n":"legionis, f","p":"noun 3","c":"military","m":"legion"},{"l":"lego","n":"legere, legi, lectus","p":"verb 3","c":"general","m":"read, choose"},{"l":"mons","n":"montis, m","p":"noun 3","c":"general","m":"mountain"},{"l":"monstro","n":"monstrare, monstravi, monstratus","p":"verb 1","c":"general","m":"show, point out, indicate, instruct"},{"l":"notus","n":"nota, notum","p":"adj","c":"general","m":"known, well-known, famous"},{"l":"novi","n":"notus (perfect with present meaning)","p":"verb 3","c":"general","m":"know"},{"l":"otium","n":"otii, n","p":"noun 2","c":"general","m":"leisure, idleness, peace"},{"l":"paene","n":"indeclinable","p":"adverb","c":"general","m":"almost, nearly"},{"l":"populus","n":"populi, m","p":"noun 2","c":"political","m":"people, nation"},{"l":"porta","n":"portae, f","p":"noun 1","c":"general","m":"gate"},{"l":"puer","n":"pueri, m","p":"noun 2","c":"general","m":"boy"},{"l":"pugna","n":"pugnae, f","p":"noun 1","c":"military","m":"fight, battle"},{"l":"rego","n":"regere, rexi, rectus","p":"verb 3","c":"political","m":"rule, direct"},{"l":"regredior","n":"regredi, regressus sum","p":"verb 3 dep","c":"general","m":"go back, return"},{"l":"silentium","n":"silentii, n","p":"noun 2","c":"general","m":"silence"},{"l":"silva","n":"silvae, f","p":"noun 1","c":"general","m":"wood, forest"},{"l":"tandem","n":"indeclinable","p":"adverb","c":"general","m":"at last, finally"},{"l":"tango","n":"tangere, tetigi, tactus","p":"verb 3","c":"general","m":"touch"},{"l":"utor","n":"uti, usus sum + abl","p":"verb 3 dep","c":"general","m":"use, enjoy"},{"l":"uxor","n":"uxoris, f","p":"noun 3","c":"domestic","m":"wife"}]},{"t":20,"w":[{"l":"an","n":"indeclinable","p":"conjunction","c":"general","m":"or"},{"l":"ancilla","n":"ancillae, f","p":"noun 1","c":"domestic","m":"slave-girl, slave-woman"},{"l":"caput","n":"capitis, n","p":"noun 3","c":"general","m":"head, person, life, capital"},{"l":"carus","n":"cara, carum","p":"adj","c":"domestic","m":"dear"},{"l":"consumo","n":"consumere, consumpsi, consumptus","p":"verb 3","c":"general","m":"eat, consume, spend"},{"l":"contendo","n":"contendere, contendi, contentus","p":"verb 3","c":"military","m":"hurry, march, contend, fight"},{"l":"dissimilis","n":"dissimile","p":"adj","c":"general","m":"different"},{"l":"diu","n":"indeclinable","p":"adverb","c":"general","m":"for a long time"},{"l":"facilis","n":"facile","p":"adj","c":"general","m":"easy"},{"l":"facinus","n":"facinoris, n","p":"noun 3","c":"legal","m":"crime, outrage, deed"},{"l":"habito","n":"habitare, habitavi, habitatus","p":"verb 1","c":"domestic","m":"live, dwell"},{"l":"hasta","n":"hastae, f","p":"noun 1","c":"military","m":"spear"},{"l":"ingredior","n":"ingredi, ingressus sum","p":"verb 3 dep","c":"general","m":"enter, undertake"},{"l":"inimicus","n":"inimici, m","p":"noun 2","c":"general","m":"(personal) enemy"},{"l":"lentus","n":"lenta, lentum","p":"adj","c":"general","m":"slow"},{"l":"levis","n":"leve","p":"adj","c":"general","m":"light, slight"},{"l":"morbus","n":"morbi, m","p":"noun 2","c":"general","m":"sickness, disease"},{"l":"morior","n":"mori, mortuus sum","p":"verb 3 dep","c":"military","m":"die"},{"l":"novus","n":"nova, novum","p":"adj","c":"general","m":"new, fresh, recent"},{"l":"nox","n":"noctis, f","p":"noun 3","c":"general","m":"night"},{"l":"palam","n":"indeclinable","p":"adverb","c":"general","m":"openly"},{"l":"par","n":"paris","p":"adj","c":"general","m":"equal"},{"l":"porto","n":"portare, portavi, portatus","p":"verb 1","c":"general","m":"carry, bear, take"},{"l":"portus","n":"portus, m","p":"noun 4","c":"general","m":"harbour, port"},{"l":"pugno","n":"pugnare, pugnavi","p":"verb 1","c":"military","m":"fight"},{"l":"punio","n":"punire, punivi, punitus","p":"verb 4","c":"legal","m":"punish"},{"l":"relinquo","n":"relinquere, reliqui, relictus","p":"verb 3","c":"general","m":"leave, leave behind, abandon"},{"l":"reliquus","n":"reliqua, reliquum","p":"adj","c":"general","m":"the rest of, the other"},{"l":"similis","n":"simile","p":"adj","c":"general","m":"similar, like"},{"l":"simul","n":"indeclinable","p":"adverb","c":"general","m":"at the same time, together"},{"l":"tantum","n":"indeclinable","p":"adverb","c":"general","m":"only"},{"l":"tantus","n":"tanta, tantum","p":"adj","c":"general","m":"so great, such a great, so much"},{"l":"valeo","n":"valere, valui","p":"verb 2","c":"general","m":"be strong, have influence"},{"l":"validus","n":"valida, validum","p":"adj","c":"general","m":"strong, powerful"}]},{"t":21,"w":[{"l":"angustus","n":"angusta, angustum","p":"adj","c":"general","m":"narrow, confined"},{"l":"animadverto","n":"animadvertere, animadverti, animadversus","p":"verb 3","c":"general","m":"notice, observe"},{"l":"castra","n":"castrorum, n pl","p":"noun 2","c":"military","m":"camp"},{"l":"causa","n":"causae, f","p":"noun 1","c":"legal","m":"cause, reason, case"},{"l":"contra","n":"+ acc","p":"prep","c":"military","m":"against"},{"l":"copiae","n":"copiarum, f pl","p":"noun 1","c":"military","m":"troops, forces, supplies"},{"l":"dives","n":"divitis","p":"adj","c":"general","m":"rich"},{"l":"divitiae","n":"divitiarum, f pl","p":"noun 1","c":"general","m":"riches, wealth"},{"l":"facio","n":"facere, feci, factus (in compounds -ficio","p":"verb 3","c":"general","m":"make, do"},{"l":"fallo","n":"fallere, fefelli, falsus","p":"verb 3","c":"general","m":"deceive, cheat"},{"l":"haud","n":"indeclinable","p":"adverb","c":"general","m":"not"},{"l":"heri","n":"indeclinable","p":"adverb","c":"general","m":"yesterday"},{"l":"iniquus","n":"iniqua, iniquum","p":"adj","c":"general","m":"unfair, unjust, unfavourable"},{"l":"initium","n":"initii, n","p":"noun 2","c":"general","m":"beginning"},{"l":"lex","n":"legis, f","p":"noun 3","c":"legal","m":"law"},{"l":"libens","n":"libentis","p":"adj","c":"general","m":"willing, glad"},{"l":"mors","n":"mortis, f","p":"noun 3","c":"military","m":"death"},{"l":"moror","n":"morari, moratus sum","p":"verb 1 dep","c":"general","m":"delay, linger"},{"l":"noctu","n":"","p":"","c":"","m":"by night"},{"l":"nullus","n":"nulla, nullum","p":"adj","c":"general","m":"no, none, not any"},{"l":"parco","n":"parcere, peperci + dat","p":"verb 3","c":"military","m":"spare"},{"l":"parens","n":"parentis, m and f","p":"noun 3","c":"domestic","m":"parent; (pl) relations"},{"l":"posco","n":"poscere, poposci","p":"verb 3","c":"general","m":"demand, ask for"},{"l":"possum","n":"posse, potui","p":"verb irreg","c":"general","m":"can, be able"},{"l":"puto","n":"putare, putavi, putatus","p":"verb 1","c":"general","m":"think, consider, reckon"},{"l":"quaero","n":"quaerere, quaesivi, quaesitus","p":"verb 3","c":"general","m":"search for, ask for, ask, inquire"},{"l":"repente","n":"indeclinable","p":"adverb","c":"general","m":"suddenly"},{"l":"res","n":"rei, f","p":"noun 5","c":"general","m":"thing, affair, matter, business"},{"l":"simulac,","n":"(simulatque) indeclinable","p":"conjunction","c":"general","m":"as soon as"},{"l":"sine","n":"+ abl","p":"prep","c":"general","m":"without"},{"l":"tectum","n":"tecti, n","p":"noun 2","c":"general","m":"roof, house"},{"l":"tego","n":"tegere, texi, tectus","p":"verb 3","c":"general","m":"cover, protect, hide"},{"l":"-ve","n":"indeclinable","p":"conjunction","c":"general","m":"or"},{"l":"vehementer","n":"indeclinable","p":"adverb","c":"general","m":"violently, loudly, strongly"}]},{"t":22,"w":[{"l":"animus","n":"animi, m","p":"noun 2","c":"general","m":"spirit, soul, mind, courage"},{"l":"annus","n":"anni, m","p":"noun 2","c":"general","m":"year"},{"l":"causa + gen","n":"","p":"noun 1","c":"general","m":"for the sake of"},{"l":"caveo","n":"cavere, cavi, cautus","p":"verb 2","c":"general","m":"beware (of), take care"},{"l":"corpus","n":"corporis, n","p":"noun 3","c":"general","m":"body"},{"l":"corripio","n":"corripere, corripui, correptus","p":"verb 3","c":"military","m":"seize, carry off"},{"l":"divido","n":"dividere, divisi, divisus","p":"verb 3","c":"general","m":"divide, separate"},{"l":"do","n":"dare, dedi, datus","p":"verb 1","c":"general","m":"give"},{"l":"fama","n":"famae, f","p":"noun 1","c":"general","m":"rumour, fame, glory"},{"l":"familia","n":"familiae, f","p":"noun 1","c":"domestic","m":"family, household"},{"l":"hic","n":"haec, hoc","p":"pron","c":"general","m":"this"},{"l":"hic","n":"indeclinable","p":"adverb","c":"general","m":"here"},{"l":"iniuria","n":"iniuriae, f","p":"noun 1","c":"legal","m":"injustice, injury, wrong"},{"l":"inopia","n":"inopiae, f","p":"noun 1","c":"military","m":"shortage, lack, poverty"},{"l":"liber","n":"libera, liberum","p":"adj","c":"general","m":"free"},{"l":"liber","n":"libri, m","p":"noun 2","c":"general","m":"book"},{"l":"mora","n":"morae, f","p":"noun 1","c":"general","m":"delay"},{"l":"mos","n":"moris, m","p":"noun 3","c":"general","m":"habit, custom, (pl) character, morals"},{"l":"num","n":"indeclinable","p":"adverb","c":"general","m":"surely…not, whether"},{"l":"numerus","n":"numeri, m","p":"noun 2","c":"general","m":"number"},{"l":"pareo","n":"parere, parui + dat","p":"verb 2","c":"general","m":"obey"},{"l":"pario","n":"parere, peperi, partus","p":"verb 3","c":"general","m":"bear (a child), win, acquire, gain, secure"},{"l":"post","n":"+ acc","p":"prep","c":"general","m":"behind, after"},{"l":"post","n":"indeclinable","p":"adverb","c":"general","m":"afterwards, next"},{"l":"qualis?","n":"quale","p":"adj","c":"general","m":"what sort of?"},{"l":"quam","n":"indeclinable","p":"adverb","c":"general","m":"how, than, as"},{"l":"res publica","n":"rei publicae, f","p":"noun phrase","c":"political","m":"state, republic"},{"l":"resisto","n":"resistere, restiti + dat","p":"verb 3","c":"military","m":"resist, oppose"},{"l":"sinister","n":"sinistra, sinistrum","p":"adj","c":"general","m":"left, on the left, unfavourable"},{"l":"sinistra","n":"sinistrae, f","p":"noun 1","c":"general","m":"left hand, left side"},{"l":"telum","n":"teli, n","p":"noun 2","c":"military","m":"weapon, javelin, missile"},{"l":"tempestas","n":"tempestatis, f","p":"noun 3","c":"general","m":"weather, storm, time"},{"l":"veho","n":"vehere, vexi, vectus","p":"verb 3","c":"general","m":"carry, bear, convey"},{"l":"vel","n":"indeclinable","p":"conjunction","c":"general","m":"or, either"}]},{"t":23,"w":[{"l":"ante","n":"+ acc","p":"prep","c":"general","m":"before, in front of"},{"l":"antea","n":"indeclinable","p":"adverb","c":"general","m":"before, previously"},{"l":"cedo","n":"cedere, cessi, cessus","p":"verb 3","c":"military","m":"yield, give up; (in compounds) go"},{"l":"celer","n":"celeris, celere","p":"adj","c":"general","m":"quick"},{"l":"cotidie","n":"indeclinable","p":"adverb","c":"general","m":"every day, daily"},{"l":"cras","n":"indeclinable","p":"adverb","c":"general","m":"tomorrow"},{"l":"doceo","n":"docere, docui, doctus","p":"verb 2","c":"general","m":"teach, inform"},{"l":"doleo","n":"dolere, dolui","p":"verb 2","c":"general","m":"hurt, be in pain, lament"},{"l":"faveo","n":"favere, favi, + dat","p":"verb 2","c":"general","m":"favour, support"},{"l":"felix","n":"felicis","p":"adj","c":"general","m":"fortunate, happy, prosperous"},{"l":"hiems","n":"hiemis, f","p":"noun 3","c":"general","m":"winter, storm"},{"l":"hinc","n":"indeclinable","p":"adverb","c":"general","m":"from here, hence, henceforth"},{"l":"inquam","n":"inquit, inquiunt","p":"verb irreg","c":"general","m":"say"},{"l":"insidiae","n":"insidiarum, f pl","p":"noun 1","c":"military","m":"ambush, trap, trick"},{"l":"liberi","n":"liberorum, m pl","p":"noun 2","c":"domestic","m":"children"},{"l":"libero","n":"liberare, liberavi, liberatus","p":"verb 1","c":"legal","m":"set free"},{"l":"moveo","n":"movere, movi, motus","p":"verb 2","c":"general","m":"move"},{"l":"mox","n":"indeclinable","p":"adverb","c":"general","m":"soon"},{"l":"numquam","n":"indeclinable","p":"adverb","c":"general","m":"never"},{"l":"nunc","n":"indeclinable","p":"adverb","c":"general","m":"now"},{"l":"paro","n":"parare, paravi, paratus","p":"verb 1","c":"general","m":"prepare, provide"},{"l":"pars","n":"partis, f","p":"noun 3","c":"general","m":"part, some, direction"},{"l":"postea","n":"indeclinable","p":"adverb","c":"general","m":"afterwards, then"},{"l":"postquam","n":"indeclinable","p":"conjunction","c":"general","m":"after, when"},{"l":"quam + superlative","n":"","p":"","c":"","m":"as ... as possible"},{"l":"quamquam","n":"indeclinable","p":"conjunction","c":"general","m":"although"},{"l":"respondeo","n":"respondere, respondi, responsus","p":"verb 2","c":"general","m":"answer, reply"},{"l":"responsum","n":"responsi, n","p":"noun 2","c":"general","m":"answer, reply"},{"l":"sino","n":"sinere, sivi, situs","p":"verb 3","c":"general","m":"allow, permit"},{"l":"sive, seu","n":"indeclinable","p":"conjunction","c":"general","m":"or if, whether"},{"l":"templum","n":"templi, n","p":"noun 2","c":"religious","m":"temple"},{"l":"tempus","n":"temporis, n","p":"noun 3","c":"general","m":"time"},{"l":"velut","n":"indeclinable","p":"adverb","c":"general","m":"just as, like, as, as if"},{"l":"venio","n":"venire, veni","p":"verb 4","c":"general","m":"come"}]},{"t":24,"w":[{"l":"antequam","n":"indeclinable","p":"conjunction","c":"general","m":"before"},{"l":"aperio","n":"aperire, aperui, apertus","p":"verb 4","c":"general","m":"open, reveal, disclose"},{"l":"celo","n":"celare, celavi, celatus","p":"verb 1","c":"general","m":"hide, conceal"},{"l":"cena","n":"cenae, f","p":"noun 1","c":"domestic","m":"dinner, meal"},{"l":"credo","n":"credere, credidi, creditus + dat","p":"verb 3","c":"general","m":"believe, trust, entrust"},{"l":"crimen","n":"criminis, n","p":"noun 3","c":"legal","m":"accusation, charge, crime"},{"l":"dolor","n":"doloris, m","p":"noun 3","c":"general","m":"pain, sorrow, anger"},{"l":"dolus","n":"doli, m","p":"noun 2","c":"general","m":"trick, fraud"},{"l":"femina","n":"feminae, f","p":"noun 1","c":"general","m":"woman"},{"l":"fere","n":"indeclinable","p":"adverb","c":"general","m":"nearly, about"},{"l":"hodie","n":"indeclinable","p":"adverb","c":"general","m":"today"},{"l":"homo","n":"hominis, m","p":"noun 3","c":"general","m":"man, person"},{"l":"insignis","n":"insigne","p":"adj","c":"general","m":"distinguished, glorious"},{"l":"inspicio","n":"inspicere, inspexi, inspectus","p":"verb 3","c":"military","m":"look at, inspect, examine"},{"l":"libertas","n":"libertatis, f","p":"noun 3","c":"legal","m":"freedom"},{"l":"libertus","n":"liberti, m","p":"noun 2","c":"legal","m":"freedman, ex-slave"},{"l":"mulier","n":"mulieris, f","p":"noun 3","c":"general","m":"woman"},{"l":"multitudo","n":"multitudinis, f","p":"noun 3","c":"general","m":"crowd, multitude"},{"l":"nuntio","n":"nuntiare, nuntiavi, nuntiatus","p":"verb 1","c":"general","m":"announce, report"},{"l":"nuntius","n":"nuntii, m","p":"noun 2","c":"military","m":"messenger, message, news"},{"l":"parvus","n":"parva, parvum","p":"adj","c":"general","m":"small"},{"l":"passim","n":"indeclinable","p":"adverb","c":"general","m":"in all directions, far and wide, everywhere"},{"l":"postremus","n":"postrema, postremum","p":"adj","c":"general","m":"last"},{"l":"postridie","n":"indeclinable","p":"adverb","c":"general","m":"on the next day"},{"l":"quando?","n":"indeclinable","p":"adverb","c":"general","m":"when?"},{"l":"quantus?","n":"quanta, quantum","p":"adj","c":"general","m":"how big? how much?"},{"l":"retineo","n":"retinere, retinui, retentus","p":"verb 2","c":"general","m":"hold back, restrain, keep"},{"l":"rex","n":"regis, m","p":"noun 3","c":"political","m":"king"},{"l":"socius","n":"socii, m","p":"noun 2","c":"military","m":"ally, comrade, companion"},{"l":"sol","n":"solis, m","p":"noun 3","c":"general","m":"sun, sunlight"},{"l":"teneo","n":"tenere, tenui, tentus","p":"verb 2","c":"general","m":"hold, keep, maintain"},{"l":"tergum","n":"tergi, n","p":"noun 2","c":"military","m":"back, rear"},{"l":"ventus","n":"venti, m","p":"noun 2","c":"general","m":"wind"},{"l":"verbum","n":"verbi, n","p":"noun 2","c":"general","m":"word"}]}];
+
+</script>
+<script>
+/* ============================================================
+   morph.js — Latin morphology engine for the AS vocabulary list
+   Generates noun / adjective / verb forms from the principal
+   parts and genitives already present in the vocabulary table.
+   ============================================================ */
+
+/* ---------- small helpers ---------- */
+const PERSONS = ['1sg', '2sg', '3sg', '1pl', '2pl', '3pl'];
+const PRONOUN = ['I', 'you', 'he', 'we', 'you (pl)', 'they'];
+const CASES = ['nom', 'acc', 'gen', 'dat', 'abl'];
+const CASE_NAME = { nom: 'nominative', acc: 'accusative', gen: 'genitive', dat: 'dative', abl: 'ablative', voc: 'vocative' };
+const NUM_NAME = { sg: 'singular', pl: 'plural' };
+
+function norm(s) {
+  return (s || '')
+    .toLowerCase()
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+function lev(a, b) {
+  const m = a.length, n = b.length;
+  if (Math.abs(m - n) > 2) return 3;
+  const d = Array.from({ length: m + 1 }, (_, i) => [i, ...Array(n).fill(0)]);
+  for (let j = 0; j <= n; j++) d[0][j] = j;
+  for (let i = 1; i <= m; i++)
+    for (let j = 1; j <= n; j++)
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+  return d[m][n];
+}
+
+/* ---------- English verb parts (for translating Latin forms) ---------- */
+const ENG_IRREG = {
+  be: ['is', 'was', 'been', 'being'], have: ['has', 'had', 'had', 'having'],
+  do: ['does', 'did', 'done', 'doing'], go: ['goes', 'went', 'gone', 'going'],
+  say: ['says', 'said', 'said', 'saying'], make: ['makes', 'made', 'made', 'making'],
+  take: ['takes', 'took', 'taken', 'taking'], give: ['gives', 'gave', 'given', 'giving'],
+  come: ['comes', 'came', 'come', 'coming'], see: ['sees', 'saw', 'seen', 'seeing'],
+  know: ['knows', 'knew', 'known', 'knowing'], get: ['gets', 'got', 'got', 'getting'],
+  find: ['finds', 'found', 'found', 'finding'], think: ['thinks', 'thought', 'thought', 'thinking'],
+  tell: ['tells', 'told', 'told', 'telling'], become: ['becomes', 'became', 'become', 'becoming'],
+  leave: ['leaves', 'left', 'left', 'leaving'], feel: ['feels', 'felt', 'felt', 'feeling'],
+  bring: ['brings', 'brought', 'brought', 'bringing'], begin: ['begins', 'began', 'begun', 'beginning'],
+  keep: ['keeps', 'kept', 'kept', 'keeping'], hold: ['holds', 'held', 'held', 'holding'],
+  write: ['writes', 'wrote', 'written', 'writing'], stand: ['stands', 'stood', 'stood', 'standing'],
+  hear: ['hears', 'heard', 'heard', 'hearing'], let: ['lets', 'let', 'let', 'letting'],
+  set: ['sets', 'set', 'set', 'setting'], put: ['puts', 'put', 'put', 'putting'],
+  meet: ['meets', 'met', 'met', 'meeting'], run: ['runs', 'ran', 'run', 'running'],
+  pay: ['pays', 'paid', 'paid', 'paying'], sit: ['sits', 'sat', 'sat', 'sitting'],
+  speak: ['speaks', 'spoke', 'spoken', 'speaking'], lie: ['lies', 'lay', 'lain', 'lying'],
+  lead: ['leads', 'led', 'led', 'leading'], read: ['reads', 'read', 'read', 'reading'],
+  grow: ['grows', 'grew', 'grown', 'growing'], lose: ['loses', 'lost', 'lost', 'losing'],
+  fall: ['falls', 'fell', 'fallen', 'falling'], send: ['sends', 'sent', 'sent', 'sending'],
+  build: ['builds', 'built', 'built', 'building'], understand: ['understands', 'understood', 'understood', 'understanding'],
+  draw: ['draws', 'drew', 'drawn', 'drawing'], break: ['breaks', 'broke', 'broken', 'breaking'],
+  spend: ['spends', 'spent', 'spent', 'spending'], catch: ['catches', 'caught', 'caught', 'catching'],
+  buy: ['buys', 'bought', 'bought', 'buying'], sell: ['sells', 'sold', 'sold', 'selling'],
+  fight: ['fights', 'fought', 'fought', 'fighting'], throw: ['throws', 'threw', 'thrown', 'throwing'],
+  choose: ['chooses', 'chose', 'chosen', 'choosing'], seek: ['seeks', 'sought', 'sought', 'seeking'],
+  teach: ['teaches', 'taught', 'taught', 'teaching'], eat: ['eats', 'ate', 'eaten', 'eating'],
+  drink: ['drinks', 'drank', 'drunk', 'drinking'], drive: ['drives', 'drove', 'driven', 'driving'],
+  rise: ['rises', 'rose', 'risen', 'rising'], flee: ['flees', 'fled', 'fled', 'fleeing'],
+  fly: ['flies', 'flew', 'flown', 'flying'], hide: ['hides', 'hid', 'hidden', 'hiding'],
+  forget: ['forgets', 'forgot', 'forgotten', 'forgetting'], win: ['wins', 'won', 'won', 'winning'],
+  sing: ['sings', 'sang', 'sung', 'singing'], swear: ['swears', 'swore', 'sworn', 'swearing'],
+  strike: ['strikes', 'struck', 'struck', 'striking'], steal: ['steals', 'stole', 'stolen', 'stealing'],
+  cut: ['cuts', 'cut', 'cut', 'cutting'], shut: ['shuts', 'shut', 'shut', 'shutting'],
+  bear: ['bears', 'bore', 'borne', 'bearing'], wear: ['wears', 'wore', 'worn', 'wearing'],
+  weep: ['weeps', 'wept', 'wept', 'weeping'], sleep: ['sleeps', 'slept', 'slept', 'sleeping'],
+  undertake: ['undertakes', 'undertook', 'undertaken', 'undertaking'],
+  overcome: ['overcomes', 'overcame', 'overcome', 'overcoming'],
+  withdraw: ['withdraws', 'withdrew', 'withdrawn', 'withdrawing'],
+  forbid: ['forbids', 'forbade', 'forbidden', 'forbidding'],
+  hang: ['hangs', 'hung', 'hung', 'hanging'], dig: ['digs', 'dug', 'dug', 'digging'],
+  bind: ['binds', 'bound', 'bound', 'binding'], burst: ['bursts', 'burst', 'burst', 'bursting'],
+  feed: ['feeds', 'fed', 'fed', 'feeding'], spread: ['spreads', 'spread', 'spread', 'spreading'],
+  hurt: ['hurts', 'hurt', 'hurt', 'hurting'], beat: ['beats', 'beat', 'beaten', 'beating'],
+  arise: ['arises', 'arose', 'arisen', 'arising'], swim: ['swims', 'swam', 'swum', 'swimming'],
+  shine: ['shines', 'shone', 'shone', 'shining'], lend: ['lends', 'lent', 'lent', 'lending'],
+  bend: ['bends', 'bent', 'bent', 'bending'], seize: ['seizes', 'seized', 'seized', 'seizing'],
+  stick: ['sticks', 'stuck', 'stuck', 'sticking'], deal: ['deals', 'dealt', 'dealt', 'dealing'],
+  mean: ['means', 'meant', 'meant', 'meaning'], hit: ['hits', 'hit', 'hit', 'hitting'],
+  bid: ['bids', 'bade', 'bidden', 'bidding'], slay: ['slays', 'slew', 'slain', 'slaying'],
+  wake: ['wakes', 'woke', 'woken', 'waking'], ride: ['rides', 'rode', 'ridden', 'riding'],
+  hasten: ['hastens', 'hastened', 'hastened', 'hastening']
+};
+const DOUBLERS = new Set(['stop', 'drop', 'plan', 'beg', 'permit', 'admit', 'commit', 'omit', 'submit', 'prefer', 'refer', 'defer', 'occur', 'compel', 'expel', 'rebel', 'control', 'equip', 'ban', 'grab', 'rob', 'sob', 'nod', 'pat', 'wrap', 'trap', 'ship', 'strip', 'grin', 'sin', 'stir', 'blur', 'scar', 'star']);
+
+function engParts(verb) {
+  const v = verb.toLowerCase();
+  if (ENG_IRREG[v]) return { base: v, s3: ENG_IRREG[v][0], past: ENG_IRREG[v][1], pp: ENG_IRREG[v][2], ing: ENG_IRREG[v][3] };
+  let s3, past, ing;
+  if (/[^aeiou]y$/.test(v)) { s3 = v.slice(0, -1) + 'ies'; past = v.slice(0, -1) + 'ied'; ing = v + 'ing'; }
+  else if (/(s|x|z|ch|sh|o)$/.test(v)) { s3 = v + 'es'; past = /e$/.test(v) ? v + 'd' : v + 'ed'; ing = /e$/.test(v) ? v.slice(0, -1) + 'ing' : v + 'ing'; }
+  else if (/e$/.test(v)) { s3 = v + 's'; past = v + 'd'; ing = v.slice(0, -1) + 'ing'; }
+  else if (DOUBLERS.has(v)) { s3 = v + 's'; past = v + v.slice(-1) + 'ed'; ing = v + v.slice(-1) + 'ing'; }
+  else { s3 = v + 's'; past = v + 'ed'; ing = v + 'ing'; }
+  return { base: v, s3, past, pp: past, ing };
+}
+
+/* Split a meanings cell into individual senses. */
+function senses(m) {
+  return (m || '').split(/[;,](?![^(]*\))/).map(s => s.trim()).filter(Boolean);
+}
+/* Take one English sense and split it into head verb + tail. */
+function verbSense(sense) {
+  const words = sense.replace(/^to\s+/i, '').split(/\s+/);
+  return { head: words[0].replace(/[^a-zA-Z]/g, ''), tail: words.slice(1).join(' ') };
+}
+
+/* ============================================================
+   NOUNS
+   ============================================================ */
+function parseNoun(w) {
+  let decl = (w.p.match(/noun (\d)/) || [])[1];
+  if (!decl) return null;
+  let gen = null, gender = null;
+  const raw = (w.n || '').replace(/\(.*?\)/g, '').trim();
+  if (!raw) return null;
+  const pluralOnly = /\bpl\b/.test(raw);
+  const commaParts = raw.split(',').map(s => s.trim()).filter(Boolean);
+  if (commaParts.length >= 2) { gen = commaParts[0].split(/\s+/)[0]; gender = (commaParts[1].match(/\b(m|f|n)\b/) || [])[1] || null; }
+  else { const sp = raw.split(/\s+/); gen = sp[0]; gender = (raw.match(/\b(m|f|n)\b/) || [])[1] || null; }
+  if (!gen || !/^[a-z]+$/i.test(gen)) return null;
+  gen = gen.toLowerCase();
+
+  if (pluralOnly) {
+    let st = null, d = null;
+    if (/arum$/.test(gen)) { st = gen.slice(0, -4); d = '1'; }
+    else if (/orum$/.test(gen)) { st = gen.slice(0, -4); d = '2'; }
+    else if (/ium$/.test(gen)) { st = gen.slice(0, -3); d = '3'; }
+    else if (/um$/.test(gen)) { st = gen.slice(0, -2); d = '3'; }
+    if (!st) return null;
+    const g = gender || (d === '1' ? 'f' : 'm');
+    return { decl: d, gen, gender: g, stem: st, istem: /ium$/.test(gen) ? (g === 'n' ? 'neut' : true) : false, lemma: w.l, pluralOnly: true };
+  }
+
+  /* trust the genitive over the label where the two disagree */
+  const bySuffix = /ae$/.test(gen) ? '1' : /ei$/.test(gen) ? '5' : /us$/.test(gen) ? '4' : /is$/.test(gen) ? '3' : /i$/.test(gen) ? '2' : null;
+  if (bySuffix && bySuffix !== decl) {
+    const lemEndsA = /a$/.test(w.l), lemEndsUsUmEr = /(us|um|er|ir|r)$/.test(w.l);
+    if ((bySuffix === '1' && lemEndsA) || (bySuffix === '2' && lemEndsUsUmEr) || bySuffix === '4' || bySuffix === '5') decl = bySuffix;
+  }
+  const suf = { '1': 'ae', '2': 'i', '3': 'is', '4': 'us', '5': 'ei' }[decl];
+  if (!gen.endsWith(suf)) return null;
+  const stem = gen.slice(0, gen.length - suf.length);
+  if (!stem) return null;
+  // i-stem heuristics for 3rd declension
+  let istem = false;
+  if (decl === '3') {
+    const nom = w.l;
+    if (gender === 'n' && /(e|al|ar)$/.test(nom)) istem = 'neut';
+    else if (/(is|es)$/.test(nom) && nom.length === gen.length) istem = true;
+    else if (/[bcdfgklmnprstx][bcdfgklmnprstx]$/.test(stem) && /(s|x)$/.test(nom)) istem = true;
+  }
+  return { decl, gen, gender: gender || 'm', stem, istem, lemma: w.l };
+}
+
+function nounForm(n, cs, num) {
+  const s = n.stem, L = n.lemma, neut = n.gender === 'n';
+  const D = n.decl;
+  if (D === '1') return { nom: [num === 'sg' ? L : s + 'ae'], acc: [num === 'sg' ? s + 'am' : s + 'as'], gen: [num === 'sg' ? s + 'ae' : s + 'arum'], dat: [num === 'sg' ? s + 'ae' : s + 'is'], abl: [num === 'sg' ? s + 'a' : s + 'is'] }[cs];
+  if (D === '2') {
+    if (neut) return { nom: [num === 'sg' ? L : s + 'a'], acc: [num === 'sg' ? L : s + 'a'], gen: [num === 'sg' ? s + 'i' : s + 'orum'], dat: [num === 'sg' ? s + 'o' : s + 'is'], abl: [num === 'sg' ? s + 'o' : s + 'is'] }[cs];
+    return { nom: [num === 'sg' ? L : s + 'i'], acc: [num === 'sg' ? s + 'um' : s + 'os'], gen: [num === 'sg' ? s + 'i' : s + 'orum'], dat: [num === 'sg' ? s + 'o' : s + 'is'], abl: [num === 'sg' ? s + 'o' : s + 'is'] }[cs];
+  }
+  if (D === '3') {
+    const gpl = n.istem ? [s + 'ium', s + 'um'] : [s + 'um', s + 'ium'];
+    if (neut) {
+      const ablSg = n.istem === 'neut' ? [s + 'i'] : [s + 'e'];
+      const nPl = n.istem === 'neut' ? [s + 'ia'] : [s + 'a'];
+      return { nom: num === 'sg' ? [L] : nPl, acc: num === 'sg' ? [L] : nPl, gen: num === 'sg' ? [s + 'is'] : gpl, dat: num === 'sg' ? [s + 'i'] : [s + 'ibus'], abl: num === 'sg' ? ablSg : [s + 'ibus'] }[cs];
+    }
+    return { nom: [num === 'sg' ? L : s + 'es'], acc: num === 'sg' ? [s + 'em'] : [s + 'es'], gen: num === 'sg' ? [s + 'is'] : gpl, dat: [num === 'sg' ? s + 'i' : s + 'ibus'], abl: [num === 'sg' ? s + 'e' : s + 'ibus'] }[cs];
+  }
+  if (D === '4') {
+    if (neut) return { nom: [num === 'sg' ? L : s + 'ua'], acc: [num === 'sg' ? L : s + 'ua'], gen: [num === 'sg' ? s + 'us' : s + 'uum'], dat: [num === 'sg' ? s + 'u' : s + 'ibus'], abl: [num === 'sg' ? s + 'u' : s + 'ibus'] }[cs];
+    return { nom: [num === 'sg' ? L : s + 'us'], acc: [num === 'sg' ? s + 'um' : s + 'us'], gen: [num === 'sg' ? s + 'us' : s + 'uum'], dat: [num === 'sg' ? s + 'ui' : s + 'ibus'], abl: [num === 'sg' ? s + 'u' : s + 'ibus'] }[cs];
+  }
+  if (D === '5') return { nom: [num === 'sg' ? L : s + 'es'], acc: [num === 'sg' ? s + 'em' : s + 'es'], gen: [num === 'sg' ? s + 'ei' : s + 'erum'], dat: [num === 'sg' ? s + 'ei' : s + 'ebus'], abl: [num === 'sg' ? s + 'e' : s + 'ebus'] }[cs];
+  return null;
+}
+
+function nounParadigm(n) {
+  const out = [];
+  for (const num of (n.pluralOnly ? ['pl'] : ['sg', 'pl'])) for (const cs of CASES) {
+    const f = nounForm(n, cs, num);
+    if (f && f[0]) out.push({ form: f[0], alts: f, cs, num });
+  }
+  return out;
+}
+
+/* ============================================================
+   ADJECTIVES
+   ============================================================ */
+const ADJ_IRREG = {
+  bonus: { comp: 'melior', sup: 'optimus' }, malus: { comp: 'peior', sup: 'pessimus' },
+  magnus: { comp: 'maior', sup: 'maximus' }, parvus: { comp: 'minor', sup: 'minimus' },
+  multus: { comp: 'plus', sup: 'plurimus' }
+};
+const LIMUS = new Set(['facilis', 'difficilis', 'similis', 'dissimilis', 'gracilis', 'humilis']);
+
+const GRADABLE = new Set(['acer','aequus','altus','angustus','audax','bonus','brevis','carus','celer','certus','clarus','crudelis','difficilis','dignus','diligens','dirus','dives','dubius','durus','facilis','felix','ferox','fidelis','fortis','gravis','idoneus','iniquus','insignis','iratus','iustus','laetus','latus','lentus','levis','longus','magnus','malus','miser','mirabilis','multus','nobilis','notus','novus','parvus','pauper','peritus','plenus','potens','recens','saevus','sapiens','similis','stultus','tristis','tutus','validus','vetus']);
+
+function parseAdj(w) {
+  if (!/adj|pron and adj|noun & adj/.test(w.p)) return null;
+  const raw = (w.n || '').replace(/\+.*$/, '').trim();
+  if (!raw || /indeclinable/i.test(raw)) return null;
+  const parts = raw.split(',').map(s => s.trim()).filter(Boolean);
+  const L = w.l.replace(/\?$/, '');
+  if (/^adj plural$/.test(w.p) || (/i$/.test(L) && parts.length >= 2 && /ae$/.test(parts[0]) && /a$/.test(parts[1]))) {
+    return { type: '212', stem: L.replace(/i$/, ''), lemma: L, fem: parts[0], neut: parts[1], pluralOnly: true, gradable: false };
+  }
+  if (parts.length >= 2 && /a$/.test(parts[0]) && /um$/.test(parts[1])) {
+    return { type: '212', stem: parts[0].slice(0, -1), lemma: L, fem: parts[0], neut: parts[1], gradable: GRADABLE.has(L) };
+  }
+  if (parts.length >= 2 && /is$/.test(parts[0]) && /e$/.test(parts[1])) {
+    return { type: '3-3', stem: parts[1].slice(0, -1), lemma: L, neut: parts[1], gradable: GRADABLE.has(L) };
+  }
+  if (parts.length === 1 && /e$/.test(parts[0]) && /is$/.test(L)) {
+    return { type: '3-2', stem: L.slice(0, -2), lemma: L, neut: parts[0], gradable: GRADABLE.has(L) };
+  }
+  if (parts.length === 1 && /is$/.test(parts[0])) {
+    return { type: '3-1', stem: parts[0].slice(0, -2), lemma: L, neut: L, gradable: GRADABLE.has(L) };
+  }
+  return null;
+}
+
+function adjForm(a, cs, num, gen) {
+  const s = a.stem;
+  if (a.type === '212') {
+    if (gen === 'f') {
+      return { nom: num === 'sg' ? s + 'a' : s + 'ae', acc: num === 'sg' ? s + 'am' : s + 'as', gen: num === 'sg' ? s + 'ae' : s + 'arum', dat: num === 'sg' ? s + 'ae' : s + 'is', abl: num === 'sg' ? s + 'a' : s + 'is' }[cs];
+    }
+    if (gen === 'n') {
+      return { nom: num === 'sg' ? s + 'um' : s + 'a', acc: num === 'sg' ? s + 'um' : s + 'a', gen: num === 'sg' ? s + 'i' : s + 'orum', dat: num === 'sg' ? s + 'o' : s + 'is', abl: num === 'sg' ? s + 'o' : s + 'is' }[cs];
+    }
+    return { nom: num === 'sg' ? a.lemma : s + 'i', acc: num === 'sg' ? s + 'um' : s + 'os', gen: num === 'sg' ? s + 'i' : s + 'orum', dat: num === 'sg' ? s + 'o' : s + 'is', abl: num === 'sg' ? s + 'o' : s + 'is' }[cs];
+  }
+  /* a handful of third-declension adjectives decline like consonant-stem nouns:
+     ablative singular -e, genitive plural -um, neuter plural -a */
+  const CONS = { dives: 1, pauper: 1, vetus: 1, princeps: 1, particeps: 1, superstes: 1, sospes: 1, compos: 1 };
+  if (CONS[a.lemma]) {
+    const nomN = a.type === '3-1' ? a.lemma : a.neut;
+    if (gen === 'n') {
+      return { nom: num === 'sg' ? nomN : s + 'a', acc: num === 'sg' ? nomN : s + 'a', gen: num === 'sg' ? s + 'is' : s + 'um', dat: num === 'sg' ? s + 'i' : s + 'ibus', abl: num === 'sg' ? s + 'e' : s + 'ibus' }[cs];
+    }
+    return { nom: num === 'sg' ? a.lemma : s + 'es', acc: num === 'sg' ? s + 'em' : s + 'es', gen: num === 'sg' ? s + 'is' : s + 'um', dat: num === 'sg' ? s + 'i' : s + 'ibus', abl: num === 'sg' ? s + 'e' : s + 'ibus' }[cs];
+  }
+  // third declension adjectives (i-stem)
+  const nomSgMF = a.type === '3-3' ? (gen === 'f' ? s + 'is' : a.lemma) : (a.type === '3-2' ? s + 'is' : a.lemma);
+  const nomSgN = a.type === '3-1' ? a.lemma : a.neut;
+  if (gen === 'n') {
+    return { nom: num === 'sg' ? nomSgN : s + 'ia', acc: num === 'sg' ? nomSgN : s + 'ia', gen: num === 'sg' ? s + 'is' : s + 'ium', dat: num === 'sg' ? s + 'i' : s + 'ibus', abl: num === 'sg' ? s + 'i' : s + 'ibus' }[cs];
+  }
+  return { nom: num === 'sg' ? nomSgMF : s + 'es', acc: num === 'sg' ? s + 'em' : s + 'es', gen: num === 'sg' ? s + 'is' : s + 'ium', dat: num === 'sg' ? s + 'i' : s + 'ibus', abl: num === 'sg' ? s + 'i' : s + 'ibus' }[cs];
+}
+
+function adjDegrees(a) {
+  const ir = ADJ_IRREG[a.lemma];
+  const comp = ir ? ir.comp : a.stem + 'ior';
+  let sup;
+  if (ir) sup = ir.sup;
+  else if (/er$/.test(a.lemma)) sup = a.lemma + 'rimus';
+  else if (LIMUS.has(a.lemma)) sup = a.stem + 'limus';
+  else sup = a.stem + 'issimus';
+  return { comp, sup };
+}
+function adjAdverb(a) {
+  const ir = { bonus: 'bene', malus: 'male', magnus: 'magnopere', multus: 'multum', facilis: 'facile' }[a.lemma];
+  if (ir) return ir;
+  if (a.type === '212') return a.stem + 'e';
+  if (/nt$/.test(a.stem)) return a.stem.slice(0, -1) + 'ter';
+  return a.stem + 'iter';
+}
+
+/* ============================================================
+   VERBS
+   ============================================================ */
+const IRREG_BASE = {
+  sum: {
+    inf: 'esse', pres: ['sum', 'es', 'est', 'sumus', 'estis', 'sunt'],
+    impf: ['eram', 'eras', 'erat', 'eramus', 'eratis', 'erant'],
+    fut: ['ero', 'eris', 'erit', 'erimus', 'eritis', 'erunt'],
+    presSubj: ['sim', 'sis', 'sit', 'simus', 'sitis', 'sint'],
+    impfSubj: ['essem', 'esses', 'esset', 'essemus', 'essetis', 'essent'],
+    imper: ['es', 'este'], partPres: null, futPart: 'futurus', noPassive: true
+  },
+  possum: {
+    inf: 'posse', pres: ['possum', 'potes', 'potest', 'possumus', 'potestis', 'possunt'],
+    impf: ['poteram', 'poteras', 'poterat', 'poteramus', 'poteratis', 'poterant'],
+    fut: ['potero', 'poteris', 'poterit', 'poterimus', 'poteritis', 'poterunt'],
+    presSubj: ['possim', 'possis', 'possit', 'possimus', 'possitis', 'possint'],
+    impfSubj: ['possem', 'posses', 'posset', 'possemus', 'possetis', 'possent'],
+    imper: null, partPres: 'potens', futPart: null, noPassive: true
+  },
+  eo: {
+    inf: 'ire', pres: ['eo', 'is', 'it', 'imus', 'itis', 'eunt'],
+    impf: ['ibam', 'ibas', 'ibat', 'ibamus', 'ibatis', 'ibant'],
+    fut: ['ibo', 'ibis', 'ibit', 'ibimus', 'ibitis', 'ibunt'],
+    presSubj: ['eam', 'eas', 'eat', 'eamus', 'eatis', 'eant'],
+    impfSubj: ['irem', 'ires', 'iret', 'iremus', 'iretis', 'irent'],
+    imper: ['i', 'ite'], partPres: 'iens', futPart: 'iturus', noPassive: true
+  },
+  fero: {
+    inf: 'ferre', pres: ['fero', 'fers', 'fert', 'ferimus', 'fertis', 'ferunt'],
+    impf: ['ferebam', 'ferebas', 'ferebat', 'ferebamus', 'ferebatis', 'ferebant'],
+    fut: ['feram', 'feres', 'feret', 'feremus', 'feretis', 'ferent'],
+    presSubj: ['feram', 'feras', 'ferat', 'feramus', 'feratis', 'ferant'],
+    impfSubj: ['ferrem', 'ferres', 'ferret', 'ferremus', 'ferretis', 'ferrent'],
+    presPass: ['feror', 'ferris', 'fertur', 'ferimur', 'ferimini', 'feruntur'],
+    imper: ['fer', 'ferte'], partPres: 'ferens', futPart: 'laturus'
+  },
+  volo: {
+    inf: 'velle', pres: ['volo', 'vis', 'vult', 'volumus', 'vultis', 'volunt'],
+    impf: ['volebam', 'volebas', 'volebat', 'volebamus', 'volebatis', 'volebant'],
+    fut: ['volam', 'voles', 'volet', 'volemus', 'voletis', 'volent'],
+    presSubj: ['velim', 'velis', 'velit', 'velimus', 'velitis', 'velint'],
+    impfSubj: ['vellem', 'velles', 'vellet', 'vellemus', 'velletis', 'vellent'],
+    imper: null, partPres: 'volens', futPart: null, noPassive: true
+  },
+  nolo: {
+    inf: 'nolle', pres: ['nolo', 'non vis', 'non vult', 'nolumus', 'non vultis', 'nolunt'],
+    impf: ['nolebam', 'nolebas', 'nolebat', 'nolebamus', 'nolebatis', 'nolebant'],
+    fut: ['nolam', 'noles', 'nolet', 'nolemus', 'noletis', 'nolent'],
+    presSubj: ['nolim', 'nolis', 'nolit', 'nolimus', 'nolitis', 'nolint'],
+    impfSubj: ['nollem', 'nolles', 'nollet', 'nollemus', 'nolletis', 'nollent'],
+    imper: ['noli', 'nolite'], partPres: 'nolens', futPart: null, noPassive: true
+  },
+  malo: {
+    inf: 'malle', pres: ['malo', 'mavis', 'mavult', 'malumus', 'mavultis', 'malunt'],
+    impf: ['malebam', 'malebas', 'malebat', 'malebamus', 'malebatis', 'malebant'],
+    fut: ['malam', 'males', 'malet', 'malemus', 'maletis', 'malent'],
+    presSubj: ['malim', 'malis', 'malit', 'malimus', 'malitis', 'malint'],
+    impfSubj: ['mallem', 'malles', 'mallet', 'mallemus', 'malletis', 'mallent'],
+    imper: null, partPres: null, futPart: null, noPassive: true
+  },
+  fio: {
+    inf: 'fieri', pres: ['fio', 'fis', 'fit', 'fimus', 'fitis', 'fiunt'],
+    impf: ['fiebam', 'fiebas', 'fiebat', 'fiebamus', 'fiebatis', 'fiebant'],
+    fut: ['fiam', 'fies', 'fiet', 'fiemus', 'fietis', 'fient'],
+    presSubj: ['fiam', 'fias', 'fiat', 'fiamus', 'fiatis', 'fiant'],
+    impfSubj: ['fierem', 'fieres', 'fieret', 'fieremus', 'fieretis', 'fierent'],
+    imper: ['fi', 'fite'], partPres: null, futPart: null, noPassive: true, depPerfect: 'factus'
+  }
+};
+
+const PERF_ACT = ['i', 'isti', 'it', 'imus', 'istis', 'erunt'];
+const PLUP_ACT = ['eram', 'eras', 'erat', 'eramus', 'eratis', 'erant'];
+const FUTP_ACT = ['ero', 'eris', 'erit', 'erimus', 'eritis', 'erint'];
+const PERF_SUBJ = ['erim', 'eris', 'erit', 'erimus', 'eritis', 'erint'];
+const PLUP_SUBJ = ['issem', 'isses', 'isset', 'issemus', 'issetis', 'issent'];
+const SUM_PRES = ['sum', 'es', 'est', 'sumus', 'estis', 'sunt'];
+const SUM_IMPF = ['eram', 'eras', 'erat', 'eramus', 'eratis', 'erant'];
+const SUM_PSUBJ = ['sim', 'sis', 'sit', 'simus', 'sitis', 'sint'];
+const SUM_ISUBJ = ['essem', 'esses', 'esset', 'essemus', 'essetis', 'essent'];
+
+const NO_FORMS = new Set(['inquam', 'coepi', 'odi', 'memini', 'novi']);
+
+function parseVerb(w) {
+  if (!/^verb/.test(w.p)) return null;
+  if (/phrase/.test(w.p)) return null;
+  if (NO_FORMS.has(w.l)) return null;
+  const lemma = w.l;
+  const raw = (w.n || '').replace(/\(.*?\)/g, '').replace(/\+.*$/, '').trim();
+  const parts = raw.split(',').map(s => s.trim()).filter(Boolean);
+  const semi = /semi/.test(w.p);
+  const perfRaw = parts[1] || '';
+  const looksDep = /^\w+us\s+sum$/.test(perfRaw) && /(ari|eri|iri)$|^[a-z]+i$/.test(parts[0] || '');
+  const dep = (!semi && /\bdep/.test(w.p)) || (!semi && looksDep && /(ari|iri)$/.test(parts[0] || ''));
+  const impers = /impersonal/.test(w.p);
+
+  /* irregulars and their compounds */
+  const irregLike = /irreg/.test(w.p) || /^(ferre|.*ferre)$/.test(parts[0] || '');
+  if (irregLike) for (const key of ['possum', 'sum', 'fero', 'eo', 'volo', 'nolo', 'malo', 'fio']) {
+    if (lemma === key || (lemma.length > key.length && lemma.endsWith(key))) {
+      const prefix = lemma.slice(0, lemma.length - key.length);
+      const base = IRREG_BASE[key];
+      const perf = parts[1] || '';
+      const depPerf = perf.match(/^(\w+us)\s+sum$/);
+      const perfStem = (!depPerf && perf && /i$/.test(perf)) ? perf.slice(0, -1) : null;
+      const ppp = depPerf ? depPerf[1] : (parts[2] ? parts[2].split('/')[0] : null);
+      return {
+        kind: 'irreg', lemma, prefix, base, perfStem, ppp,
+        depPerfect: !!depPerf,
+        suppStem: (!depPerf && ppp && /us$/.test(ppp)) ? ppp.slice(0, -2) : null,
+        dep: false, semi: !!depPerf, impers, meanings: senses(w.m), noPassive: base.noPassive || !ppp || !!depPerf
+      };
+    }
+  }
+
+  const inf = parts[0] || '';
+  if (!inf) return null;
+  const conjM = w.p.match(/verb (\d)/);
+  let conj = conjM ? conjM[1] : null;
+  if (!conj) {
+    if (/are$|ari$/.test(inf)) conj = '1';
+    else if (/ere$/.test(inf)) conj = (/eo$|eor$|et$/.test(lemma)) ? '2' : '3';
+    else if (/ire$|iri$/.test(inf)) conj = '4';
+    else if (/i$/.test(inf)) conj = '3';
+    else return null;
+  }
+  let pstem = null, io = false;
+  if (dep) {
+    if (conj === '1' && /ari$/.test(inf)) pstem = inf.slice(0, -3);
+    else if (conj === '2' && /eri$/.test(inf)) pstem = inf.slice(0, -3);
+    else if (conj === '4' && /iri$/.test(inf)) pstem = inf.slice(0, -3);
+    else if (conj === '3' && /i$/.test(inf)) {
+      if (/ior$/.test(lemma)) { io = true; pstem = inf.slice(0, -1); }
+      else pstem = inf.slice(0, -1);
+    }
+  } else {
+    if (conj === '1' && /are$/.test(inf)) pstem = inf.slice(0, -3);
+    else if (conj === '2' && /ere$/.test(inf)) pstem = inf.slice(0, -3);
+    else if (conj === '4' && /ire$/.test(inf)) pstem = inf.slice(0, -3);
+    else if (conj === '3' && /ere$/.test(inf)) { pstem = inf.slice(0, -3); io = /io$/.test(lemma); }
+  }
+  if (!pstem) return null;
+  const perf = parts[1] || '';
+  let perfStem = null, ppp = null;
+  if (dep || semi) { ppp = perf.replace(/\s+sum$/, '').split('/')[0] || null; if (ppp && !/us$/.test(ppp)) ppp = null; }
+  else {
+    perfStem = /i$/.test(perf) ? perf.slice(0, -1) : null;
+    ppp = parts[2] ? parts[2].split('/')[0] : null;
+  }
+  return {
+    kind: 'reg', lemma, conj, io, pstem, perfStem, ppp,
+    suppStem: (!dep && !semi && ppp && /us$/.test(ppp)) ? ppp.slice(0, -2) : null,
+    dep, semi, impers, meanings: senses(w.m), noPassive: !ppp || dep || semi
+  };
+}
+
+const THEME = {
+  '1': { pres: ['o', 'as', 'at', 'amus', 'atis', 'ant'], presP: ['or', 'aris', 'atur', 'amur', 'amini', 'antur'], impf: 'aba', fut: ['abo', 'abis', 'abit', 'abimus', 'abitis', 'abunt'], futP: ['abor', 'aberis', 'abitur', 'abimur', 'abimini', 'abuntur'], psubj: ['em', 'es', 'et', 'emus', 'etis', 'ent'], psubjP: ['er', 'eris', 'etur', 'emur', 'emini', 'entur'], inf: 'are', infP: 'ari', imper: ['a', 'ate'], part: 'ans', ger: 'and' },
+  '2': { pres: ['eo', 'es', 'et', 'emus', 'etis', 'ent'], presP: ['eor', 'eris', 'etur', 'emur', 'emini', 'entur'], impf: 'eba', fut: ['ebo', 'ebis', 'ebit', 'ebimus', 'ebitis', 'ebunt'], futP: ['ebor', 'eberis', 'ebitur', 'ebimur', 'ebimini', 'ebuntur'], psubj: ['eam', 'eas', 'eat', 'eamus', 'eatis', 'eant'], psubjP: ['ear', 'earis', 'eatur', 'eamur', 'eamini', 'eantur'], inf: 'ere', infP: 'eri', imper: ['e', 'ete'], part: 'ens', ger: 'end' },
+  '3': { pres: ['o', 'is', 'it', 'imus', 'itis', 'unt'], presP: ['or', 'eris', 'itur', 'imur', 'imini', 'untur'], impf: 'eba', fut: ['am', 'es', 'et', 'emus', 'etis', 'ent'], futP: ['ar', 'eris', 'etur', 'emur', 'emini', 'entur'], psubj: ['am', 'as', 'at', 'amus', 'atis', 'ant'], psubjP: ['ar', 'aris', 'atur', 'amur', 'amini', 'antur'], inf: 'ere', infP: 'i', imper: ['e', 'ite'], part: 'ens', ger: 'end' },
+  '3io': { pres: ['io', 'is', 'it', 'imus', 'itis', 'iunt'], presP: ['ior', 'eris', 'itur', 'imur', 'imini', 'iuntur'], impf: 'ieba', fut: ['iam', 'ies', 'iet', 'iemus', 'ietis', 'ient'], futP: ['iar', 'ieris', 'ietur', 'iemur', 'iemini', 'ientur'], psubj: ['iam', 'ias', 'iat', 'iamus', 'iatis', 'iant'], psubjP: ['iar', 'iaris', 'iatur', 'iamur', 'iamini', 'iantur'], inf: 'ere', infP: 'i', imper: ['e', 'ite'], part: 'iens', ger: 'iend' },
+  '4': { pres: ['io', 'is', 'it', 'imus', 'itis', 'iunt'], presP: ['ior', 'iris', 'itur', 'imur', 'imini', 'iuntur'], impf: 'ieba', fut: ['iam', 'ies', 'iet', 'iemus', 'ietis', 'ient'], futP: ['iar', 'ieris', 'ietur', 'iemur', 'iemini', 'ientur'], psubj: ['iam', 'ias', 'iat', 'iamus', 'iatis', 'iant'], psubjP: ['iar', 'iaris', 'iatur', 'iamur', 'iamini', 'iantur'], inf: 'ire', infP: 'iri', imper: ['i', 'ite'], part: 'iens', ger: 'iend' }
+};
+const IMPF_END = ['m', 's', 't', 'mus', 'tis', 'nt'];
+const IMPF_ENDP = ['r', 'ris', 'tur', 'mur', 'mini', 'ntur'];
+const IRREG_IMPER = { dico: ['dic', 'dicite'], duco: ['duc', 'ducite'], facio: ['fac', 'facite'] };
+
+function pppAgree(ppp, num, gender) {
+  const s = ppp.slice(0, -2);
+  if (num === 'sg') return gender === 'f' ? s + 'a' : gender === 'n' ? s + 'um' : s + 'us';
+  return gender === 'f' ? s + 'ae' : gender === 'n' ? s + 'a' : s + 'i';
+}
+
+/* Build the full finite paradigm as a list of {form, tense, voice, mood, person} */
+function verbParadigm(v, opts) {
+  opts = opts || {};
+  const out = [];
+  const push = (form, tense, voice, mood, pi) => { if (form) out.push({ form, tense, voice, mood, person: PERSONS[pi] }); };
+  const P = v.prefix || '';
+
+  if (v.kind === 'irreg') {
+    const b = v.base;
+    for (let i = 0; i < 6; i++) {
+      push(P + b.pres[i], 'present', 'active', 'indicative', i);
+      push(P + b.impf[i], 'imperfect', 'active', 'indicative', i);
+      push(P + b.fut[i], 'future', 'active', 'indicative', i);
+      push(P + b.presSubj[i], 'present', 'active', 'subjunctive', i);
+      push(P + b.impfSubj[i], 'imperfect', 'active', 'subjunctive', i);
+      if (v.perfStem) {
+        push(v.perfStem + PERF_ACT[i], 'perfect', 'active', 'indicative', i);
+        push(v.perfStem + PLUP_ACT[i], 'pluperfect', 'active', 'indicative', i);
+        push(v.perfStem + FUTP_ACT[i], 'future perfect', 'active', 'indicative', i);
+        push(v.perfStem + PERF_SUBJ[i], 'perfect', 'active', 'subjunctive', i);
+        push(v.perfStem + PLUP_SUBJ[i], 'pluperfect', 'active', 'subjunctive', i);
+      }
+      if (b.presPass && !v.noPassive) push(P + b.presPass[i], 'present', 'passive', 'indicative', i);
+      if (v.depPerfect && v.ppp) {
+        const pp = pppAgree(v.ppp, i < 3 ? 'sg' : 'pl', 'm');
+        push(pp + ' ' + SUM_PRES[i], 'perfect', 'active', 'indicative', i);
+        push(pp + ' ' + SUM_IMPF[i], 'pluperfect', 'active', 'indicative', i);
+        push(pp + ' ' + SUM_PSUBJ[i], 'perfect', 'active', 'subjunctive', i);
+        push(pp + ' ' + SUM_ISUBJ[i], 'pluperfect', 'active', 'subjunctive', i);
+      }
+    }
+    return out;
+  }
+
+  const key = v.io ? '3io' : v.conj;
+  const T = THEME[key];
+  const s = v.pstem;
+  const dep = v.dep;
+
+  for (let i = 0; i < 6; i++) {
+    if (v.impers && i !== 2) continue;
+    if (dep) {
+      push(s + T.presP[i], 'present', 'active', 'indicative', i);
+      push(s + T.impf + IMPF_ENDP[i], 'imperfect', 'active', 'indicative', i);
+      push(s + T.futP[i], 'future', 'active', 'indicative', i);
+      push(s + T.psubjP[i], 'present', 'active', 'subjunctive', i);
+      push(s + T.inf + IMPF_ENDP[i], 'imperfect', 'active', 'subjunctive', i);
+    } else {
+      push(s + T.pres[i], 'present', 'active', 'indicative', i);
+      push(s + T.impf + IMPF_END[i], 'imperfect', 'active', 'indicative', i);
+      push(s + T.fut[i], 'future', 'active', 'indicative', i);
+      push(s + T.psubj[i], 'present', 'active', 'subjunctive', i);
+      push(s + T.inf + IMPF_END[i], 'imperfect', 'active', 'subjunctive', i);
+      if (v.perfStem) {
+        push(v.perfStem + PERF_ACT[i], 'perfect', 'active', 'indicative', i);
+        push(v.perfStem + PLUP_ACT[i], 'pluperfect', 'active', 'indicative', i);
+        push(v.perfStem + FUTP_ACT[i], 'future perfect', 'active', 'indicative', i);
+        push(v.perfStem + PERF_SUBJ[i], 'perfect', 'active', 'subjunctive', i);
+        push(v.perfStem + PLUP_SUBJ[i], 'pluperfect', 'active', 'subjunctive', i);
+      }
+      if (!v.noPassive && !v.semi) {
+        push(s + T.presP[i], 'present', 'passive', 'indicative', i);
+        push(s + T.impf + IMPF_ENDP[i], 'imperfect', 'passive', 'indicative', i);
+        push(s + T.futP[i], 'future', 'passive', 'indicative', i);
+        push(s + T.psubjP[i], 'present', 'passive', 'subjunctive', i);
+        push(s + T.inf + IMPF_ENDP[i], 'imperfect', 'passive', 'subjunctive', i);
+      }
+    }
+    /* compound perfects (deponent, semi-deponent, and true passives) */
+    if (v.ppp && /us$/.test(v.ppp)) {
+      const num = i < 3 ? 'sg' : 'pl';
+      const pp = pppAgree(v.ppp, num, 'm');
+      const voice = (dep || v.semi) ? 'active' : 'passive';
+      push(pp + ' ' + SUM_PRES[i], 'perfect', voice, 'indicative', i);
+      push(pp + ' ' + SUM_IMPF[i], 'pluperfect', voice, 'indicative', i);
+      push(pp + ' ' + SUM_PSUBJ[i], 'perfect', voice, 'subjunctive', i);
+      push(pp + ' ' + SUM_ISUBJ[i], 'pluperfect', voice, 'subjunctive', i);
+    }
+  }
+  return out;
+}
+
+function verbNonFinite(v) {
+  const out = [];
+  if (v.impers) {
+    const key0 = v.io ? '3io' : v.conj;
+    if (v.kind === 'reg') out.push({ form: v.pstem + THEME[key0].inf, label: 'present active infinitive' });
+    return out;
+  }
+  if (v.kind === 'irreg') {
+    const P = v.prefix || '';
+    out.push({ form: P + v.base.inf, label: 'present active infinitive' });
+    if (v.perfStem) out.push({ form: v.perfStem + 'isse', label: 'perfect active infinitive' });
+    if (v.depPerfect && v.ppp) out.push({ form: v.ppp + ' esse', label: 'perfect infinitive (active meaning)' });
+    if (v.base.partPres) out.push({ form: P + v.base.partPres, label: 'present active participle' });
+    if (v.ppp) out.push({ form: v.ppp, label: 'perfect passive participle' });
+    if (v.base.imper) { out.push({ form: P + v.base.imper[0], label: 'imperative singular' }); out.push({ form: P + v.base.imper[1], label: 'imperative plural' }); }
+    return out;
+  }
+  const key = v.io ? '3io' : v.conj;
+  const T = THEME[key], s = v.pstem;
+  if (v.dep) {
+    out.push({ form: s + T.infP, label: 'present infinitive (deponent)' });
+    if (v.ppp) out.push({ form: v.ppp.replace(/us$/, 'us') + ' esse', label: 'perfect infinitive (deponent)' });
+    out.push({ form: s + T.part, label: 'present participle' });
+    if (v.ppp) out.push({ form: v.ppp, label: 'perfect participle (active meaning)' });
+    out.push({ form: s + (v.conj === '1' ? 'are' : v.conj === '2' ? 'ere' : v.conj === '4' ? 'ire' : 'ere'), label: 'imperative singular (deponent)' });
+    out.push({ form: s + T.presP[4], label: 'imperative plural (deponent)' });
+  } else {
+    out.push({ form: s + T.inf, label: 'present active infinitive' });
+    if (!v.noPassive && !v.semi) out.push({ form: s + T.infP, label: 'present passive infinitive' });
+    if (v.perfStem) out.push({ form: v.perfStem + 'isse', label: 'perfect active infinitive' });
+    if (v.ppp) out.push({ form: v.ppp + ' esse', label: v.semi ? 'perfect infinitive (active meaning)' : 'perfect passive infinitive' });
+    if (v.suppStem && !v.semi) out.push({ form: v.suppStem + 'urus esse', label: 'future active infinitive' });
+    out.push({ form: s + T.part, label: 'present active participle' });
+    if (v.ppp) out.push({ form: v.ppp, label: v.semi ? 'perfect participle (active meaning)' : 'perfect passive participle' });
+    if (v.suppStem && !v.semi) out.push({ form: v.suppStem + 'urus', label: 'future active participle' });
+    const ir = IRREG_IMPER[v.lemma];
+    out.push({ form: ir ? ir[0] : s + T.imper[0], label: 'imperative singular' });
+    out.push({ form: ir ? ir[1] : s + T.imper[1], label: 'imperative plural' });
+  }
+  out.push({ form: s + T.ger + 'um', label: 'gerund (accusative)' });
+  out.push({ form: s + T.ger + 'us', label: 'gerundive' });
+  return out;
+}
+
+/* English rendering of a finite verb form (indicative only) */
+function englishVerb(v, spec) {
+  if (spec.mood !== 'indicative') return null;
+  const sense = v.meanings[0];
+  if (!sense) return null;
+  const { head, tail } = verbSense(sense);
+  if (!head) return null;
+  const e = engParts(head);
+  const i = PERSONS.indexOf(spec.person);
+  const sg3 = i === 2;
+  const pl = i >= 3;
+  const pro = PRONOUN[i];
+  const t = tail ? ' ' + tail : '';
+  const be = sg3 ? 'is' : (i === 0 ? 'am' : 'are');
+  const bePast = (sg3 || i === 0) ? 'was' : 'were';
+  const isBe = head === 'be';
+  const outs = [];
+  const V = pl || !sg3 ? e.base : e.s3;
+  if (spec.voice === 'active') {
+    switch (spec.tense) {
+      case 'present':
+        outs.push(`${pro} ${V}${t}`);
+        if (!isBe) outs.push(`${pro} ${be} ${e.ing}${t}`, `${pro} do ${e.base}${t}`.replace('he do', 'he does'));
+        break;
+      case 'imperfect':
+        if (isBe) outs.push(`${pro} ${bePast}${t}`);
+        else outs.push(`${pro} ${bePast} ${e.ing}${t}`, `${pro} used to ${e.base}${t}`, `${pro} ${e.past}${t}`);
+        break;
+      case 'future': outs.push(`${pro} will ${e.base}${t}`, `${pro} shall ${e.base}${t}`); break;
+      case 'perfect':
+        outs.push(`${pro} ${isBe ? bePast : e.past}${t}`);
+        if (!isBe) outs.push(`${pro} ${sg3 ? 'has' : 'have'} ${e.pp}${t}`, `${pro} did ${e.base}${t}`);
+        else outs.push(`${pro} ${sg3 ? 'has' : 'have'} been${t}`);
+        break;
+      case 'pluperfect': outs.push(`${pro} had ${isBe ? 'been' : e.pp}${t}`); break;
+      case 'future perfect': outs.push(`${pro} will have ${isBe ? 'been' : e.pp}${t}`); break;
+    }
+  } else {
+    switch (spec.tense) {
+      case 'present': outs.push(`${pro} ${be} ${e.pp}${t}`, `${pro} ${be} being ${e.pp}${t}`); break;
+      case 'imperfect': outs.push(`${pro} ${bePast} being ${e.pp}${t}`, `${pro} ${bePast} ${e.pp}${t}`); break;
+      case 'future': outs.push(`${pro} will be ${e.pp}${t}`); break;
+      case 'perfect': outs.push(`${pro} ${bePast} ${e.pp}${t}`, `${pro} ${sg3 ? 'has' : 'have'} been ${e.pp}${t}`); break;
+      case 'pluperfect': outs.push(`${pro} had been ${e.pp}${t}`); break;
+      case 'future perfect': outs.push(`${pro} will have been ${e.pp}${t}`); break;
+    }
+  }
+  return outs;
+}
+
+/* accept he / she / it / they interchangeably where person allows */
+function expandPronouns(list, person) {
+  const set = new Set();
+  for (const s of list) {
+    set.add(s);
+    if (person === '3sg') { set.add(s.replace(/^he\b/, 'she')); set.add(s.replace(/^he\b/, 'it')); }
+    if (person === '2sg' || person === '2pl') set.add(s.replace(/\s*\(pl\)/, ''));
+  }
+  return [...set];
+}
+
+/* English gloss for a noun case/number, for E2L prompts */
+function englishNoun(meaning, cs, num) {
+  const base = senses(meaning)[0] || meaning;
+  const plural = num === 'pl' ? pluralise(base) : base;
+  const art = num === 'pl' ? 'the ' : 'the ';
+  switch (cs) {
+    case 'nom': return art + plural;
+    case 'acc': return art + plural;
+    case 'gen': return 'of ' + art + plural;
+    case 'dat': return 'to/for ' + art + plural;
+    case 'abl': return 'by/with/from ' + art + plural;
+  }
+}
+const PLUR_IRR = { man: 'men', woman: 'women', child: 'children', foot: 'feet', tooth: 'teeth', person: 'people', mouse: 'mice', goose: 'geese', ox: 'oxen', wife: 'wives', life: 'lives', thief: 'thieves', leaf: 'leaves' };
+const ALREADY_PL = new Set(['men', 'women', 'children', 'people', 'feet', 'teeth', 'troops', 'arms', 'forces', 'riches', 'gods', 'walls', 'camp', 'news', 'series']);
+function pluraliseWord(w) {
+  const k = w.toLowerCase();
+  if (ALREADY_PL.has(k)) return w;
+  if (PLUR_IRR[k]) return PLUR_IRR[k];
+  if (/(s|x|z|ch|sh)$/.test(w)) return w + 'es';
+  if (/[^aeiou]y$/.test(w)) return w.slice(0, -1) + 'ies';
+  if (/fe$/.test(w)) return w.slice(0, -2) + 'ves';
+  if (/[^f]f$/.test(w)) return w.slice(0, -1) + 'ves';
+  return w + 's';
+}
+function pluralise(n) {
+  const w = n.trim();
+  /* 'column of men' -> 'columns of men' */
+  const m = w.match(/^(\S+)(\s+(?:of|in|to|for)\s+.+)$/i);
+  if (m) return pluraliseWord(m[1]) + m[2];
+  const parts = w.split(/\s+/);
+  parts[parts.length - 1] = pluraliseWord(parts[parts.length - 1]);
+  return parts.join(' ');
+}
+
+const M = {
+  GRADABLE, parseNoun, nounForm, nounParadigm, parseAdj, adjForm, adjDegrees, adjAdverb,
+  parseVerb, verbParadigm, verbNonFinite, englishVerb, englishNoun, expandPronouns,
+  senses, norm, lev, engParts, PERSONS, CASES, CASE_NAME, NUM_NAME, pluralise
+};
+
+</script>
+<script>
+/* ============================================================
+   app.js — AS Latin Vocabulary trainer
+   ============================================================ */
+(function () {
+'use strict';
+
+/* ---------- word index ---------- */
+const WORDS = [];
+VOCAB.forEach(t => t.w.forEach((w, i) => {
+  const o = Object.assign({}, w);
+  o.test = t.t; o.id = t.t + ':' + i;
+  o.noun = M.parseNoun(o); o.adj = M.parseAdj(o); o.verb = M.parseVerb(o);
+  o.senses = M.senses(o.m);
+  WORDS.push(o);
+}));
+const BY_TEST = {};
+WORDS.forEach(w => { (BY_TEST[w.test] = BY_TEST[w.test] || []).push(w); });
+const TESTS = Object.keys(BY_TEST).map(Number).sort((a, b) => a - b);
+
+/* words that share a sense: 'the master' is dominus or magister, both right */
+const SENSE_INDEX = new Map();
+WORDS.forEach(w => w.senses.forEach(sn => {
+  const k = M.norm(sn);
+  if (!k) return;
+  if (!SENSE_INDEX.has(k)) SENSE_INDEX.set(k, []);
+  SENSE_INDEX.get(k).push(w);
+}));
+/* every word that can legitimately answer this English, w first, capped */
+function synonymsOf(w, sense, ok) {
+  const list = SENSE_INDEX.get(M.norm(sense)) || [];
+  const out = [w];
+  for (const x of list) if (x !== w && ok(x) && out.length < 5) out.push(x);
+  return out;
+}
+function alsoNote(alts) {
+  const rest = alts.slice(1);
+  return rest.length ? ' <span class="muted">(also accepted: ' + rest.map(x => esc(x)).join(', ') + ')</span>' : '';
+}
+
+const ANIMATE = /\b(man|men|woman|women|boy|girl|child|children|soldier|king|queen|citizen|slave|enemy|general|leader|sailor|farmer|master|mistress|friend|son|daughter|father|mother|parent|god|goddess|guard|messenger|horseman|cavalry|youth|crowd|army|people|senator|consul|commander|inhabitant|prisoner|hostage|companion|comrade|allies|ally|brother|sister|husband|wife|priest|poet|witness|servant|guest|host|troops|band|legion|centurion|sentry|survivor|dog|horse|animal|bird)\b/i;
+
+/* ---------- storage ---------- */
+const KEY = 'aslatin.v1';
+let store = { stats: {}, flags: [], queries: [], settings: {}, done: {} };
+try { const raw = localStorage.getItem(KEY); if (raw) store = Object.assign(store, JSON.parse(raw)); } catch (e) {}
+if (!store.queries) store.queries = [];
+function save() { try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) {} }
+function bump(id, right) {
+  const s = store.stats[id] = store.stats[id] || { r: 0, w: 0 };
+  if (right) s.r++; else s.w++;
+  save();
+}
+function weakness(id) { const s = store.stats[id]; if (!s) return 0.5; return (s.w + 0.5) / (s.r + s.w + 1); }
+
+/* ---------- helpers ---------- */
+const $ = s => document.querySelector(s);
+const el = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html !== undefined) e.innerHTML = html; return e; };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));[a[i], a[j]] = [a[j], a[i]]; } return a; }
+const pick = a => a[Math.floor(Math.random() * a.length)];
+function sample(a, n) { return shuffle(a).slice(0, n); }
+function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+/* ---------- answer checking ---------- */
+function checkText(given, accepted) {
+  const g = M.norm(given);
+  if (!g) return { ok: false };
+  for (const a of accepted) if (M.norm(a) === g) return { ok: true };
+  for (const a of accepted) if (M.lev(M.norm(a), g) === 1) return { ok: true, close: true };
+  return { ok: false };
+}
+/* multi-word Latin answers: accept any word order */
+function checkWords(given, accepted) {
+  const key = s => M.norm(s).split(' ').filter(Boolean).sort().join(' ');
+  const g = key(given);
+  if (!g) return { ok: false };
+  for (const a of accepted) if (key(a) === g) return { ok: true };
+  for (const a of accepted) if (M.lev(key(a), g) === 1) return { ok: true, close: true };
+  return { ok: false };
+}
+/* basic test: every meaning must be there, in any order */
+function checkAllMeanings(given, senses) {
+  const parts = given.split(/[,;/]|\band\b/).map(s => M.norm(s)).filter(Boolean);
+  /* each sense may be answered in full or with the parenthesis dropped */
+  const want = senses.map(sense => {
+    const full = M.norm(sense);
+    const bare = M.norm(sense.replace(/\(.*?\)/g, ' '));
+    const noTo = bare.replace(/^to /, '');
+    return { label: sense.trim(), forms: [...new Set([full, bare, noTo])].filter(Boolean) };
+  });
+  const missing = [], used = new Set();
+  let close = false;
+  const eq = (a, b) => a === b || a === b.replace(/^to /, '') || b === a.replace(/^to /, '');
+  for (const w of want) {
+    let hit = -1;
+    for (let i = 0; i < parts.length && hit < 0; i++) {
+      if (used.has(i)) continue;
+      if (w.forms.some(f => eq(parts[i], f))) hit = i;
+    }
+    if (hit < 0) for (let i = 0; i < parts.length && hit < 0; i++) {
+      if (used.has(i)) continue;
+      if (w.forms.some(f => M.lev(parts[i], f) <= 1)) { hit = i; close = true; }
+    }
+    if (hit < 0) missing.push(w.label); else used.add(hit);
+  }
+  return { ok: missing.length === 0, close, missing };
+}
+/* principal parts / notes */
+function checkNotes(given, notes) {
+  const clean = s => M.norm(s.replace(/\(.*?\)/g, ' ').replace(/\+.*$/, ' '));
+  const g = clean(given), w = clean(notes);
+  if (!g) return { ok: false };
+  if (g === w) return { ok: true };
+  if (M.lev(g, w) <= 1) return { ok: true, close: true };
+  /* allow the gender letter to be dropped from a noun's parts */
+  const wNoGender = w.replace(/\b(m|f|n)\b/g, '').replace(/\s+/g, ' ').trim();
+  if (g === wNoGender) return { ok: true, partial: 'gender' };
+  return { ok: false };
+}
+
+/* ============================================================
+   QUESTION GENERATORS
+   ============================================================ */
+
+/* --- 2. basic: meanings --- */
+function qBasic(w) {
+  if (!w.senses.length) return null;
+  const many = w.senses.length > 1;
+  return {
+    type: 'text', word: w, kind: 'Meaning',
+    prompt: w.l, promptClass: '',
+    sub: many ? 'Give <b>all ' + w.senses.length + '</b> meanings, separated by commas. Order does not matter.' : 'Give the meaning.',
+    check: g => checkAllMeanings(g, w.senses),
+    show: w.senses.join(', '),
+    extra: w.n ? '<i>' + esc(w.n) + '</i> &middot; ' + esc(w.p) : esc(w.p)
+  };
+}
+
+/* --- 3. advanced: meanings + principal parts --- */
+function qAdvanced(w) {
+  if (!w.n || /indeclinable/i.test(w.n) || /^\s*\+/.test(w.n) || !/[a-z]{3}/i.test(w.n.replace(/\b(acc|abl|dat|gen|m|f|n|pl)\b/g, ''))) return qBasic(w);
+  const isVerb = /^verb/.test(w.p);
+  return {
+    type: 'two', word: w, kind: 'Meaning and parts',
+    prompt: w.l,
+    sub: isVerb ? 'Give the remaining principal parts, then all the meanings.' : 'Give the rest of the dictionary entry, then all the meanings.',
+    fields: [
+      { label: isVerb ? 'Principal parts' : 'Genitive and gender', ph: isVerb ? 'e.g. agere, egi, actus' : 'e.g. militis, m', check: g => checkNotes(g, w.n), show: w.n },
+      { label: 'Meaning' + (w.senses.length > 1 ? 's (all ' + w.senses.length + ')' : ''), ph: 'e.g. do, act, drive', check: g => checkAllMeanings(g, w.senses), show: w.senses.join(', ') }
+    ],
+    show: w.n + ' — ' + w.senses.join(', ')
+  };
+}
+
+/* --- 4. super-advanced: forms --- */
+const TENSES = ['present', 'imperfect', 'future', 'perfect', 'pluperfect', 'future perfect'];
+const PERSON_LABEL = { '1sg': '1st singular', '2sg': '2nd singular', '3sg': '3rd singular', '1pl': '1st plural', '2pl': '2nd plural', '3pl': '3rd plural' };
+
+function verbTranslateQ(w) {
+  const v = w.verb; if (!v || v.impers) return null;
+  const pd = M.verbParadigm(v).filter(x => x.mood === 'indicative' && TENSES.indexOf(x.tense) >= 0);
+  if (!pd.length) return null;
+  const cands = pd.filter(x => M.englishVerb(v, x));
+  if (!cands.length) return null;
+  const act = cands.filter(x => x.voice === 'active');
+  const spec = (act.length && Math.random() < 0.78) ? pick(act) : pick(cands);
+  const eng = M.expandPronouns(M.englishVerb(v, spec), spec.person);
+  return {
+    type: 'text', word: w, kind: 'Translate the form', form: spec.form,
+    prompt: spec.form,
+    sub: 'Translate this form into English.',
+    check: g => checkText(g, eng),
+    show: eng[0],
+    extra: PERSON_LABEL[spec.person] + ' ' + spec.tense + ' ' + spec.voice + ' &middot; <b>' + esc(w.l) + '</b>, ' + esc(w.senses.join(', ')),
+    flagKey: w.l + ' → ' + spec.form + ' (' + spec.tense + ' ' + spec.voice + ' ' + spec.person + ')'
+  };
+}
+
+function verbParseQ(w) {
+  const v = w.verb; if (!v) return null;
+  const pd = M.verbParadigm(v);
+  if (!pd.length) return null;
+  const spec = pick(pd);
+  /* every analysis that produces the same form is acceptable */
+  const valid = pd.filter(x => x.form === spec.form);
+  return {
+    type: 'parse-verb', word: w, kind: 'Parse the form', form: spec.form,
+    prompt: spec.form,
+    sub: 'Give the person, number, tense, voice and mood. (<b>' + esc(w.l) + '</b>, ' + esc(w.senses[0] || '') + ')',
+    valid,
+    show: valid.map(x => PERSON_LABEL[x.person] + ', ' + x.tense + ', ' + x.voice + ', ' + x.mood).join('  /  '),
+    flagKey: w.l + ' → ' + spec.form
+  };
+}
+
+function nounParseQ(w) {
+  const n = w.noun; if (!n) return null;
+  const pd = M.nounParadigm(n);
+  if (!pd.length) return null;
+  const spec = pick(pd);
+  const valid = pd.filter(x => x.form === spec.form);
+  return {
+    type: 'parse-noun', word: w, kind: 'Case and number', form: spec.form,
+    prompt: spec.form,
+    sub: 'Which case and number? (<b>' + esc(w.l) + '</b>, ' + esc(w.senses[0] || '') + ')',
+    valid,
+    show: valid.map(x => M.CASE_NAME[x.cs] + ' ' + M.NUM_NAME[x.num]).join('  /  '),
+    flagKey: w.l + ' → ' + spec.form
+  };
+}
+
+function nonFiniteQ(w) {
+  const v = w.verb; if (!v) return null;
+  const nf = M.verbNonFinite(v).filter(x => x.form && !/gerund/.test(x.label));
+  if (nf.length < 2) return null;
+  const spec = pick(nf);
+  const distractors = sample(['present active infinitive', 'perfect active infinitive', 'present passive infinitive', 'perfect passive participle', 'present active participle', 'future active participle', 'imperative singular', 'imperative plural', 'gerundive'].filter(l => l !== spec.label), 3);
+  return {
+    type: 'choice', word: w, kind: 'Name the form', form: spec.form,
+    prompt: spec.form,
+    sub: 'What form is this? (<b>' + esc(w.l) + '</b>, ' + esc(w.senses[0] || '') + ')',
+    options: shuffle([spec.label].concat(distractors)),
+    answer: spec.label,
+    show: spec.label,
+    flagKey: w.l + ' → ' + spec.form
+  };
+}
+
+function adjDegreeQ(w) {
+  const a = w.adj; if (!a || !a.gradable) return null;
+  const d = M.adjDegrees(a);
+  const which = Math.random() < 0.5 ? 'comparative' : 'superlative';
+  const eng = w.senses[0] || '';
+  return {
+    type: 'text', word: w, kind: 'Degree',
+    prompt: w.l,
+    sub: 'Give the <b>' + which + '</b> (masculine nominative singular).',
+    check: g => checkText(g, [which === 'comparative' ? d.comp : d.sup]),
+    show: which === 'comparative' ? d.comp : d.sup,
+    extra: esc(eng) + ' &middot; comparative <b>' + d.comp + '</b>, superlative <b>' + d.sup + '</b>, adverb <b>' + M.adjAdverb(a) + '</b>',
+    flagKey: w.l + ' ' + which
+  };
+}
+
+function formsQuestion(w) {
+  const gens = [];
+  if (w.verb) { gens.push(verbTranslateQ, verbTranslateQ, verbParseQ, nonFiniteQ); }
+  if (w.noun) { gens.push(nounParseQ, nounParseQ); }
+  if (w.adj && w.adj.gradable) gens.push(adjDegreeQ);
+  if (!gens.length) return null;
+  for (const g of shuffle(gens)) { const q = g(w); if (q) return q; }
+  return null;
+}
+
+/* --- 5. super-advanced squared: English into Latin --- */
+function e2lVerbQ(w) {
+  const v = w.verb; if (!v || v.impers) return null;
+  const pd = M.verbParadigm(v).filter(x => x.mood === 'indicative' && TENSES.indexOf(x.tense) >= 0 && x.voice === 'active');
+  const cands = pd.filter(x => M.englishVerb(v, x));
+  if (!cands.length) return null;
+  const spec = pick(cands);
+  const eng = M.englishVerb(v, spec)[0];
+  const syn = synonymsOf(w, w.senses[0], x => x.verb && !x.verb.impers);
+  const accepted = [];
+  syn.forEach(x => M.verbParadigm(x.verb)
+    .filter(y => y.tense === spec.tense && y.person === spec.person && y.voice === spec.voice && y.mood === spec.mood)
+    .forEach(y => accepted.push(y.form)));
+  if (!accepted.length) accepted.push(spec.form);
+  return {
+    type: 'text', word: w, kind: 'English into Latin', latin: true,
+    prompt: cap(eng), promptClass: 'en',
+    sub: 'Put into Latin. (<b>' + esc(w.l) + '</b> &middot; ' + spec.tense + ', ' + PERSON_LABEL[spec.person] + ')',
+    check: g => checkWords(g, accepted),
+    show: spec.form,
+    extra: alsoNote(accepted),
+    flagKey: 'E2L ' + w.l + ' ' + spec.tense + ' ' + spec.person
+  };
+}
+
+function nounSlot(w, cs, num) {
+  const syn = synonymsOf(w, w.senses[0], x => x.noun && !(x.noun.pluralOnly && num === 'sg'));
+  const out = [];
+  syn.forEach(x => { const f = M.nounForm(x.noun, cs, num); if (f) f.forEach(y => { if (y && out.indexOf(y) < 0) out.push(y); }); });
+  return out.length ? out : [];
+}
+
+function e2lNounQ(w) {
+  const n = w.noun; if (!n) return null;
+  const pd = M.nounParadigm(n).filter(x => x.cs !== 'nom');
+  if (!pd.length) return null;
+  const spec = pick(pd);
+  const accepted = nounSlot(w, spec.cs, spec.num);
+  return {
+    type: 'text', word: w, kind: 'English into Latin', latin: true,
+    prompt: cap(M.englishNoun(w.m, spec.cs, spec.num)), promptClass: 'en',
+    sub: 'Put into Latin. (<b>' + esc(w.l) + ', ' + esc(w.n) + '</b> &middot; ' + M.CASE_NAME[spec.cs] + ' ' + M.NUM_NAME[spec.num] + ')',
+    check: g => checkWords(g, accepted),
+    show: (spec.alts && spec.alts.length ? spec.alts : [spec.form]).join(' / '),
+    extra: alsoNote(accepted),
+    flagKey: 'E2L ' + w.l + ' ' + spec.cs + spec.num
+  };
+}
+
+function e2lPhraseQ(w, pool) {
+  const n = w.noun; if (!n) return null;
+  const adjs = pool.filter(x => x.adj && !x.adj.pluralOnly && x.senses.length && M.GRADABLE.has(x.adj.lemma));
+  if (!adjs.length) return null;
+  const a = pick(adjs);
+  const num = n.pluralOnly ? 'pl' : pick(['sg', 'pl']);
+  const cs = pick(['nom', 'acc', 'gen', 'dat', 'abl']);
+  const nf = M.nounForm(n, cs, num); if (!nf || !nf[0]) return null;
+  const af = M.adjForm(a.adj, cs, num, n.gender); if (!af) return null;
+  const adjEng = (a.senses[0] || '').split('(')[0].trim();
+  const nounEng = M.englishNoun(w.m, cs, num);
+  const eng = nounEng.replace(/\bthe\b/, 'the ' + adjEng);
+  const nounForms = nounSlot(w, cs, num).length ? nounSlot(w, cs, num) : nf;
+  const adjSyn = synonymsOf(a, adjEng, x => x.adj && !x.adj.pluralOnly);
+  const adjForms = [];
+  adjSyn.forEach(x => { const f = M.adjForm(x.adj, cs, num, n.gender); if (f && adjForms.indexOf(f) < 0) adjForms.push(f); });
+  const accepted = [];
+  for (const form of nounForms) for (const aj of adjForms) { accepted.push(aj + ' ' + form); accepted.push(form + ' ' + aj); }
+  return {
+    type: 'text', word: w, kind: 'English into Latin', latin: true,
+    prompt: cap(eng), promptClass: 'en',
+    sub: 'Put into Latin, making the adjective agree. (<b>' + esc(w.l) + '</b> &middot; <b>' + esc(a.l) + '</b> &middot; ' + M.CASE_NAME[cs] + ' ' + M.NUM_NAME[num] + ')',
+    check: g => checkWords(g, accepted),
+    show: af + ' ' + nf[0],
+    flagKey: 'E2L phrase ' + a.l + ' + ' + w.l + ' ' + cs + num
+  };
+}
+
+function e2lPrepQ(w, pool) {
+  const preps = pool.filter(x => /prep/.test(x.p) && /\+\s*(acc|abl)/.test(x.n || ''));
+  const nouns = pool.filter(x => x.noun && /^[a-z-]+$/i.test((x.senses[0] || '').trim()));
+  if (!preps.length || !nouns.length) return null;
+  const p = pick(preps);
+  const n = pick(nouns);
+  const cs = /acc/.test(p.n) ? 'acc' : 'abl';
+  const num = n.noun.pluralOnly ? 'pl' : pick(['sg', 'pl']);
+  const nf = M.nounForm(n.noun, cs, num); if (!nf || !nf[0]) return null;
+  const prepEng = (p.senses[0] || '').trim();
+  const nounEng = M.englishNoun(n.m, 'nom', num);
+  const prepSyn = synonymsOf(p, prepEng, x => /prep/.test(x.p) && new RegExp(cs).test(x.n || ''));
+  const nounForms = nounSlot(n, cs, num).length ? nounSlot(n, cs, num) : nf;
+  const accepted = [];
+  prepSyn.forEach(pp => nounForms.forEach(f => accepted.push(pp.l + ' ' + f)));
+  return {
+    type: 'text', word: n, kind: 'English into Latin', latin: true,
+    prompt: cap(prepEng + ' ' + nounEng), promptClass: 'en',
+    sub: 'Put into Latin. (<b>' + esc(p.l) + '</b> takes the ' + M.CASE_NAME[cs] + ' &middot; <b>' + esc(n.l) + ', ' + esc(n.n) + '</b>)',
+    check: g => checkWords(g, accepted),
+    show: accepted[0],
+    flagKey: 'E2L prep ' + p.l + ' + ' + n.l
+  };
+}
+
+function e2lSentenceQ(pool) {
+  const subs = pool.filter(x => x.noun && !x.noun.pluralOnly && ANIMATE.test(x.m));
+  const verbs = pool.filter(x => x.verb && x.verb.kind === 'reg' && !x.verb.impers && !/\+/.test(x.n || '') && x.senses.length);
+  if (!subs.length || !verbs.length) return null;
+  const s = pick(subs), v = pick(verbs);
+  const num = pick(['sg', 'pl']);
+  const person = num === 'sg' ? '3sg' : '3pl';
+  const pd = M.verbParadigm(v.verb).filter(x => x.mood === 'indicative' && x.voice === 'active' && x.person === person && TENSES.indexOf(x.tense) >= 0);
+  if (!pd.length) return null;
+  const spec = pick(pd);
+  const vEng = M.englishVerb(v.verb, spec); if (!vEng) return null;
+  const sf = M.nounForm(s.noun, 'nom', num); if (!sf || !sf[0]) return null;
+  const sEng = M.englishNoun(s.m, 'nom', num);
+  /* strip the pronoun off the English verb phrase and attach the subject */
+  const vp = vEng[0].replace(/^(he|she|it|they)\s+/, '');
+  /* each slot may be filled by any word of the list that carries the same sense */
+  const slots = [];
+  slots.push(nounSlot(s, 'nom', num).length ? nounSlot(s, 'nom', num) : [sf[0]]);
+  const vSyn = synonymsOf(v, v.senses[0], x => x.verb && !x.verb.impers);
+  const vForms = [];
+  vSyn.forEach(x => M.verbParadigm(x.verb)
+    .filter(y => y.tense === spec.tense && y.person === spec.person && y.voice === 'active' && y.mood === 'indicative')
+    .forEach(y => { if (vForms.indexOf(y.form) < 0) vForms.push(y.form); }));
+  slots.push(vForms.length ? vForms : [spec.form]);
+  const words = [sf[0], spec.form];
+  let objBit = '';
+  const objs = pool.filter(x => x.noun && !ANIMATE.test(x.m) && x.noun.gender !== undefined);
+  if (v.verb.suppStem && objs.length && Math.random() < 0.5) {
+    const o = pick(objs);
+    const onum = o.noun.pluralOnly ? 'pl' : pick(['sg', 'pl']);
+    const of_ = M.nounForm(o.noun, 'acc', onum);
+    if (of_ && of_[0]) {
+      words.push(of_[0]); objBit = ' ' + M.englishNoun(o.m, 'acc', onum);
+      slots.push(nounSlot(o, 'acc', onum).length ? nounSlot(o, 'acc', onum) : [of_[0]]);
+    }
+  }
+  const eng = sEng + ' ' + vp + objBit;
+  const accepted = [];
+  combinations(slots).forEach(combo => permutations(combo).forEach(a => accepted.push(a.join(' '))));
+  return {
+    type: 'text', word: v, kind: 'English into Latin', latin: true,
+    prompt: cap(eng) + '.', promptClass: 'en',
+    sub: 'Put the sentence into Latin. Word order is free. (' + spec.tense + ')',
+    check: g => checkWords(g, accepted),
+    show: words.join(' '),
+    flagKey: 'E2L sentence ' + s.l + ' ' + v.l
+  };
+}
+function combinations(slots) {
+  let out = [[]];
+  for (const opts of slots) {
+    const next = [];
+    for (const base of out) for (const o of opts.slice(0, 4)) { if (next.length < 120) next.push(base.concat([o])); }
+    out = next;
+  }
+  return out;
+}
+function permutations(a) {
+  if (a.length <= 1) return [a];
+  const out = [];
+  for (let i = 0; i < a.length; i++) {
+    const rest = a.slice(0, i).concat(a.slice(i + 1));
+    for (const p of permutations(rest)) out.push([a[i]].concat(p));
+  }
+  return out;
+}
+
+function e2lQuestion(w, pool) {
+  const gens = [];
+  if (w.verb) gens.push(e2lVerbQ, e2lVerbQ);
+  if (w.noun) gens.push(e2lNounQ, x => e2lPhraseQ(x, pool));
+  gens.push(() => e2lPrepQ(w, pool));
+  gens.push(() => e2lSentenceQ(pool));
+  for (const g of shuffle(gens)) { const q = g(w, pool); if (q) return q; }
+  return null;
+}
+
+/* --- 1. flashcards --- */
+function qFlash(w, reverse) {
+  return {
+    type: 'flash', word: w, kind: 'Flashcard',
+    front: reverse ? w.senses.join(', ') : w.l,
+    parts: reverse ? '' : (w.n && !/indeclinable/i.test(w.n) ? w.n : '') + (w.p ? '  ·  ' + w.p : ''),
+    back: reverse ? w.l + (w.n && !/indeclinable/i.test(w.n) ? '  (' + w.n + ')' : '') : w.senses.join(', ')
+  };
+}
+
+/* ============================================================
+   BUILDING A SESSION
+   ============================================================ */
+const MODES = [
+  { id: 'flash', n: 1, t: 'Flashcards', d: 'Latin one side, meanings and parts the other. Rate yourself; anything you miss comes round again.' },
+  { id: 'basic', n: 2, t: 'Basic test', d: 'What must be known: every meaning of the word, given in any order.' },
+  { id: 'advanced', n: 3, t: 'Advanced test', d: 'Meanings plus the principal parts, genitive and gender.' },
+  { id: 'forms', n: 4, t: 'Forms', d: 'Translate and parse real forms: tulit, militibus, acerrimus.' },
+  { id: 'e2l', n: 5, t: 'English into Latin', d: 'Forms, agreeing phrases and short sentences, from English.' },
+  { id: 'mixed', n: 6, t: 'Consolidation', d: 'Everything mixed, weighted towards words you have got wrong before.' }
+];
+
+let state = null;
+
+function poolFor(tests) {
+  const set = new Set(tests);
+  return WORDS.filter(w => set.has(w.test));
+}
+function hasForms(w) { return !!(w.verb || w.noun || (w.adj && w.adj.gradable)); }
+function modeFilter(mode, arr) {
+  if (mode === 'forms' || mode === 'e2l') {
+    const f = arr.filter(hasForms);
+    return f.length >= 6 ? f : arr;
+  }
+  return arr;
+}
+function earlierPool(tests) {
+  const lo = Math.min.apply(null, tests);
+  return WORDS.filter(w => w.test < lo);
+}
+
+function buildQuestions(mode, tests, count, interRatio) {
+  const main = modeFilter(mode, poolFor(tests));
+  const earlier = modeFilter(mode, earlierPool(tests));
+  const nInter = earlier.length ? Math.round(count * interRatio) : 0;
+  const nMain = count - nInter;
+
+  const weighted = (arr, k) => {
+    const scored = arr.map(w => ({ w, s: Math.random() + weakness(w.id) * 0.9 }));
+    scored.sort((a, b) => b.s - a.s);
+    return scored.slice(0, k).map(x => x.w);
+  };
+
+  const chosen = [];
+  const mainPick = mode === 'mixed' ? weighted(main, nMain) : sample(main, nMain);
+  mainPick.forEach(w => chosen.push({ w, inter: false }));
+  if (nInter) weighted(earlier, nInter).forEach(w => chosen.push({ w, inter: true }));
+
+  const pool = poolFor(tests).concat(earlierPool(tests));
+  const out = [];
+  for (const c of shuffle(chosen)) {
+    let q = null, m = mode;
+    if (mode === 'mixed') m = pick(['basic', 'basic', 'advanced', 'forms', 'e2l']);
+    if (m === 'flash') q = qFlash(c.w, false);
+    else if (m === 'basic') q = qBasic(c.w);
+    else if (m === 'advanced') q = qAdvanced(c.w);
+    else if (m === 'forms') q = formsQuestion(c.w) || qBasic(c.w);
+    else if (m === 'e2l') q = e2lQuestion(c.w, pool) || qBasic(c.w);
+    if (!q) q = qBasic(c.w);
+    if (!q) continue;
+    q.inter = c.inter;
+    out.push(q);
+  }
+  return out;
+}
+
+/* ============================================================
+   UI
+   ============================================================ */
+let selected = new Set([1]);
+let mode = 'basic';
+
+function renderChips() {
+  const box = $('#testChips'); box.innerHTML = '';
+  TESTS.forEach(t => {
+    const b = el('button', 'chip', String(t));
+    b.setAttribute('aria-pressed', selected.has(t));
+    if (store.done[t]) b.classList.add('done');
+    b.onclick = () => {
+      if (selected.has(t)) { if (selected.size > 1) selected.delete(t); }
+      else selected.add(t);
+      renderChips(); updateInfo();
+    };
+    box.appendChild(b);
+  });
+}
+function renderModes() {
+  const box = $('#modeGrid'); box.innerHTML = '';
+  MODES.forEach(m => {
+    const b = el('button', 'mode');
+    b.setAttribute('aria-pressed', m.id === mode);
+    b.innerHTML = '<div><span class="n">' + m.n + '</span><span class="t">' + m.t + '</span></div><div class="d">' + m.d + '</div>';
+    b.onclick = () => { mode = m.id; renderModes(); updateInfo(); };
+    box.appendChild(b);
+  });
+}
+function updateInfo() {
+  const tests = [...selected].sort((a, b) => a - b);
+  const pool = poolFor(tests);
+  $('#poolInfo').innerHTML = '<b>' + pool.length + '</b> words selected from test' + (tests.length > 1 ? 's ' : ' ') + rangeText(tests) + '.';
+  const earlier = earlierPool(tests);
+  $('#interNote').innerHTML = earlier.length
+    ? 'Interleaved questions are drawn from the ' + earlier.length + ' words in tests 1&ndash;' + (Math.min.apply(null, tests) - 1) + ', weighted towards ones you have got wrong before.'
+    : 'Nothing earlier to interleave from yet &mdash; pick a later test to switch this on.';
+  $('#startHint').textContent = MODES.find(m => m.id === mode).t + ' · ' + rangeText(tests);
+}
+function rangeText(tests) {
+  if (tests.length === 1) return String(tests[0]);
+  let runs = [], start = tests[0], prev = tests[0];
+  for (let i = 1; i <= tests.length; i++) {
+    if (tests[i] === prev + 1) { prev = tests[i]; continue; }
+    runs.push(start === prev ? String(start) : start + '–' + prev);
+    start = prev = tests[i];
+  }
+  return runs.join(', ');
+}
+
+/* ---------- session ---------- */
+function startSession() {
+  const tests = [...selected].sort((a, b) => a - b);
+  let count = parseInt($('#qCount').value, 10);
+  const inter = parseFloat($('#interleave').value);
+  const poolSize = poolFor(tests).length;
+  if (!count) count = poolSize;
+  count = Math.min(count, poolSize + Math.round(poolSize * inter));
+  const qs = buildQuestions(mode, tests, count, inter);
+  if (!qs.length) return;
+  state = { qs, i: 0, right: 0, wrong: [], tests, mode, again: [], claimed: 0, pupil: $('#pupil').value.trim() };
+  store.settings = { count: $('#qCount').value, inter: $('#interleave').value, pupil: state.pupil };
+  tests.forEach(t => store.done[t] = true);
+  save();
+  show('session');
+  renderQuestion();
+}
+
+function show(which) {
+  ['home', 'session', 'results', 'print', 'teacher'].forEach(id => $('#' + id).classList.toggle('hidden', id !== which));
+  window.scrollTo(0, 0);
+}
+
+function renderQuestion() {
+  const s = state;
+  if (s.i >= s.qs.length) { if (s.again.length) { s.qs = s.qs.concat(s.again); s.again = []; } else return finish(); }
+  const q = s.qs[s.i];
+  $('#progBar').style.width = (100 * s.i / s.qs.length) + '%';
+  $('#runScore').textContent = s.i > 0 ? s.right + ' of ' + s.i + ' so far' : '';
+  const c = $('#qcard'); c.innerHTML = '';
+
+  const head = el('div', 'qhead');
+  head.innerHTML = '<span>Question ' + (s.i + 1) + ' of ' + s.qs.length + '</span>' +
+    '<span class="qtag' + (q.inter ? ' inter' : '') + '">' + (q.inter ? 'Revision &middot; test ' + q.word.test : q.kind) + '</span>';
+  c.appendChild(head);
+
+  if (q.type === 'flash') return renderFlash(c, q);
+
+  c.appendChild(el('div', 'prompt ' + (q.promptClass || ''), esc(q.prompt)));
+  if (q.sub) c.appendChild(el('div', 'sub', q.sub));
+
+  const form = el('form');
+  let inputs = [];
+  if (q.type === 'text') {
+    const inp = el('input'); inp.type = 'text'; inp.autocomplete = 'off'; inp.autocapitalize = 'off'; inp.spellcheck = false;
+    inp.placeholder = q.latin ? 'Type the Latin' : 'Type your answer';
+    form.appendChild(inp); inputs = [inp];
+  } else if (q.type === 'two') {
+    q.fields.forEach(f => {
+      const d = el('div'); d.style.marginBottom = '10px';
+      d.appendChild(el('label', null, f.label));
+      const inp = el('input'); inp.type = 'text'; inp.autocomplete = 'off'; inp.spellcheck = false; inp.placeholder = f.ph;
+      d.appendChild(inp); form.appendChild(d); inputs.push(inp);
+    });
+  } else if (q.type === 'parse-verb') {
+    const g = el('div', 'parse');
+    inputs = [
+      selectOf(g, 'Person & number', ['1sg', '2sg', '3sg', '1pl', '2pl', '3pl'], PERSON_LABEL),
+      selectOf(g, 'Tense', TENSES),
+      selectOf(g, 'Voice', ['active', 'passive']),
+      selectOf(g, 'Mood', ['indicative', 'subjunctive'])
+    ];
+    form.appendChild(g);
+  } else if (q.type === 'parse-noun') {
+    const g = el('div', 'parse');
+    inputs = [selectOf(g, 'Case', M.CASES, M.CASE_NAME), selectOf(g, 'Number', ['sg', 'pl'], M.NUM_NAME)];
+    form.appendChild(g);
+  } else if (q.type === 'choice') {
+    const g = el('div', 'parse');
+    q.options.forEach(o => {
+      const b = el('button', 'btn ghost sm', esc(o)); b.type = 'button';
+      b.onclick = () => grade(q, [o]);
+      g.appendChild(b);
+    });
+    form.appendChild(g);
+  }
+
+  if (q.type !== 'choice') {
+    const bar = el('div'); bar.style.marginTop = '14px';
+    const sub = el('button', 'btn', 'Check'); sub.type = 'submit';
+    bar.appendChild(sub); form.appendChild(bar);
+    form.onsubmit = e => { e.preventDefault(); grade(q, inputs.map(i => i.value)); };
+  }
+  c.appendChild(form);
+  const first = form.querySelector('input,select'); if (first) first.focus();
+}
+
+function selectOf(parent, label, opts, names) {
+  const d = el('div');
+  d.appendChild(el('label', null, label));
+  const sel = el('select');
+  sel.appendChild(el('option', null, '&mdash;'));
+  opts.forEach(o => { const op = el('option', null, names ? (names[o] || o) : o); op.value = o; sel.appendChild(op); });
+  d.appendChild(sel); parent.appendChild(d);
+  return sel;
+}
+
+function grade(q, vals) {
+  const s = state;
+  let res;
+  if (q.type === 'text') res = q.check(vals[0]);
+  else if (q.type === 'two') {
+    const r = q.fields.map((f, i) => f.check(vals[i]));
+    res = { ok: r.every(x => x.ok), close: r.some(x => x.close), parts: r };
+  } else if (q.type === 'parse-verb') {
+    const [p, t, v, m] = vals;
+    res = { ok: q.valid.some(x => x.person === p && x.tense === t && x.voice === v && x.mood === m) };
+  } else if (q.type === 'parse-noun') {
+    const [c, n] = vals;
+    res = { ok: q.valid.some(x => x.cs === c && x.num === n) };
+  } else if (q.type === 'choice') {
+    res = { ok: vals[0] === q.answer };
+  }
+
+  bump(q.word.id, res.ok);
+  if (res.ok) s.right++; else { s.wrong.push(q); if (s.again.length < 6) s.again.push(q); }
+  const typed = (q.type === 'text' || q.type === 'two') ? vals.filter(Boolean).join(' / ').trim() : '';
+
+  const card = $('#qcard');
+  card.querySelectorAll('form button,form input,form select').forEach(e => e.disabled = true);
+  const fb = el('div', 'fb ' + (res.ok ? (res.close ? 'warn' : 'ok') : 'bad'));
+  let msg = res.ok ? (res.close ? 'Right, but check your spelling.' : 'Correct.') : 'Not quite.';
+  if (!res.ok && res.missing && res.missing.length) msg = 'Not everything &mdash; you missed ' + res.missing.map(x => '&ldquo;' + esc(x) + '&rdquo;').join(', ') + '.';
+  fb.innerHTML = '<b>' + msg + '</b><span class="alt">' + esc(q.show) + '</span>' + (q.extra ? '<span class="alt muted">' + q.extra + '</span>' : '');
+  card.appendChild(fb);
+
+  const bar = el('div'); bar.style.marginTop = '14px'; bar.style.display = 'flex'; bar.style.gap = '10px'; bar.style.alignItems = 'center';
+  const next = el('button', 'btn', s.i + 1 >= s.qs.length && !s.again.length ? 'See results' : 'Next');
+  next.onclick = () => { s.i++; renderQuestion(); };
+  bar.appendChild(next);
+  if (!res.ok && typed) {
+    const cl = el('button', 'flag', 'My answer could be right too');
+    cl.onclick = () => {
+      store.queries.push({ q: q.prompt, want: q.show, got: typed, w: q.word.l, t: q.word.test, m: MODES.find(x => x.id === s.mode).t, d: new Date().toISOString().slice(0, 10) });
+      save();
+      s.claimed = (s.claimed || 0) + 1;
+      s.right++;
+      const i = s.wrong.lastIndexOf(q); if (i >= 0) s.wrong.splice(i, 1);
+      const j = s.again.lastIndexOf(q); if (j >= 0) s.again.splice(j, 1);
+      bump(q.word.id, true);
+      fb.className = 'fb warn';
+      fb.innerHTML = '<b>Counted as right, and sent to your teacher to check.</b><span class="alt">You put <b>' + esc(typed) + '</b>; the answer expected was <b>' + esc(q.show) + '</b>.</span>';
+      cl.remove();
+      next.textContent = s.i + 1 >= s.qs.length && !s.again.length ? 'See results' : 'Next';
+    };
+    bar.appendChild(cl);
+  }
+  if (q.flagKey) {
+    const fl = el('button', 'flag', 'This form looks wrong');
+    fl.style.marginLeft = '4px';
+    fl.onclick = () => { store.flags.push({ k: q.flagKey, w: q.word.l, t: q.word.test, d: new Date().toISOString().slice(0, 10) }); save(); fl.textContent = 'Flagged, thank you'; fl.disabled = true; };
+    bar.appendChild(fl);
+  }
+  card.appendChild(bar);
+  next.focus();
+}
+
+function renderFlash(c, q) {
+  const s = state;
+  const f = el('div', 'flash');
+  let shown = false;
+  const draw = () => {
+    f.innerHTML = '<div class="front">' + esc(q.front) + '</div>' +
+      (q.parts ? '<div class="parts">' + esc(q.parts) + '</div>' : '') +
+      (shown ? '<div class="back">' + esc(q.back) + '</div>' : '<div class="hint">Tap, or press space, to turn over</div>');
+  };
+  draw();
+  f.onclick = () => { if (!shown) { shown = true; draw(); rate.classList.remove('hidden'); } };
+  c.appendChild(f);
+  const rate = el('div', 'hidden');
+  rate.style.display = 'flex'; rate.style.gap = '10px'; rate.style.marginTop = '14px'; rate.style.flexWrap = 'wrap';
+  const good = el('button', 'btn', 'Knew it');
+  const bad = el('button', 'btn ghost', 'Not yet');
+  good.onclick = () => { bump(q.word.id, true); s.right++; s.i++; renderQuestion(); };
+  bad.onclick = () => { bump(q.word.id, false); s.wrong.push(q); if (s.again.length < 8) s.again.push(q); s.i++; renderQuestion(); };
+  rate.appendChild(good); rate.appendChild(bad);
+  c.appendChild(rate);
+  const key = e => {
+    if (e.code === 'Space') { e.preventDefault(); if (!shown) f.onclick(); }
+    else if (shown && (e.key === '1' || e.key === 'ArrowRight')) good.click();
+    else if (shown && (e.key === '2' || e.key === 'ArrowLeft')) bad.click();
+  };
+  document.addEventListener('keydown', key, { once: false });
+  const clean = () => document.removeEventListener('keydown', key);
+  good.addEventListener('click', clean); bad.addEventListener('click', clean);
+}
+
+/* ---------- results ---------- */
+function finish() {
+  const s = state;
+  const total = s.qs.length;
+  const pct = total ? Math.round(100 * s.right / total) : 0;
+  const sec = $('#results'); sec.innerHTML = '';
+
+  const c = el('div', 'card');
+  c.innerHTML = '<h2>Result</h2><div class="score">' + s.right + '<small> / ' + total + '</small></div>' +
+    '<p class="muted">' + pct + '% &middot; ' + MODES.find(m => m.id === s.mode).t + ' &middot; test' + (s.tests.length > 1 ? 's ' : ' ') + rangeText(s.tests) +
+    (s.claimed ? ' &middot; including ' + s.claimed + ' you asked to be counted' : '') + '</p>';
+  sec.appendChild(c);
+
+  if (s.wrong.length) {
+    const w = el('div', 'card');
+    let rows = '';
+    const seen = new Set();
+    s.wrong.forEach(q => {
+      const k = q.word.id + (q.form || q.prompt);
+      if (seen.has(k)) return; seen.add(k);
+      rows += '<tr><td class="lat">' + esc(q.prompt) + '</td><td>' + esc(q.show) + '</td><td class="muted">' + esc(q.word.l) + ' &middot; ' + q.word.test + '</td></tr>';
+    });
+    w.innerHTML = '<h2>Worth another look</h2><table><thead><tr><th>Question</th><th>Answer</th><th>Word</th></tr></thead><tbody>' + rows + '</tbody></table>';
+    const again = el('button', 'btn sm'); again.textContent = 'Test me on just these';
+    again.style.marginTop = '14px';
+    again.onclick = () => {
+      const ws = [...new Set(s.wrong.map(q => q.word))];
+      const qs = ws.map(x => (s.mode === 'flash' ? qFlash(x, false) : s.mode === 'e2l' ? e2lQuestion(x, ws) : s.mode === 'forms' ? formsQuestion(x) : qBasic(x))).filter(Boolean);
+      state = { qs: shuffle(qs), i: 0, right: 0, wrong: [], tests: s.tests, mode: s.mode, again: [], claimed: 0, pupil: s.pupil };
+      show('session'); renderQuestion();
+    };
+    w.appendChild(again);
+    sec.appendChild(w);
+  }
+
+  const code = makeCode({ n: s.pupil || '', m: s.mode, t: rangeText(s.tests), s: s.right, q: total, c: s.claimed || 0 });
+  const cc = el('div', 'card');
+  cc.innerHTML = '<h2>Score code</h2><p class="muted">Send this line to your teacher as proof the prep was done.</p><code class="codebox">' + esc(code) + '</code>';
+  const cp = el('button', 'btn ghost sm', 'Copy code'); cp.style.marginTop = '12px';
+  cp.onclick = () => { navigator.clipboard && navigator.clipboard.writeText(code); cp.textContent = 'Copied'; };
+  cc.appendChild(cp);
+  sec.appendChild(cc);
+
+  const nav = el('div');
+  const again2 = el('button', 'btn red', 'Another go'); again2.onclick = () => startSession();
+  const home = el('button', 'btn ghost', 'Back to the start'); home.style.marginLeft = '10px'; home.onclick = () => show('home');
+  nav.appendChild(again2); nav.appendChild(home);
+  sec.appendChild(nav);
+  show('results');
+}
+
+/* ---------- score code ---------- */
+function b64(str) { return btoa(unescape(encodeURIComponent(str))).replace(/=+$/, '').replace(/\+/g, '-').replace(/\//g, '_'); }
+function unb64(str) { str = str.replace(/-/g, '+').replace(/_/g, '/'); return decodeURIComponent(escape(atob(str))); }
+function sum(str) { let h = 5381; for (let i = 0; i < str.length; i++) h = ((h * 33) ^ str.charCodeAt(i)) >>> 0; return h.toString(36).slice(0, 4).toUpperCase(); }
+function makeCode(o) {
+  o.d = new Date().toISOString().slice(0, 10);
+  const p = b64(JSON.stringify(o));
+  return 'LAT-' + p + '-' + sum(p);
+}
+function readCode(code) {
+  const m = String(code).trim().match(/^LAT-([A-Za-z0-9\-_]+)-([A-Z0-9]{1,4})$/);
+  if (!m) return { error: 'That is not a score code.' };
+  if (sum(m[1]) !== m[2]) return { error: 'This code has been altered — the checksum does not match.' };
+  try { return { data: JSON.parse(unb64(m[1])) }; } catch (e) { return { error: 'This code is damaged.' }; }
+}
+
+/* ============================================================
+   PRINT SHEET
+   ============================================================ */
+function initPrint() {
+  const sel = $('#pTest'); sel.innerHTML = '';
+  TESTS.forEach(t => { const o = el('option', null, 'Test ' + t); o.value = t; sel.appendChild(o); });
+  $('#pGen').onclick = buildSheet;
+  $('#pPrint').onclick = () => window.print();
+  $('#pKey').onclick = () => { const k = $('#sheet').querySelectorAll('.ans'); k.forEach(e => e.classList.toggle('hidden')); };
+  buildSheet();
+}
+function buildSheet() {
+  const t = parseInt($('#pTest').value, 10);
+  let n = parseInt($('#pCount').value, 10);
+  const dir = $('#pDir').value;
+  const ratio = parseFloat($('#pInter').value);
+  const main = BY_TEST[t] || [];
+  if (!n) n = main.length;
+  const earlier = WORDS.filter(w => w.test < t);
+  const nInter = earlier.length ? Math.round(n * ratio) : 0;
+  const items = sample(main, n - nInter).map(w => ({ w, i: false }))
+    .concat(sample(earlier, nInter).map(w => ({ w, i: true })));
+  const list = shuffle(items);
+
+  let html = '<div class="sheet"><h3>Latin Vocabulary Test ' + t + '</h3>' +
+    '<div class="meta">Name: ______________________  &nbsp; Set: __________  &nbsp; Date: __________ &nbsp;&nbsp; Total: ___ / ' + list.length + '</div><ol class="cols">';
+  list.forEach(it => {
+    const w = it.w;
+    let q = '', a = '';
+    if (dir === 'le') { q = w.l; a = w.senses.join(', '); }
+    else if (dir === 'el') { q = w.senses.join(', '); a = w.l + (w.n && !/indeclinable/i.test(w.n) ? ', ' + w.n : ''); }
+    else { q = w.l; a = (w.n && !/indeclinable/i.test(w.n) ? w.n + ' — ' : '') + w.senses.join(', '); }
+    html += '<li>' + esc(q) + (it.i ? ' <span class="muted">(rev.)</span>' : '') + ' <span class="ans hidden">&nbsp;&nbsp;' + esc(a) + '</span></li>';
+  });
+  html += '</ol></div>';
+  $('#sheet').innerHTML = html;
+}
+
+/* ============================================================
+   TEACHER PANEL
+   ============================================================ */
+function renderTeacher() {
+  const sec = $('#teacher'); sec.innerHTML = '';
+
+  const d = el('div', 'card');
+  d.innerHTML = '<h2>Check a score code</h2><p class="muted">Paste a pupil\'s code to see what they did. A code that has been edited will fail the check.</p>';
+  const inp = el('input'); inp.type = 'text'; inp.placeholder = 'LAT-...'; inp.style.marginTop = '8px';
+  const out = el('div'); out.style.marginTop = '12px';
+  inp.oninput = () => {
+    if (!inp.value.trim()) { out.innerHTML = ''; return; }
+    const r = readCode(inp.value);
+    if (r.error) { out.innerHTML = '<div class="fb bad">' + esc(r.error) + '</div>'; return; }
+    const x = r.data;
+    const mn = (MODES.find(m => m.id === x.m) || {}).t || x.m;
+    out.innerHTML = '<div class="fb ok"><b>' + esc(x.n || 'No name given') + '</b>' +
+      '<span class="alt">' + x.s + ' out of ' + x.q + ' &middot; ' + esc(mn) + ' &middot; test ' + esc(x.t) + ' &middot; ' + esc(x.d) +
+      (x.c ? ' &middot; <b>' + x.c + ' self-claimed</b>, see Queried answers' : '') + '</span></div>';
+  };
+  d.appendChild(inp); d.appendChild(out);
+  sec.appendChild(d);
+
+  const qr = el('div', 'card');
+  let qHtml = '<h2>Queried answers</h2>';
+  if (!store.queries.length) qHtml += '<p class="muted">Nothing queried on this device. When a pupil is marked wrong they can say their version could be right too; the mark is given back and the query lands here for you to check.</p>';
+  else {
+    qHtml += '<p class="muted">The mark was given back in each case. The score code says how many.</p>' +
+      '<table><thead><tr><th>Question</th><th>Pupil put</th><th>Expected</th><th>Word</th><th>Test</th><th>Date</th></tr></thead><tbody>';
+    store.queries.slice().reverse().forEach(x => {
+      qHtml += '<tr><td>' + esc(x.q) + '</td><td class="lat">' + esc(x.got) + '</td><td>' + esc(x.want) + '</td><td class="muted">' + esc(x.w) + '</td><td>' + x.t + '</td><td class="muted">' + esc(x.d) + '</td></tr>';
+    });
+    qHtml += '</tbody></table>';
+  }
+  qr.innerHTML = qHtml;
+  if (store.queries.length) {
+    const cp = el('button', 'btn ghost sm', 'Copy the list'); cp.style.marginTop = '12px';
+    cp.onclick = () => { navigator.clipboard && navigator.clipboard.writeText(store.queries.map(x => x.q + '  |  put: ' + x.got + '  |  expected: ' + x.want + '  |  ' + x.w + ' (test ' + x.t + ')').join('\n')); cp.textContent = 'Copied'; };
+    const cl = el('button', 'btn ghost sm', 'Clear'); cl.style.marginTop = '12px'; cl.style.marginLeft = '8px';
+    cl.onclick = () => { store.queries = []; save(); renderTeacher(); };
+    qr.appendChild(cp); qr.appendChild(cl);
+  }
+  sec.appendChild(qr);
+
+  const f = el('div', 'card');
+  let flagHtml = '<h2>Flagged forms</h2>';
+  if (!store.flags.length) flagHtml += '<p class="muted">Nothing flagged on this device. Pupils can flag any generated form that looks wrong; they collect here.</p>';
+  else {
+    flagHtml += '<table><thead><tr><th>Item</th><th>Word</th><th>Test</th><th>Date</th></tr></thead><tbody>';
+    store.flags.slice().reverse().forEach(x => { flagHtml += '<tr><td>' + esc(x.k) + '</td><td class="lat">' + esc(x.w) + '</td><td>' + x.t + '</td><td class="muted">' + esc(x.d) + '</td></tr>'; });
+    flagHtml += '</tbody></table>';
+  }
+  f.innerHTML = flagHtml;
+  if (store.flags.length) {
+    const cp = el('button', 'btn ghost sm', 'Copy the list'); cp.style.marginTop = '12px';
+    cp.onclick = () => { navigator.clipboard && navigator.clipboard.writeText(store.flags.map(x => x.k).join('\n')); cp.textContent = 'Copied'; };
+    const cl = el('button', 'btn ghost sm', 'Clear'); cl.style.marginTop = '12px'; cl.style.marginLeft = '8px';
+    cl.onclick = () => { store.flags = []; save(); renderTeacher(); };
+    f.appendChild(cp); f.appendChild(cl);
+  }
+  sec.appendChild(f);
+
+  const b = el('div', 'card');
+  b.innerHTML = '<h2>Browse the list</h2>';
+  const sel = el('select');
+  TESTS.forEach(t => { const o = el('option', null, 'Test ' + t); o.value = t; sel.appendChild(o); });
+  const tbl = el('div'); tbl.style.marginTop = '12px';
+  const draw = () => {
+    const ws = BY_TEST[sel.value] || [];
+    let h = '<table><thead><tr><th>Latin</th><th>Parts</th><th>Part of speech</th><th>Meanings</th></tr></thead><tbody>';
+    ws.forEach(w => { h += '<tr><td class="lat">' + esc(w.l) + '</td><td class="muted">' + esc(w.n) + '</td><td class="muted">' + esc(w.p) + '</td><td>' + esc(w.m) + '</td></tr>'; });
+    tbl.innerHTML = h + '</tbody></table>';
+  };
+  sel.onchange = draw; draw();
+  b.appendChild(sel); b.appendChild(tbl);
+  sec.appendChild(b);
+
+  const r = el('div', 'card');
+  r.innerHTML = '<h2>This device</h2><p class="muted">Progress, flags and queries are kept in this browser only. Nothing is sent anywhere.</p>';
+  const wipe = el('button', 'btn ghost sm', 'Clear everything on this device');
+  wipe.onclick = () => { if (confirm('Clear all progress, flags and queries on this device?')) { store = { stats: {}, flags: [], queries: [], settings: {}, done: {} }; save(); renderTeacher(); renderChips(); } };
+  r.appendChild(wipe);
+  sec.appendChild(r);
+
+  show('teacher');
+}
+
+/* ============================================================
+   BOOT
+   ============================================================ */
+if (store.settings.count) $('#qCount').value = store.settings.count;
+if (store.settings.inter) $('#interleave').value = store.settings.inter;
+if (store.settings.pupil) $('#pupil').value = store.settings.pupil;
+
+renderChips(); renderModes(); updateInfo(); initPrint();
+
+$('#start').onclick = startSession;
+$('#quit').onclick = finish;
+$('#navHome').onclick = () => show('home');
+$('#navPrint').onclick = () => show('print');
+$('#navTeacher').onclick = renderTeacher;
+$('#selOne').onclick = () => { const t = Math.max.apply(null, [...selected]); selected = new Set([t]); renderChips(); updateInfo(); };
+$('#selCumulative').onclick = () => { const t = Math.max.apply(null, [...selected]); selected = new Set(TESTS.filter(x => x <= t)); renderChips(); updateInfo(); };
+$('#selAll').onclick = () => { selected = new Set(TESTS); renderChips(); updateInfo(); };
+$('#qCount').onchange = updateInfo; $('#interleave').onchange = updateInfo;
+
+if (location.search.indexOf('debug') >= 0) window.__t = { WORDS, MODES, buildQuestions, formsQuestion, e2lQuestion, poolFor, readCode, makeCode, checkAllMeanings, checkWords };
+
+})();
+
+</script>
+</body>
+</html>

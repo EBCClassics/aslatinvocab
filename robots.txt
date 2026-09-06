@@ -1,0 +1,3 @@
+# This site is a teaching resource and is not for public indexing.
+User-agent: *
+Disallow: /
